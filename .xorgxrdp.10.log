@@ -1,0 +1,2483 @@
+[ 53873.953] 
+X.Org X Server 1.20.4
+X Protocol Version 11, Revision 0
+[ 53873.953] Build Operating System: Linux 4.15.0-99-generic armv8l Raspbian
+[ 53873.953] Current Operating System: Linux pi-zero 5.4.72+ #1356 Thu Oct 22 13:56:00 BST 2020 armv6l
+[ 53873.953] Kernel command line: coherent_pool=1M 8250.nr_uarts=0 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1 snd_bcm2835.enable_headphones=1 bcm2708_fb.fbwidth=1920 bcm2708_fb.fbheight=1080 bcm2708_fb.fbswap=1 smsc95xx.macaddr=B8:27:EB:15:8E:53 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  console=ttyS0,115200 console=tty1 root=PARTUUID=240f108e-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
+[ 53873.954] Build Date: 27 August 2020  08:51:48AM
+[ 53873.954] xorg-server 2:1.20.4-1+rpt2+deb10u1 (https://www.debian.org/support) 
+[ 53873.954] Current version of pixman: 0.36.0
+[ 53873.954] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[ 53873.954] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[ 53873.956] (++) Log file: ".xorgxrdp.10.log", Time: Fri Nov 13 11:30:45 2020
+[ 53873.958] (++) Using config file: "/etc/X11/xrdp/xorg.conf"
+[ 53873.958] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[ 53873.961] (==) ServerLayout "X11 Server"
+[ 53873.962] (**) |-->Screen "Screen (xrdpdev)" (0)
+[ 53873.962] (**) |   |-->Monitor "Monitor"
+[ 53873.965] (**) |   |-->Device "Video Card (xrdpdev)"
+[ 53873.965] (**) |   |-->GPUDevice "Video Card (xrdpdev)"
+[ 53873.965] (**) |-->Input Device "xrdpMouse"
+[ 53873.966] (**) |-->Input Device "xrdpKeyboard"
+[ 53873.966] (**) Option "DontVTSwitch" "on"
+[ 53873.966] (**) Option "AutoAddDevices" "off"
+[ 53873.966] (**) Not automatically adding devices
+[ 53873.966] (==) Automatically enabling devices
+[ 53873.966] (==) Automatically adding GPU devices
+[ 53873.967] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[ 53873.967] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
+[ 53873.967] 	Entry deleted from font path.
+[ 53873.967] (==) FontPath set to:
+	/usr/share/fonts/X11/misc,
+	/usr/share/fonts/X11/100dpi/:unscaled,
+	/usr/share/fonts/X11/75dpi/:unscaled,
+	/usr/share/fonts/X11/Type1,
+	/usr/share/fonts/X11/100dpi,
+	/usr/share/fonts/X11/75dpi,
+	built-ins
+[ 53873.967] (==) ModulePath set to "/usr/lib/xorg/modules"
+[ 53873.968] (II) Loader magic: 0x1fcf80
+[ 53873.968] (II) Module ABI versions:
+[ 53873.968] 	X.Org ANSI C Emulation: 0.4
+[ 53873.968] 	X.Org Video Driver: 24.0
+[ 53873.968] 	X.Org XInput driver : 24.1
+[ 53873.968] 	X.Org Server Extension : 10.0
+[ 53874.002] (II) systemd-logind: took control of session /org/freedesktop/login1/session/c1
+[ 53874.004] (II) no primary bus or device found
+[ 53874.004] (II) "glx" will be loaded. This was enabled by default and also specified in the config file.
+[ 53874.004] (II) LoadModule: "dbe"
+[ 53874.005] (II) Module "dbe" already built-in
+[ 53874.005] (II) LoadModule: "ddc"
+[ 53874.005] (II) Module "ddc" already built-in
+[ 53874.006] (II) LoadModule: "extmod"
+[ 53874.006] (II) Module "extmod" already built-in
+[ 53874.006] (II) LoadModule: "glx"
+[ 53874.007] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[ 53874.021] (II) Module glx: vendor="X.Org Foundation"
+[ 53874.022] 	compiled for 1.20.4, module version = 1.0.0
+[ 53874.022] 	ABI class: X.Org Server Extension, version 10.0
+[ 53874.022] (II) LoadModule: "int10"
+[ 53874.024] (II) Loading /usr/lib/xorg/modules/libint10.so
+[ 53874.032] (II) Module int10: vendor="X.Org Foundation"
+[ 53874.032] 	compiled for 1.20.4, module version = 1.0.0
+[ 53874.032] 	ABI class: X.Org Video Driver, version 24.0
+[ 53874.032] (II) LoadModule: "record"
+[ 53874.032] (II) Module "record" already built-in
+[ 53874.032] (II) LoadModule: "vbe"
+[ 53874.034] (II) Loading /usr/lib/xorg/modules/libvbe.so
+[ 53874.038] (II) Module vbe: vendor="X.Org Foundation"
+[ 53874.039] 	compiled for 1.20.4, module version = 1.1.0
+[ 53874.039] 	ABI class: X.Org Video Driver, version 24.0
+[ 53874.039] (II) LoadModule: "xorgxrdp"
+[ 53874.041] (II) Loading /usr/lib/xorg/modules/libxorgxrdp.so
+[ 53874.050] (II) Module XORGXRDP: vendor="X.Org Foundation"
+[ 53874.050] 	compiled for 1.20.3, module version = 0.2.9
+[ 53874.050] 	ABI class: X.Org Video Driver, version 24.0
+[ 53874.050] xorgxrdpSetup:
+[ 53874.051] (II) LoadModule: "fb"
+[ 53874.052] (II) Loading /usr/lib/xorg/modules/libfb.so
+[ 53874.053] (II) Module fb: vendor="X.Org Foundation"
+[ 53874.054] 	compiled for 1.20.4, module version = 1.0.0
+[ 53874.054] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[ 53874.054] (II) LoadModule: "xrdpdev"
+[ 53874.055] (II) Loading /usr/lib/xorg/modules/drivers/xrdpdev_drv.so
+[ 53874.059] (II) Module XRDPDEV: vendor="X.Org Foundation"
+[ 53874.059] 	compiled for 1.20.3, module version = 0.2.9
+[ 53874.060] 	ABI class: X.Org Video Driver, version 24.0
+[ 53874.060] xrdpdevSetup:
+[ 53874.060] (II) LoadModule: "xrdpmouse"
+[ 53874.061] (II) Loading /usr/lib/xorg/modules/input/xrdpmouse_drv.so
+[ 53874.064] (II) Module XRDPMOUSE: vendor="X.Org Foundation"
+[ 53874.064] 	compiled for 1.20.3, module version = 0.2.9
+[ 53874.064] 	Module class: X.Org XInput Driver
+[ 53874.064] 	ABI class: X.Org XInput driver, version 24.1
+[ 53874.064] rdpmousePlug:
+[ 53874.065] (II) LoadModule: "xrdpkeyb"
+[ 53874.066] (II) Loading /usr/lib/xorg/modules/input/xrdpkeyb_drv.so
+[ 53874.069] (II) Module XRDPKEYB: vendor="X.Org Foundation"
+[ 53874.069] 	compiled for 1.20.3, module version = 0.2.9
+[ 53874.069] 	Module class: X.Org XInput Driver
+[ 53874.069] 	ABI class: X.Org XInput driver, version 24.1
+[ 53874.069] rdpkeybPlug:
+[ 53874.069] rdpIdentify:
+[ 53874.069] (II) XRDPDEV: driver for xrdp: XRDPDEV
+[ 53874.070] rdpDriverFunc: op 10
+[ 53874.070] (WW) Falling back to old probe method for XRDPDEV
+[ 53874.070] rdpProbe:
+[ 53874.070] (II) Loading sub module "fb"
+[ 53874.070] (II) LoadModule: "fb"
+[ 53874.071] (II) Loading /usr/lib/xorg/modules/libfb.so
+[ 53874.072] (II) Module fb: vendor="X.Org Foundation"
+[ 53874.072] 	compiled for 1.20.4, module version = 1.0.0
+[ 53874.072] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[ 53874.072] (II) XRDPDEV(0): using default device
+[ 53874.072] (II) XRDPDEV(0): using default device
+[ 53874.072] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[ 53874.073] rdpPreInit:
+[ 53874.073] (**) XRDPDEV(0): Depth 24, (--) framebuffer bpp 32
+[ 53874.073] (==) XRDPDEV(0): RGB weight 888
+[ 53874.073] (==) XRDPDEV(0): Using gamma correction (1.0, 1.0, 1.0)
+[ 53874.073] (==) XRDPDEV(0): Default visual is TrueColor
+[ 53874.073] (==) XRDPDEV(0): DPI set to (96, 96)
+[ 53874.073] (II) XRDPDEV(0): 	mode "640x480" ok
+[ 53874.074] (II) XRDPDEV(0): 	mode "800x600" ok
+[ 53874.074] (II) XRDPDEV(0): Virtual size is 800x600 (pitch 800)
+[ 53874.074] (**) XRDPDEV(0):  Default mode "800x600": 36.0 MHz (scaled from 0.0 MHz), 35.2 kHz, 56.2 Hz
+[ 53874.074] (II) XRDPDEV(0): Modeline "800x600"x0.0   36.00  800 824 896 1024  600 601 603 625 +hsync +vsync (35.2 kHz d)
+[ 53874.074] rdpScreenInit: virtualX 800 virtualY 600 rgbBits 8 depth 24
+[ 53874.074] rdpScreenInit: pfbMemory bytes 1920000
+[ 53874.075] rdpScreenInit: pfbMemory 0xb6000010
+[ 53874.075] rdpSimdInit: assigning yuv functions
+[ 53874.075] rdpXvInit: depth 24
+[ 53874.076] (==) XRDPDEV(0): Backing store enabled
+[ 53874.077] rdpClientConInit: disconnect idle session after [0] sec
+[ 53874.077] rdpClientConInit: kill disconnected [0] timeout [0] sec
+[ 53874.078] rdpScreenInit: out
+[ 53874.078] (II) Initializing extension Generic Event Extension
+[ 53874.080] (II) Initializing extension SHAPE
+[ 53874.082] (II) Initializing extension MIT-SHM
+[ 53874.084] (II) Initializing extension XInputExtension
+[ 53874.087] (II) Initializing extension XTEST
+[ 53874.089] (II) Initializing extension BIG-REQUESTS
+[ 53874.091] (II) Initializing extension SYNC
+[ 53874.093] (II) Initializing extension XKEYBOARD
+[ 53874.095] (II) Initializing extension XC-MISC
+[ 53874.111] (II) Initializing extension SECURITY
+[ 53874.118] (II) Initializing extension XFIXES
+[ 53874.120] (II) Initializing extension RENDER
+[ 53874.122] (II) Initializing extension RANDR
+[ 53874.141] (II) Initializing extension COMPOSITE
+[ 53874.143] (II) Initializing extension DAMAGE
+[ 53874.145] (II) Initializing extension MIT-SCREEN-SAVER
+[ 53874.147] (II) Initializing extension DOUBLE-BUFFER
+[ 53874.149] (II) Initializing extension RECORD
+[ 53874.162] (II) Initializing extension DPMS
+[ 53874.163] (II) Initializing extension Present
+[ 53874.171] (II) Initializing extension DRI3
+[ 53874.172] (II) Initializing extension X-Resource
+[ 53874.174] (II) Initializing extension XVideo
+[ 53874.176] (II) Initializing extension XVideo-MotionCompensation
+[ 53874.176] (II) Initializing extension SELinux
+[ 53874.176] (II) SELinux: Disabled on system
+[ 53874.176] (II) Initializing extension GLX
+[ 53874.178] (II) AIGLX: Screen 0 is not DRI2 capable
+[ 53875.365] (II) IGLX: Loaded and initialized swrast
+[ 53875.365] (II) GLX: Initialized DRISWRAST GL provider for screen 0
+[ 53875.365] (II) Initializing extension XFree86-VidModeExtension
+[ 53875.367] (II) Initializing extension XFree86-DGA
+[ 53875.369] (II) Initializing extension XFree86-DRI
+[ 53875.369] (II) Initializing extension DRI2
+[ 53875.845] (II) Using input driver 'XRDPMOUSE' for 'xrdpMouse'
+[ 53875.846] (**) Option "CorePointer"
+[ 53875.846] (**) xrdpMouse: always reports core events
+[ 53875.846] rdpmousePreInit: drv 0x1383fa0 info 0x1510980, flags 0x0
+[ 53875.846] (II) XINPUT: Adding extended input device "xrdpMouse" (type: Mouse, id 6)
+[ 53875.846] rdpmouseControl: what 0
+[ 53875.847] rdpmouseDeviceInit:
+[ 53875.847] rdpmouseCtrl:
+[ 53875.847] rdpRegisterInputCallback: type 1 proc 0xb6509944
+[ 53875.847] (**) xrdpMouse: (accel) keeping acceleration scheme 1
+[ 53875.848] (**) xrdpMouse: (accel) acceleration profile 0
+[ 53875.848] (**) xrdpMouse: (accel) acceleration factor: 2.000
+[ 53875.848] (**) xrdpMouse: (accel) acceleration threshold: 4
+[ 53875.848] rdpmouseControl: what 1
+[ 53875.848] rdpmouseDeviceOn:
+[ 53875.848] (II) Using input driver 'XRDPKEYB' for 'xrdpKeyboard'
+[ 53875.849] (**) Option "CoreKeyboard"
+[ 53875.849] (**) xrdpKeyboard: always reports core events
+[ 53875.849] rdpkeybPreInit: drv 0x138c4b0 info 0x168c8c8, flags 0x0
+[ 53875.849] (II) XINPUT: Adding extended input device "xrdpKeyboard" (type: Keyboard, id 7)
+[ 53875.849] rdpkeybControl: what 0
+[ 53875.849] rdpkeybDeviceInit:
+[ 53876.228] rdpkeybChangeKeyboardControl:
+[ 53876.228] rdpkeybChangeKeyboardControl: autoRepeat on
+[ 53876.229] rdpRegisterInputCallback: type 0 proc 0xb61d6380
+[ 53876.229] rdpkeybControl: what 1
+[ 53876.229] rdpkeybDeviceOn:
+[ 53876.398] (II) config/udev: Adding input device Logitech USB Optical Mouse (/dev/input/event0)
+[ 53876.399] (II) AutoAddDevices is off - not adding device.
+[ 53876.408] (II) config/udev: Adding input device Logitech USB Optical Mouse (/dev/input/mouse0)
+[ 53876.409] (II) AutoAddDevices is off - not adding device.
+[ 53876.421] (II) config/udev: Adding input device Logitech USB Keyboard (/dev/input/event1)
+[ 53876.421] (II) AutoAddDevices is off - not adding device.
+[ 53876.432] (II) config/udev: Adding input device Logitech USB Keyboard Consumer Control (/dev/input/event2)
+[ 53876.433] (II) AutoAddDevices is off - not adding device.
+[ 53876.444] (II) config/udev: Adding input device Logitech USB Keyboard System Control (/dev/input/event3)
+[ 53876.444] (II) AutoAddDevices is off - not adding device.
+[ 53876.507] rdpSaveScreen:
+[ 53876.509] rdpDeferredRandR:
+[ 53876.510] rdpResizeSession: width 1024 height 768
+[ 53876.510]   calling RRScreenSizeSet
+[ 53876.510] rdpRRScreenSetSize: width 1024 height 768 mmWidth 271 mmHeight 203
+[ 53876.511] rdpRRGetInfo:
+[ 53876.512]   screen resized to 1024x768
+[ 53876.521]   RRScreenSizeSet ok 1
+[ 53876.521] rdpResizeSession: width 600 height 1260
+[ 53876.521]   calling RRScreenSizeSet
+[ 53876.522] rdpRRScreenSetSize: width 600 height 1260 mmWidth 159 mmHeight 333
+[ 53876.523] rdpRRGetInfo:
+[ 53876.524]   screen resized to 600x1260
+[ 53876.532]   RRScreenSizeSet ok 1
+[ 53876.532] rdpInDeferredRepeatCallback:
+[ 53876.533] rdpkeybChangeKeyboardControl:
+[ 53876.533] rdpkeybChangeKeyboardControl: autoRepeat off
+[ 53876.533] rdpClientConGotConnection:
+[ 53876.534] rdpClientConGotConnection: g_sck_accept ok new_sck 7
+[ 53876.534] rdpClientConGetConnection: idle_disconnect_timeout set to non-positive value, idle timer turned off
+[ 53876.534] rdpAddClientConToDev: adding first clientCon 0x16b8f80
+[ 53876.534] rdpClientConProcessMsgVersion: version 0 0 0 1
+[ 53876.536] rdpClientConProcessScreenSizeMsg: set width 600 height 1260 bpp 32
+[ 53876.536] rdpClientConProcessScreenSizeMsg: shmemid 13 shmemptr 0xb011d000
+[ 53876.536] rdpClientConProcessMsgClientInput: invalidate x 0 y 0 cx 600 cy 1260
+[ 53876.537] rdpClientConProcessMsgClientInfo:
+[ 53876.538]   got client info bytes 5732
+[ 53876.538]   jpeg support 0
+[ 53876.538]   offscreen support 0
+[ 53876.538]   offscreen size 0
+[ 53876.538]   offscreen entries 0
+[ 53876.538]   client can not do offscreen to offscreen blits
+[ 53876.539]   client can do new(color) cursor
+[ 53876.539]   client can not do multimon
+[ 53876.539] rdpRRSetRdpOutputs: numCrtcs 0 monitorCount 0
+[ 53876.539] rdpRRSetRdpOutputs: add output 0 left 0 top 0 width 600 height 1260
+[ 53876.539] rdpLoadLayout: keylayout 0x00000409 variant  display 10
+[ 53876.541] rdpkeybChangeKeyboardControl:
+[ 53876.541] rdpkeybChangeKeyboardControl: autoRepeat on
+[ 53876.547] rdpkeybChangeKeyboardControl:
+[ 53876.547] rdpkeybChangeKeyboardControl: autoRepeat on
+[ 53876.701] rdpInDeferredRepeatCallback:
+[ 53876.701] rdpkeybChangeKeyboardControl:
+[ 53876.702] rdpkeybChangeKeyboardControl: autoRepeat off
+[ 53876.702] rdpInDeferredRepeatCallback:
+[ 53876.702] rdpkeybChangeKeyboardControl:
+[ 53876.705] rdpkeybChangeKeyboardControl: autoRepeat off
+[ 53878.333] rdpkeybChangeKeyboardControl:
+[ 53878.333] rdpkeybChangeKeyboardControl: autoRepeat off
+[ 53878.333] rdpkeybChangeKeyboardControl:
+[ 53878.333] rdpkeybChangeKeyboardControl: autoRepeat off
+[ 53878.334] rdpkeybChangeKeyboardControl:
+[ 53878.334] rdpkeybChangeKeyboardControl: autoRepeat off
+[ 53878.334] rdpkeybChangeKeyboardControl:
+[ 53878.334] rdpkeybChangeKeyboardControl: autoRepeat off
+[ 53889.430] rdpRRGetInfo:
+[ 53889.432] rdpRRCrtcGetGamma: 0x168f1c8 0x16b39f8 0x16b3df8 0x16b3bf8
+[ 53889.433] rdpRRCrtcGetGamma: 0x168f1c8 0x16b39f8 0x16b3df8 0x16b3bf8
+[ 53972.770] rdpClientConRecv: g_sck_recv failed(returned 0)
+[ 53972.770] rdpClientConRecvMsg: error
+[ 53972.771] rdpClientConCheck: rdpClientConGotData failed
+[ 53972.771] rdpClientConDisconnect:
+[ 53972.771] rdpRemoveClientConFromDev: removing clientCon 0x16b8f80
+[ 54562.120] rdpSaveScreen:
+[ 55162.123] rdpSaveScreen:
+[ 55762.129] rdpSaveScreen:
+[ 56362.133] rdpSaveScreen:
+[ 56962.137] rdpSaveScreen:
+[ 57562.139] rdpSaveScreen:
+[ 58162.140] rdpSaveScreen:
+[ 58762.145] rdpSaveScreen:
+[ 59362.149] rdpSaveScreen:
+[ 59962.150] rdpSaveScreen:
+[ 60562.156] rdpSaveScreen:
+[ 61162.160] rdpSaveScreen:
+[ 61762.163] rdpSaveScreen:
+[ 62362.165] rdpSaveScreen:
+[ 62962.170] rdpSaveScreen:
+[ 63562.175] rdpSaveScreen:
+[ 64162.178] rdpSaveScreen:
+[ 64762.180] rdpSaveScreen:
+[ 65362.185] rdpSaveScreen:
+[ 65962.190] rdpSaveScreen:
+[ 66562.191] rdpSaveScreen:
+[ 67162.193] rdpSaveScreen:
+[ 67762.198] rdpSaveScreen:
+[ 68362.203] rdpSaveScreen:
+[ 68962.205] rdpSaveScreen:
+[ 69562.205] rdpSaveScreen:
+[ 70162.210] rdpSaveScreen:
+[ 70762.215] rdpSaveScreen:
+[ 71362.217] rdpSaveScreen:
+[ 71962.219] rdpSaveScreen:
+[ 72562.223] rdpSaveScreen:
+[ 73162.225] rdpSaveScreen:
+[ 73762.228] rdpSaveScreen:
+[ 74362.228] rdpSaveScreen:
+[ 74962.230] rdpSaveScreen:
+[ 75562.234] rdpSaveScreen:
+[ 76162.236] rdpSaveScreen:
+[ 76762.236] rdpSaveScreen:
+[ 77362.242] rdpSaveScreen:
+[ 77962.245] rdpSaveScreen:
+[ 78562.247] rdpSaveScreen:
+[ 79162.248] rdpSaveScreen:
+[ 79762.250] rdpSaveScreen:
+[ 80362.253] rdpSaveScreen:
+[ 80962.254] rdpSaveScreen:
+[ 81562.259] rdpSaveScreen:
+[ 82162.264] rdpSaveScreen:
+[ 82762.267] rdpSaveScreen:
+[ 83362.268] rdpSaveScreen:
+[ 83962.274] rdpSaveScreen:
+[ 84562.279] rdpSaveScreen:
+[ 85162.281] rdpSaveScreen:
+[ 85762.283] rdpSaveScreen:
+[ 86362.289] rdpSaveScreen:
+[ 86962.294] rdpSaveScreen:
+[ 87562.298] rdpSaveScreen:
+[ 88162.299] rdpSaveScreen:
+[ 88762.304] rdpSaveScreen:
+[ 89362.309] rdpSaveScreen:
+[ 89962.312] rdpSaveScreen:
+[ 90562.313] rdpSaveScreen:
+[ 91162.318] rdpSaveScreen:
+[ 91762.322] rdpSaveScreen:
+[ 92362.324] rdpSaveScreen:
+[ 92962.325] rdpSaveScreen:
+[ 93562.330] rdpSaveScreen:
+[ 94162.334] rdpSaveScreen:
+[ 94762.336] rdpSaveScreen:
+[ 95362.338] rdpSaveScreen:
+[ 95962.343] rdpSaveScreen:
+[ 96562.348] rdpSaveScreen:
+[ 97162.350] rdpSaveScreen:
+[ 97762.350] rdpSaveScreen:
+[ 98362.355] rdpSaveScreen:
+[ 98962.359] rdpSaveScreen:
+[ 99562.361] rdpSaveScreen:
+[100162.362] rdpSaveScreen:
+[100762.368] rdpSaveScreen:
+[101362.371] rdpSaveScreen:
+[101962.372] rdpSaveScreen:
+[102562.372] rdpSaveScreen:
+[103162.377] rdpSaveScreen:
+[103762.381] rdpSaveScreen:
+[104362.382] rdpSaveScreen:
+[104962.387] rdpSaveScreen:
+[105562.391] rdpSaveScreen:
+[106162.394] rdpSaveScreen:
+[106762.396] rdpSaveScreen:
+[107362.400] rdpSaveScreen:
+[107962.404] rdpSaveScreen:
+[108562.407] rdpSaveScreen:
+[109162.408] rdpSaveScreen:
+[109762.413] rdpSaveScreen:
+[110362.417] rdpSaveScreen:
+[110962.419] rdpSaveScreen:
+[111562.420] rdpSaveScreen:
+[112162.426] rdpSaveScreen:
+[112762.430] rdpSaveScreen:
+[113362.433] rdpSaveScreen:
+[113962.435] rdpSaveScreen:
+[114562.440] rdpSaveScreen:
+[115162.443] rdpSaveScreen:
+[115762.446] rdpSaveScreen:
+[116362.447] rdpSaveScreen:
+[116962.450] rdpSaveScreen:
+[117562.451] rdpSaveScreen:
+[118162.454] rdpSaveScreen:
+[118762.455] rdpSaveScreen:
+[119362.460] rdpSaveScreen:
+[119962.463] rdpSaveScreen:
+[120562.465] rdpSaveScreen:
+[121162.466] rdpSaveScreen:
+[121762.470] rdpSaveScreen:
+[122362.472] rdpSaveScreen:
+[122962.474] rdpSaveScreen:
+[123562.480] rdpSaveScreen:
+[124162.484] rdpSaveScreen:
+[124762.487] rdpSaveScreen:
+[125362.489] rdpSaveScreen:
+[125962.490] rdpSaveScreen:
+[126562.494] rdpSaveScreen:
+[127162.497] rdpSaveScreen:
+[127762.498] rdpSaveScreen:
+[128362.504] rdpSaveScreen:
+[128962.508] rdpSaveScreen:
+[129562.510] rdpSaveScreen:
+[130162.511] rdpSaveScreen:
+[130762.517] rdpSaveScreen:
+[131362.521] rdpSaveScreen:
+[131962.523] rdpSaveScreen:
+[132562.525] rdpSaveScreen:
+[133162.530] rdpSaveScreen:
+[133762.533] rdpSaveScreen:
+[134362.535] rdpSaveScreen:
+[134962.536] rdpSaveScreen:
+[135562.541] rdpSaveScreen:
+[136162.544] rdpSaveScreen:
+[136762.545] rdpSaveScreen:
+[137362.547] rdpSaveScreen:
+[137962.552] rdpSaveScreen:
+[138562.556] rdpSaveScreen:
+[139162.558] rdpSaveScreen:
+[139762.560] rdpSaveScreen:
+[140362.564] rdpSaveScreen:
+[140962.568] rdpSaveScreen:
+[141562.570] rdpSaveScreen:
+[142162.570] rdpSaveScreen:
+[142762.575] rdpSaveScreen:
+[143362.579] rdpSaveScreen:
+[143962.581] rdpSaveScreen:
+[144562.581] rdpSaveScreen:
+[145162.586] rdpSaveScreen:
+[145762.588] rdpSaveScreen:
+[146362.590] rdpSaveScreen:
+[146962.595] rdpSaveScreen:
+[147562.600] rdpSaveScreen:
+[148162.603] rdpSaveScreen:
+[148762.604] rdpSaveScreen:
+[149362.610] rdpSaveScreen:
+[149962.615] rdpSaveScreen:
+[150562.618] rdpSaveScreen:
+[151162.620] rdpSaveScreen:
+[151762.625] rdpSaveScreen:
+[152362.630] rdpSaveScreen:
+[152962.633] rdpSaveScreen:
+[153562.634] rdpSaveScreen:
+[154162.640] rdpSaveScreen:
+[154762.643] rdpSaveScreen:
+[155362.646] rdpSaveScreen:
+[155962.647] rdpSaveScreen:
+[156562.652] rdpSaveScreen:
+[157162.656] rdpSaveScreen:
+[157762.658] rdpSaveScreen:
+[158362.659] rdpSaveScreen:
+[158962.663] rdpSaveScreen:
+[159562.667] rdpSaveScreen:
+[160162.669] rdpSaveScreen:
+[160762.670] rdpSaveScreen:
+[161362.675] rdpSaveScreen:
+[161962.678] rdpSaveScreen:
+[162562.680] rdpSaveScreen:
+[163162.680] rdpSaveScreen:
+[163762.685] rdpSaveScreen:
+[164362.689] rdpSaveScreen:
+[164962.691] rdpSaveScreen:
+[165562.691] rdpSaveScreen:
+[166162.696] rdpSaveScreen:
+[166762.700] rdpSaveScreen:
+[167362.701] rdpSaveScreen:
+[167962.706] rdpSaveScreen:
+[168562.711] rdpSaveScreen:
+[169162.713] rdpSaveScreen:
+[169762.715] rdpSaveScreen:
+[170362.720] rdpSaveScreen:
+[170962.723] rdpSaveScreen:
+[171562.726] rdpSaveScreen:
+[172162.728] rdpSaveScreen:
+[172762.734] rdpSaveScreen:
+[173362.737] rdpSaveScreen:
+[173962.741] rdpSaveScreen:
+[174562.742] rdpSaveScreen:
+[175162.748] rdpSaveScreen:
+[175762.751] rdpSaveScreen:
+[176362.754] rdpSaveScreen:
+[176962.755] rdpSaveScreen:
+[177562.760] rdpSaveScreen:
+[178162.763] rdpSaveScreen:
+[178762.766] rdpSaveScreen:
+[179362.768] rdpSaveScreen:
+[179962.773] rdpSaveScreen:
+[180562.776] rdpSaveScreen:
+[181162.777] rdpSaveScreen:
+[181762.779] rdpSaveScreen:
+[182362.783] rdpSaveScreen:
+[182962.786] rdpSaveScreen:
+[183562.789] rdpSaveScreen:
+[184162.789] rdpSaveScreen:
+[184762.790] rdpSaveScreen:
+[185362.794] rdpSaveScreen:
+[185962.796] rdpSaveScreen:
+[186562.798] rdpSaveScreen:
+[187162.802] rdpSaveScreen:
+[187762.806] rdpSaveScreen:
+[188362.807] rdpSaveScreen:
+[188962.813] rdpSaveScreen:
+[189562.818] rdpSaveScreen:
+[190162.820] rdpSaveScreen:
+[190762.821] rdpSaveScreen:
+[191362.826] rdpSaveScreen:
+[191962.831] rdpSaveScreen:
+[192562.835] rdpSaveScreen:
+[193162.836] rdpSaveScreen:
+[193762.842] rdpSaveScreen:
+[194362.846] rdpSaveScreen:
+[194962.848] rdpSaveScreen:
+[195562.850] rdpSaveScreen:
+[196162.855] rdpSaveScreen:
+[196762.857] rdpSaveScreen:
+[197362.860] rdpSaveScreen:
+[197962.862] rdpSaveScreen:
+[198562.867] rdpSaveScreen:
+[199162.870] rdpSaveScreen:
+[199762.872] rdpSaveScreen:
+[200362.873] rdpSaveScreen:
+[200962.879] rdpSaveScreen:
+[201562.883] rdpSaveScreen:
+[202162.885] rdpSaveScreen:
+[202762.887] rdpSaveScreen:
+[203362.889] rdpSaveScreen:
+[203962.893] rdpSaveScreen:
+[204562.896] rdpSaveScreen:
+[205162.897] rdpSaveScreen:
+[205762.900] rdpSaveScreen:
+[206362.903] rdpSaveScreen:
+[206962.905] rdpSaveScreen:
+[207562.906] rdpSaveScreen:
+[208162.910] rdpSaveScreen:
+[208762.913] rdpSaveScreen:
+[209362.915] rdpSaveScreen:
+[209962.920] rdpSaveScreen:
+[210562.926] rdpSaveScreen:
+[211162.928] rdpSaveScreen:
+[211762.931] rdpSaveScreen:
+[212362.937] rdpSaveScreen:
+[212962.940] rdpSaveScreen:
+[213562.943] rdpSaveScreen:
+[214162.945] rdpSaveScreen:
+[214762.947] rdpSaveScreen:
+[215362.951] rdpSaveScreen:
+[215962.953] rdpSaveScreen:
+[216562.954] rdpSaveScreen:
+[217162.960] rdpSaveScreen:
+[217762.964] rdpSaveScreen:
+[218362.967] rdpSaveScreen:
+[218962.968] rdpSaveScreen:
+[219562.974] rdpSaveScreen:
+[220162.978] rdpSaveScreen:
+[220762.981] rdpSaveScreen:
+[221362.983] rdpSaveScreen:
+[221962.988] rdpSaveScreen:
+[222562.992] rdpSaveScreen:
+[223162.994] rdpSaveScreen:
+[223762.996] rdpSaveScreen:
+[224363.001] rdpSaveScreen:
+[224963.004] rdpSaveScreen:
+[225563.007] rdpSaveScreen:
+[226163.008] rdpSaveScreen:
+[226763.010] rdpSaveScreen:
+[227363.013] rdpSaveScreen:
+[227963.016] rdpSaveScreen:
+[228563.017] rdpSaveScreen:
+[229163.022] rdpSaveScreen:
+[229763.025] rdpSaveScreen:
+[230363.027] rdpSaveScreen:
+[230963.028] rdpSaveScreen:
+[231563.033] rdpSaveScreen:
+[232163.035] rdpSaveScreen:
+[232763.037] rdpSaveScreen:
+[233363.040] rdpSaveScreen:
+[233963.045] rdpSaveScreen:
+[234563.045] rdpSaveScreen:
+[235163.047] rdpSaveScreen:
+[235763.052] rdpSaveScreen:
+[236363.057] rdpSaveScreen:
+[236963.059] rdpSaveScreen:
+[237563.061] rdpSaveScreen:
+[238163.065] rdpSaveScreen:
+[238763.070] rdpSaveScreen:
+[239363.073] rdpSaveScreen:
+[239963.074] rdpSaveScreen:
+[240563.079] rdpSaveScreen:
+[241163.083] rdpSaveScreen:
+[241763.085] rdpSaveScreen:
+[242363.085] rdpSaveScreen:
+[242963.091] rdpSaveScreen:
+[243563.093] rdpSaveScreen:
+[244163.096] rdpSaveScreen:
+[244763.096] rdpSaveScreen:
+[245363.101] rdpSaveScreen:
+[245963.105] rdpSaveScreen:
+[246563.107] rdpSaveScreen:
+[247163.109] rdpSaveScreen:
+[247763.110] rdpSaveScreen:
+[248363.113] rdpSaveScreen:
+[248963.116] rdpSaveScreen:
+[249563.117] rdpSaveScreen:
+[250163.122] rdpSaveScreen:
+[250763.126] rdpSaveScreen:
+[251363.129] rdpSaveScreen:
+[251963.129] rdpSaveScreen:
+[252563.134] rdpSaveScreen:
+[253163.138] rdpSaveScreen:
+[253763.140] rdpSaveScreen:
+[254363.146] rdpSaveScreen:
+[254963.150] rdpSaveScreen:
+[255563.153] rdpSaveScreen:
+[256163.155] rdpSaveScreen:
+[256763.160] rdpSaveScreen:
+[257363.164] rdpSaveScreen:
+[257963.167] rdpSaveScreen:
+[258563.169] rdpSaveScreen:
+[259163.173] rdpSaveScreen:
+[259763.178] rdpSaveScreen:
+[260363.181] rdpSaveScreen:
+[260963.183] rdpSaveScreen:
+[261563.189] rdpSaveScreen:
+[262163.192] rdpSaveScreen:
+[262763.195] rdpSaveScreen:
+[263363.197] rdpSaveScreen:
+[263963.202] rdpSaveScreen:
+[264563.206] rdpSaveScreen:
+[265163.208] rdpSaveScreen:
+[265763.209] rdpSaveScreen:
+[266363.215] rdpSaveScreen:
+[266963.218] rdpSaveScreen:
+[267563.221] rdpSaveScreen:
+[268163.222] rdpSaveScreen:
+[268763.227] rdpSaveScreen:
+[269363.232] rdpSaveScreen:
+[269963.234] rdpSaveScreen:
+[270563.235] rdpSaveScreen:
+[271163.241] rdpSaveScreen:
+[271763.244] rdpSaveScreen:
+[272363.247] rdpSaveScreen:
+[272963.248] rdpSaveScreen:
+[273563.253] rdpSaveScreen:
+[274163.256] rdpSaveScreen:
+[274763.257] rdpSaveScreen:
+[275363.258] rdpSaveScreen:
+[275963.260] rdpSaveScreen:
+[276563.263] rdpSaveScreen:
+[277163.264] rdpSaveScreen:
+[277763.270] rdpSaveScreen:
+[278363.276] rdpSaveScreen:
+[278963.279] rdpSaveScreen:
+[279563.282] rdpSaveScreen:
+[280163.287] rdpSaveScreen:
+[280763.292] rdpSaveScreen:
+[281363.296] rdpSaveScreen:
+[281963.298] rdpSaveScreen:
+[282563.303] rdpSaveScreen:
+[283163.307] rdpSaveScreen:
+[283763.309] rdpSaveScreen:
+[284363.311] rdpSaveScreen:
+[284963.316] rdpSaveScreen:
+[285563.321] rdpSaveScreen:
+[286163.324] rdpSaveScreen:
+[286763.326] rdpSaveScreen:
+[287363.332] rdpSaveScreen:
+[287963.336] rdpSaveScreen:
+[288563.340] rdpSaveScreen:
+[289163.341] rdpSaveScreen:
+[289763.347] rdpSaveScreen:
+[290363.350] rdpSaveScreen:
+[290963.354] rdpSaveScreen:
+[291563.355] rdpSaveScreen:
+[292163.359] rdpSaveScreen:
+[292763.364] rdpSaveScreen:
+[293363.367] rdpSaveScreen:
+[293963.368] rdpSaveScreen:
+[294563.373] rdpSaveScreen:
+[295163.378] rdpSaveScreen:
+[295763.380] rdpSaveScreen:
+[296363.381] rdpSaveScreen:
+[296963.386] rdpSaveScreen:
+[297563.391] rdpSaveScreen:
+[298163.393] rdpSaveScreen:
+[298763.394] rdpSaveScreen:
+[299363.395] rdpSaveScreen:
+[299963.398] rdpSaveScreen:
+[300563.400] rdpSaveScreen:
+[301163.400] rdpSaveScreen:
+[301763.405] rdpSaveScreen:
+[302363.410] rdpSaveScreen:
+[302963.412] rdpSaveScreen:
+[303563.413] rdpSaveScreen:
+[304163.417] rdpSaveScreen:
+[304763.420] rdpSaveScreen:
+[305363.422] rdpSaveScreen:
+[305963.425] rdpSaveScreen:
+[306563.430] rdpSaveScreen:
+[307163.433] rdpSaveScreen:
+[307763.434] rdpSaveScreen:
+[308363.440] rdpSaveScreen:
+[308963.444] rdpSaveScreen:
+[309563.447] rdpSaveScreen:
+[310163.449] rdpSaveScreen:
+[310763.450] rdpSaveScreen:
+[311363.453] rdpSaveScreen:
+[311963.457] rdpSaveScreen:
+[312563.458] rdpSaveScreen:
+[313163.463] rdpSaveScreen:
+[313763.468] rdpSaveScreen:
+[314363.470] rdpSaveScreen:
+[314963.470] rdpSaveScreen:
+[315563.476] rdpSaveScreen:
+[316163.479] rdpSaveScreen:
+[316763.482] rdpSaveScreen:
+[317363.484] rdpSaveScreen:
+[317963.488] rdpSaveScreen:
+[318563.490] rdpSaveScreen:
+[319163.493] rdpSaveScreen:
+[319763.494] rdpSaveScreen:
+[320363.499] rdpSaveScreen:
+[320963.502] rdpSaveScreen:
+[321563.505] rdpSaveScreen:
+[322163.506] rdpSaveScreen:
+[322763.510] rdpSaveScreen:
+[323363.513] rdpSaveScreen:
+[323963.515] rdpSaveScreen:
+[324563.515] rdpSaveScreen:
+[325163.520] rdpSaveScreen:
+[325763.524] rdpSaveScreen:
+[326363.527] rdpSaveScreen:
+[326963.527] rdpSaveScreen:
+[327563.531] rdpSaveScreen:
+[328163.534] rdpSaveScreen:
+[328763.537] rdpSaveScreen:
+[329363.539] rdpSaveScreen:
+[329963.543] rdpSaveScreen:
+[330563.546] rdpSaveScreen:
+[331163.549] rdpSaveScreen:
+[331763.551] rdpSaveScreen:
+[332363.557] rdpSaveScreen:
+[332963.561] rdpSaveScreen:
+[333563.564] rdpSaveScreen:
+[334163.565] rdpSaveScreen:
+[334763.571] rdpSaveScreen:
+[335363.575] rdpSaveScreen:
+[335963.578] rdpSaveScreen:
+[336563.580] rdpSaveScreen:
+[337163.580] rdpSaveScreen:
+[337763.586] rdpSaveScreen:
+[338363.589] rdpSaveScreen:
+[338963.591] rdpSaveScreen:
+[339563.593] rdpSaveScreen:
+[340163.598] rdpSaveScreen:
+[340763.602] rdpSaveScreen:
+[341363.605] rdpSaveScreen:
+[341963.606] rdpSaveScreen:
+[342563.607] rdpSaveScreen:
+[343163.612] rdpSaveScreen:
+[343763.617] rdpSaveScreen:
+[344363.619] rdpSaveScreen:
+[344963.621] rdpSaveScreen:
+[345563.626] rdpSaveScreen:
+[346163.630] rdpSaveScreen:
+[346763.633] rdpSaveScreen:
+[347363.635] rdpSaveScreen:
+[347963.641] rdpSaveScreen:
+[348563.645] rdpSaveScreen:
+[349163.649] rdpSaveScreen:
+[349763.652] rdpSaveScreen:
+[350363.653] rdpSaveScreen:
+[350963.659] rdpSaveScreen:
+[351563.660] rdpSaveScreen:
+[352163.662] rdpSaveScreen:
+[352763.663] rdpSaveScreen:
+[353363.667] rdpSaveScreen:
+[353963.672] rdpSaveScreen:
+[354563.675] rdpSaveScreen:
+[355163.676] rdpSaveScreen:
+[355763.678] rdpSaveScreen:
+[356363.680] rdpSaveScreen:
+[356963.684] rdpSaveScreen:
+[357563.686] rdpSaveScreen:
+[358163.687] rdpSaveScreen:
+[358763.690] rdpSaveScreen:
+[359363.693] rdpSaveScreen:
+[359963.697] rdpSaveScreen:
+[360563.698] rdpSaveScreen:
+[361163.703] rdpSaveScreen:
+[361763.708] rdpSaveScreen:
+[362363.711] rdpSaveScreen:
+[362963.714] rdpSaveScreen:
+[363563.715] rdpSaveScreen:
+[364163.720] rdpSaveScreen:
+[364763.724] rdpSaveScreen:
+[365363.728] rdpSaveScreen:
+[365963.729] rdpSaveScreen:
+[366563.734] rdpSaveScreen:
+[367163.739] rdpSaveScreen:
+[367763.743] rdpSaveScreen:
+[368363.745] rdpSaveScreen:
+[368963.745] rdpSaveScreen:
+[369563.751] rdpSaveScreen:
+[370163.754] rdpSaveScreen:
+[370763.757] rdpSaveScreen:
+[371363.757] rdpSaveScreen:
+[371963.760] rdpSaveScreen:
+[372563.764] rdpSaveScreen:
+[373163.767] rdpSaveScreen:
+[373763.769] rdpSaveScreen:
+[374363.774] rdpSaveScreen:
+[374963.779] rdpSaveScreen:
+[375563.780] rdpSaveScreen:
+[376163.782] rdpSaveScreen:
+[376763.784] rdpSaveScreen:
+[377363.789] rdpSaveScreen:
+[377963.792] rdpSaveScreen:
+[378563.795] rdpSaveScreen:
+[379163.797] rdpSaveScreen:
+[379763.802] rdpSaveScreen:
+[380363.806] rdpSaveScreen:
+[380963.810] rdpSaveScreen:
+[381563.811] rdpSaveScreen:
+[382163.812] rdpSaveScreen:
+[382763.816] rdpSaveScreen:
+[383363.819] rdpSaveScreen:
+[383963.822] rdpSaveScreen:
+[384563.823] rdpSaveScreen:
+[385163.827] rdpSaveScreen:
+[385763.832] rdpSaveScreen:
+[386363.834] rdpSaveScreen:
+[386963.837] rdpSaveScreen:
+[387563.842] rdpSaveScreen:
+[388163.846] rdpSaveScreen:
+[388763.850] rdpSaveScreen:
+[389363.852] rdpSaveScreen:
+[389963.854] rdpSaveScreen:
+[390563.858] rdpSaveScreen:
+[391163.860] rdpSaveScreen:
+[391763.863] rdpSaveScreen:
+[392363.864] rdpSaveScreen:
+[392963.869] rdpSaveScreen:
+[393563.873] rdpSaveScreen:
+[394163.877] rdpSaveScreen:
+[394763.878] rdpSaveScreen:
+[395363.885] rdpSaveScreen:
+[395963.890] rdpSaveScreen:
+[396563.893] rdpSaveScreen:
+[397163.895] rdpSaveScreen:
+[397763.896] rdpSaveScreen:
+[398363.901] rdpSaveScreen:
+[398963.904] rdpSaveScreen:
+[399563.907] rdpSaveScreen:
+[400163.908] rdpSaveScreen:
+[400763.913] rdpSaveScreen:
+[401363.918] rdpSaveScreen:
+[401963.921] rdpSaveScreen:
+[402563.923] rdpSaveScreen:
+[403163.924] rdpSaveScreen:
+[403763.928] rdpSaveScreen:
+[404363.931] rdpSaveScreen:
+[404963.934] rdpSaveScreen:
+[405563.935] rdpSaveScreen:
+[406163.941] rdpSaveScreen:
+[406763.944] rdpSaveScreen:
+[407363.948] rdpSaveScreen:
+[407963.950] rdpSaveScreen:
+[408563.956] rdpSaveScreen:
+[409163.960] rdpSaveScreen:
+[409763.963] rdpSaveScreen:
+[410363.965] rdpSaveScreen:
+[410963.965] rdpSaveScreen:
+[411563.970] rdpSaveScreen:
+[412163.975] rdpSaveScreen:
+[412763.977] rdpSaveScreen:
+[413363.979] rdpSaveScreen:
+[413963.983] rdpSaveScreen:
+[414563.987] rdpSaveScreen:
+[415163.990] rdpSaveScreen:
+[415763.992] rdpSaveScreen:
+[416363.994] rdpSaveScreen:
+[416963.998] rdpSaveScreen:
+[417564.002] rdpSaveScreen:
+[418164.004] rdpSaveScreen:
+[418764.006] rdpSaveScreen:
+[419364.010] rdpSaveScreen:
+[419964.013] rdpSaveScreen:
+[420564.016] rdpSaveScreen:
+[421164.018] rdpSaveScreen:
+[421764.024] rdpSaveScreen:
+[422364.028] rdpSaveScreen:
+[422964.032] rdpSaveScreen:
+[423564.035] rdpSaveScreen:
+[424164.036] rdpSaveScreen:
+[424764.040] rdpSaveScreen:
+[425364.043] rdpSaveScreen:
+[425964.046] rdpSaveScreen:
+[426564.048] rdpSaveScreen:
+[427164.053] rdpSaveScreen:
+[427764.056] rdpSaveScreen:
+[428364.060] rdpSaveScreen:
+[428964.062] rdpSaveScreen:
+[429564.067] rdpSaveScreen:
+[430164.071] rdpSaveScreen:
+[430764.076] rdpSaveScreen:
+[431364.077] rdpSaveScreen:
+[431964.078] rdpSaveScreen:
+[432564.082] rdpSaveScreen:
+[433164.087] rdpSaveScreen:
+[433764.089] rdpSaveScreen:
+[434364.091] rdpSaveScreen:
+[434964.097] rdpSaveScreen:
+[435564.102] rdpSaveScreen:
+[436164.105] rdpSaveScreen:
+[436764.106] rdpSaveScreen:
+[437364.108] rdpSaveScreen:
+[437964.112] rdpSaveScreen:
+[438564.115] rdpSaveScreen:
+[439164.119] rdpSaveScreen:
+[439764.120] rdpSaveScreen:
+[440364.126] rdpSaveScreen:
+[440964.130] rdpSaveScreen:
+[441564.133] rdpSaveScreen:
+[442164.135] rdpSaveScreen:
+[442764.141] rdpSaveScreen:
+[443364.146] rdpSaveScreen:
+[443964.149] rdpSaveScreen:
+[444564.151] rdpSaveScreen:
+[445164.153] rdpSaveScreen:
+[445764.158] rdpSaveScreen:
+[446364.161] rdpSaveScreen:
+[446964.164] rdpSaveScreen:
+[447564.166] rdpSaveScreen:
+[448164.172] rdpSaveScreen:
+[448764.176] rdpSaveScreen:
+[449364.179] rdpSaveScreen:
+[449964.181] rdpSaveScreen:
+[450564.181] rdpSaveScreen:
+[451164.186] rdpSaveScreen:
+[451764.189] rdpSaveScreen:
+[452364.191] rdpSaveScreen:
+[452964.192] rdpSaveScreen:
+[453564.198] rdpSaveScreen:
+[454164.201] rdpSaveScreen:
+[454764.205] rdpSaveScreen:
+[455364.206] rdpSaveScreen:
+[455964.212] rdpSaveScreen:
+[456564.216] rdpSaveScreen:
+[457164.221] rdpSaveScreen:
+[457764.223] rdpSaveScreen:
+[458364.223] rdpSaveScreen:
+[458964.229] rdpSaveScreen:
+[459564.233] rdpSaveScreen:
+[460164.235] rdpSaveScreen:
+[460764.236] rdpSaveScreen:
+[461364.240] rdpSaveScreen:
+[461964.243] rdpSaveScreen:
+[462564.247] rdpSaveScreen:
+[463164.248] rdpSaveScreen:
+[463764.250] rdpSaveScreen:
+[464364.254] rdpSaveScreen:
+[464964.258] rdpSaveScreen:
+[465564.260] rdpSaveScreen:
+[466164.261] rdpSaveScreen:
+[466764.267] rdpSaveScreen:
+[467364.270] rdpSaveScreen:
+[467964.272] rdpSaveScreen:
+[468564.274] rdpSaveScreen:
+[469164.280] rdpSaveScreen:
+[469764.284] rdpSaveScreen:
+[470364.288] rdpSaveScreen:
+[470964.291] rdpSaveScreen:
+[471564.292] rdpSaveScreen:
+[472164.296] rdpSaveScreen:
+[472764.300] rdpSaveScreen:
+[473364.303] rdpSaveScreen:
+[473964.305] rdpSaveScreen:
+[474564.310] rdpSaveScreen:
+[475164.314] rdpSaveScreen:
+[475764.316] rdpSaveScreen:
+[476364.319] rdpSaveScreen:
+[476964.324] rdpSaveScreen:
+[477564.328] rdpSaveScreen:
+[478164.331] rdpSaveScreen:
+[478764.334] rdpSaveScreen:
+[479364.336] rdpSaveScreen:
+[479964.342] rdpSaveScreen:
+[480564.345] rdpSaveScreen:
+[481164.348] rdpSaveScreen:
+[481764.350] rdpSaveScreen:
+[482364.355] rdpSaveScreen:
+[482964.360] rdpSaveScreen:
+[483564.363] rdpSaveScreen:
+[484164.366] rdpSaveScreen:
+[484764.368] rdpSaveScreen:
+[485364.373] rdpSaveScreen:
+[485964.376] rdpSaveScreen:
+[486564.379] rdpSaveScreen:
+[487164.380] rdpSaveScreen:
+[487764.385] rdpSaveScreen:
+[488364.389] rdpSaveScreen:
+[488964.391] rdpSaveScreen:
+[489564.393] rdpSaveScreen:
+[490164.394] rdpSaveScreen:
+[490764.398] rdpSaveScreen:
+[491364.402] rdpSaveScreen:
+[491964.405] rdpSaveScreen:
+[492564.407] rdpSaveScreen:
+[493164.413] rdpSaveScreen:
+[493764.416] rdpSaveScreen:
+[494364.420] rdpSaveScreen:
+[494964.422] rdpSaveScreen:
+[495564.428] rdpSaveScreen:
+[496164.429] rdpSaveScreen:
+[496764.433] rdpSaveScreen:
+[497364.435] rdpSaveScreen:
+[497964.437] rdpSaveScreen:
+[498564.440] rdpSaveScreen:
+[499164.443] rdpSaveScreen:
+[499764.447] rdpSaveScreen:
+[500364.449] rdpSaveScreen:
+[500964.450] rdpSaveScreen:
+[501564.454] rdpSaveScreen:
+[502164.457] rdpSaveScreen:
+[502764.459] rdpSaveScreen:
+[503364.460] rdpSaveScreen:
+[503964.464] rdpSaveScreen:
+[504564.468] rdpSaveScreen:
+[505164.471] rdpSaveScreen:
+[505764.472] rdpSaveScreen:
+[506364.477] rdpSaveScreen:
+[506964.480] rdpSaveScreen:
+[507564.483] rdpSaveScreen:
+[508164.486] rdpSaveScreen:
+[508764.491] rdpSaveScreen:
+[509364.496] rdpSaveScreen:
+[509964.499] rdpSaveScreen:
+[510564.501] rdpSaveScreen:
+[511164.503] rdpSaveScreen:
+[511764.508] rdpSaveScreen:
+[512364.510] rdpSaveScreen:
+[512964.513] rdpSaveScreen:
+[513564.514] rdpSaveScreen:
+[514164.519] rdpSaveScreen:
+[514764.523] rdpSaveScreen:
+[515364.525] rdpSaveScreen:
+[515964.528] rdpSaveScreen:
+[516564.528] rdpSaveScreen:
+[517164.534] rdpSaveScreen:
+[517764.537] rdpSaveScreen:
+[518364.540] rdpSaveScreen:
+[518964.541] rdpSaveScreen:
+[519564.546] rdpSaveScreen:
+[520164.549] rdpSaveScreen:
+[520764.553] rdpSaveScreen:
+[521364.554] rdpSaveScreen:
+[521964.560] rdpSaveScreen:
+[522564.564] rdpSaveScreen:
+[523164.568] rdpSaveScreen:
+[523764.570] rdpSaveScreen:
+[524364.570] rdpSaveScreen:
+[524964.575] rdpSaveScreen:
+[525564.579] rdpSaveScreen:
+[526164.583] rdpSaveScreen:
+[526764.585] rdpSaveScreen:
+[527364.589] rdpSaveScreen:
+[527964.593] rdpSaveScreen:
+[528564.596] rdpSaveScreen:
+[529164.599] rdpSaveScreen:
+[529764.599] rdpSaveScreen:
+[530364.605] rdpSaveScreen:
+[530964.608] rdpSaveScreen:
+[531564.612] rdpSaveScreen:
+[532164.613] rdpSaveScreen:
+[532764.619] rdpSaveScreen:
+[533364.623] rdpSaveScreen:
+[533964.627] rdpSaveScreen:
+[534564.628] rdpSaveScreen:
+[535164.629] rdpSaveScreen:
+[535764.634] rdpSaveScreen:
+[536364.638] rdpSaveScreen:
+[536964.641] rdpSaveScreen:
+[537564.643] rdpSaveScreen:
+[538164.647] rdpSaveScreen:
+[538764.650] rdpSaveScreen:
+[539364.653] rdpSaveScreen:
+[539964.654] rdpSaveScreen:
+[540564.659] rdpSaveScreen:
+[541164.663] rdpSaveScreen:
+[541764.666] rdpSaveScreen:
+[542364.668] rdpSaveScreen:
+[542964.670] rdpSaveScreen:
+[543564.675] rdpSaveScreen:
+[544164.675] rdpSaveScreen:
+[544764.678] rdpSaveScreen:
+[545364.679] rdpSaveScreen:
+[545964.684] rdpSaveScreen:
+[546564.688] rdpSaveScreen:
+[547164.691] rdpSaveScreen:
+[547764.692] rdpSaveScreen:
+[548364.698] rdpSaveScreen:
+[548964.703] rdpSaveScreen:
+[549564.706] rdpSaveScreen:
+[550164.708] rdpSaveScreen:
+[550764.710] rdpSaveScreen:
+[551364.714] rdpSaveScreen:
+[551964.719] rdpSaveScreen:
+[552564.720] rdpSaveScreen:
+[553164.721] rdpSaveScreen:
+[553764.727] rdpSaveScreen:
+[554364.730] rdpSaveScreen:
+[554964.733] rdpSaveScreen:
+[555564.735] rdpSaveScreen:
+[556164.736] rdpSaveScreen:
+[556764.740] rdpSaveScreen:
+[557364.744] rdpSaveScreen:
+[557964.747] rdpSaveScreen:
+[558564.749] rdpSaveScreen:
+[559164.755] rdpSaveScreen:
+[559764.758] rdpSaveScreen:
+[560364.760] rdpSaveScreen:
+[560964.761] rdpSaveScreen:
+[561564.767] rdpSaveScreen:
+[562164.772] rdpSaveScreen:
+[562764.775] rdpSaveScreen:
+[563364.778] rdpSaveScreen:
+[563964.779] rdpSaveScreen:
+[564564.784] rdpSaveScreen:
+[565164.788] rdpSaveScreen:
+[565764.790] rdpSaveScreen:
+[566364.791] rdpSaveScreen:
+[566964.797] rdpSaveScreen:
+[567564.800] rdpSaveScreen:
+[568164.803] rdpSaveScreen:
+[568764.804] rdpSaveScreen:
+[569364.805] rdpSaveScreen:
+[569964.809] rdpSaveScreen:
+[570564.812] rdpSaveScreen:
+[571164.814] rdpSaveScreen:
+[571764.816] rdpSaveScreen:
+[572364.821] rdpSaveScreen:
+[572964.825] rdpSaveScreen:
+[573564.828] rdpSaveScreen:
+[574164.829] rdpSaveScreen:
+[574764.835] rdpSaveScreen:
+[575364.839] rdpSaveScreen:
+[575964.842] rdpSaveScreen:
+[576564.845] rdpSaveScreen:
+[577164.846] rdpSaveScreen:
+[577764.850] rdpSaveScreen:
+[578364.854] rdpSaveScreen:
+[578964.857] rdpSaveScreen:
+[579564.858] rdpSaveScreen:
+[580164.863] rdpSaveScreen:
+[580764.868] rdpSaveScreen:
+[581364.871] rdpSaveScreen:
+[581964.872] rdpSaveScreen:
+[582564.873] rdpSaveScreen:
+[583164.877] rdpSaveScreen:
+[583764.880] rdpSaveScreen:
+[584364.884] rdpSaveScreen:
+[584964.884] rdpSaveScreen:
+[585564.889] rdpSaveScreen:
+[586164.893] rdpSaveScreen:
+[586764.896] rdpSaveScreen:
+[587364.897] rdpSaveScreen:
+[587964.902] rdpSaveScreen:
+[588564.906] rdpSaveScreen:
+[589164.909] rdpSaveScreen:
+[589764.910] rdpSaveScreen:
+[590364.910] rdpSaveScreen:
+[590964.916] rdpSaveScreen:
+[591564.918] rdpSaveScreen:
+[592164.920] rdpSaveScreen:
+[592764.922] rdpSaveScreen:
+[593364.928] rdpSaveScreen:
+[593964.932] rdpSaveScreen:
+[594564.936] rdpSaveScreen:
+[595164.938] rdpSaveScreen:
+[595764.938] rdpSaveScreen:
+[596364.943] rdpSaveScreen:
+[596964.946] rdpSaveScreen:
+[597564.949] rdpSaveScreen:
+[598164.951] rdpSaveScreen:
+[598764.955] rdpSaveScreen:
+[599364.960] rdpSaveScreen:
+[599964.963] rdpSaveScreen:
+[600564.965] rdpSaveScreen:
+[601164.970] rdpSaveScreen:
+[601764.975] rdpSaveScreen:
+[602364.978] rdpSaveScreen:
+[602964.980] rdpSaveScreen:
+[603564.981] rdpSaveScreen:
+[604164.985] rdpSaveScreen:
+[604764.990] rdpSaveScreen:
+[605364.993] rdpSaveScreen:
+[605964.994] rdpSaveScreen:
+[606565.000] rdpSaveScreen:
+[607165.004] rdpSaveScreen:
+[607765.007] rdpSaveScreen:
+[608365.008] rdpSaveScreen:
+[608965.010] rdpSaveScreen:
+[609565.014] rdpSaveScreen:
+[610165.017] rdpSaveScreen:
+[610765.019] rdpSaveScreen:
+[611365.021] rdpSaveScreen:
+[611965.026] rdpSaveScreen:
+[612565.029] rdpSaveScreen:
+[613165.033] rdpSaveScreen:
+[613765.034] rdpSaveScreen:
+[614365.036] rdpSaveScreen:
+[614965.040] rdpSaveScreen:
+[615565.044] rdpSaveScreen:
+[616165.046] rdpSaveScreen:
+[616765.048] rdpSaveScreen:
+[617365.053] rdpSaveScreen:
+[617965.056] rdpSaveScreen:
+[618565.059] rdpSaveScreen:
+[619165.060] rdpSaveScreen:
+[619765.066] rdpSaveScreen:
+[620365.070] rdpSaveScreen:
+[620965.073] rdpSaveScreen:
+[621565.076] rdpSaveScreen:
+[622165.076] rdpSaveScreen:
+[622765.082] rdpSaveScreen:
+[623365.086] rdpSaveScreen:
+[623965.088] rdpSaveScreen:
+[624565.090] rdpSaveScreen:
+[625165.095] rdpSaveScreen:
+[625765.099] rdpSaveScreen:
+[626365.102] rdpSaveScreen:
+[626965.104] rdpSaveScreen:
+[627565.104] rdpSaveScreen:
+[628165.109] rdpSaveScreen:
+[628765.112] rdpSaveScreen:
+[629365.119] rdpSaveScreen:
+[629965.120] rdpSaveScreen:
+[630565.128] rdpSaveScreen:
+[631165.133] rdpSaveScreen:
+[631765.135] rdpSaveScreen:
+[632365.143] rdpSaveScreen:
+[632965.148] rdpSaveScreen:
+[633565.152] rdpSaveScreen:
+[634165.155] rdpSaveScreen:
+[634765.157] rdpSaveScreen:
+[635365.158] rdpSaveScreen:
+[635965.166] rdpSaveScreen:
+[636565.170] rdpSaveScreen:
+[637165.172] rdpSaveScreen:
+[637765.177] rdpSaveScreen:
+[638365.189] rdpSaveScreen:
+[638965.190] rdpSaveScreen:
+[639565.193] rdpSaveScreen:
+[640165.194] rdpSaveScreen:
+[640765.196] rdpSaveScreen:
+[641365.203] rdpSaveScreen:
+[641965.206] rdpSaveScreen:
+[642565.208] rdpSaveScreen:
+[643165.209] rdpSaveScreen:
+[643765.218] rdpSaveScreen:
+[644365.225] rdpSaveScreen:
+[644965.228] rdpSaveScreen:
+[645565.231] rdpSaveScreen:
+[646165.239] rdpSaveScreen:
+[646765.242] rdpSaveScreen:
+[647365.246] rdpSaveScreen:
+[647965.247] rdpSaveScreen:
+[648565.252] rdpSaveScreen:
+[649165.256] rdpSaveScreen:
+[649765.259] rdpSaveScreen:
+[650365.262] rdpSaveScreen:
+[650965.267] rdpSaveScreen:
+[651565.277] rdpSaveScreen:
+[652165.281] rdpSaveScreen:
+[652765.284] rdpSaveScreen:
+[653365.285] rdpSaveScreen:
+[653965.294] rdpSaveScreen:
+[654565.298] rdpSaveScreen:
+[655165.302] rdpSaveScreen:
+[655765.305] rdpSaveScreen:
+[656365.307] rdpSaveScreen:
+[656965.312] rdpSaveScreen:
+[657565.315] rdpSaveScreen:
+[658165.318] rdpSaveScreen:
+[658765.320] rdpSaveScreen:
+[659365.326] rdpSaveScreen:
+[659965.330] rdpSaveScreen:
+[660565.334] rdpSaveScreen:
+[661165.336] rdpSaveScreen:
+[661765.336] rdpSaveScreen:
+[662365.344] rdpSaveScreen:
+[662965.348] rdpSaveScreen:
+[663565.350] rdpSaveScreen:
+[664165.351] rdpSaveScreen:
+[664765.360] rdpSaveScreen:
+[665365.364] rdpSaveScreen:
+[665965.367] rdpSaveScreen:
+[666565.368] rdpSaveScreen:
+[667165.373] rdpSaveScreen:
+[667765.378] rdpSaveScreen:
+[668365.380] rdpSaveScreen:
+[668965.382] rdpSaveScreen:
+[669565.383] rdpSaveScreen:
+[670165.387] rdpSaveScreen:
+[670765.390] rdpSaveScreen:
+[671365.392] rdpSaveScreen:
+[671965.396] rdpSaveScreen:
+[672565.401] rdpSaveScreen:
+[673165.405] rdpSaveScreen:
+[673765.408] rdpSaveScreen:
+[674365.410] rdpSaveScreen:
+[674965.411] rdpSaveScreen:
+[675565.419] rdpSaveScreen:
+[676165.422] rdpSaveScreen:
+[676765.424] rdpSaveScreen:
+[677365.426] rdpSaveScreen:
+[677965.435] rdpSaveScreen:
+[678565.439] rdpSaveScreen:
+[679165.441] rdpSaveScreen:
+[679765.443] rdpSaveScreen:
+[680365.449] rdpSaveScreen:
+[680965.450] rdpSaveScreen:
+[681565.456] rdpSaveScreen:
+[682165.458] rdpSaveScreen:
+[682765.459] rdpSaveScreen:
+[683365.464] rdpSaveScreen:
+[683965.467] rdpSaveScreen:
+[684565.470] rdpSaveScreen:
+[685165.473] rdpSaveScreen:
+[685765.477] rdpSaveScreen:
+[686365.482] rdpSaveScreen:
+[686965.485] rdpSaveScreen:
+[687565.487] rdpSaveScreen:
+[688165.489] rdpSaveScreen:
+[688765.496] rdpSaveScreen:
+[689365.499] rdpSaveScreen:
+[689965.502] rdpSaveScreen:
+[690565.503] rdpSaveScreen:
+[691165.508] rdpSaveScreen:
+[691765.510] rdpSaveScreen:
+[692365.511] rdpSaveScreen:
+[692965.512] rdpSaveScreen:
+[693565.514] rdpSaveScreen:
+[694165.522] rdpSaveScreen:
+[694765.528] rdpSaveScreen:
+[695365.531] rdpSaveScreen:
+[695965.535] rdpSaveScreen:
+[696565.540] rdpSaveScreen:
+[697165.543] rdpSaveScreen:
+[697765.546] rdpSaveScreen:
+[698365.553] rdpSaveScreen:
+[698965.558] rdpSaveScreen:
+[699565.563] rdpSaveScreen:
+[700165.566] rdpSaveScreen:
+[700765.568] rdpSaveScreen:
+[701365.570] rdpSaveScreen:
+[701965.578] rdpSaveScreen:
+[702565.586] rdpSaveScreen:
+[703165.589] rdpSaveScreen:
+[703765.594] rdpSaveScreen:
+[704365.603] rdpSaveScreen:
+[704965.613] rdpSaveScreen:
+[705565.616] rdpSaveScreen:
+[706165.617] rdpSaveScreen:
+[706765.623] rdpSaveScreen:
+[707365.627] rdpSaveScreen:
+[707965.642] rdpSaveScreen:
+[708565.648] rdpSaveScreen:
+[709165.653] rdpSaveScreen:
+[709765.661] rdpSaveScreen:
+[710365.668] rdpSaveScreen:
+[710965.674] rdpSaveScreen:
+[711565.683] rdpSaveScreen:
+[712165.691] rdpSaveScreen:
+[712765.695] rdpSaveScreen:
+[713365.698] rdpSaveScreen:
+[713965.700] rdpSaveScreen:
+[714565.701] rdpSaveScreen:
+[715165.708] rdpSaveScreen:
+[715765.712] rdpSaveScreen:
+[716365.715] rdpSaveScreen:
+[716965.721] rdpSaveScreen:
+[717565.728] rdpSaveScreen:
+[718165.735] rdpSaveScreen:
+[718765.743] rdpSaveScreen:
+[719365.748] rdpSaveScreen:
+[719965.749] rdpSaveScreen:
+[720565.753] rdpSaveScreen:
+[721165.756] rdpSaveScreen:
+[721765.758] rdpSaveScreen:
+[722365.759] rdpSaveScreen:
+[722965.768] rdpSaveScreen:
+[723565.775] rdpSaveScreen:
+[724165.782] rdpSaveScreen:
+[724765.783] rdpSaveScreen:
+[725365.787] rdpSaveScreen:
+[725965.795] rdpSaveScreen:
+[726565.802] rdpSaveScreen:
+[727165.805] rdpSaveScreen:
+[727765.806] rdpSaveScreen:
+[728365.810] rdpSaveScreen:
+[728965.813] rdpSaveScreen:
+[729565.816] rdpSaveScreen:
+[730165.817] rdpSaveScreen:
+[730765.823] rdpSaveScreen:
+[731365.831] rdpSaveScreen:
+[731965.838] rdpSaveScreen:
+[732565.845] rdpSaveScreen:
+[733165.849] rdpSaveScreen:
+[733765.859] rdpSaveScreen:
+[734365.867] rdpSaveScreen:
+[734965.870] rdpSaveScreen:
+[735565.875] rdpSaveScreen:
+[736165.884] rdpSaveScreen:
+[736765.892] rdpSaveScreen:
+[737365.899] rdpSaveScreen:
+[737965.903] rdpSaveScreen:
+[738565.907] rdpSaveScreen:
+[739165.915] rdpSaveScreen:
+[739765.922] rdpSaveScreen:
+[740365.928] rdpSaveScreen:
+[740965.933] rdpSaveScreen:
+[741565.942] rdpSaveScreen:
+[742165.951] rdpSaveScreen:
+[742765.958] rdpSaveScreen:
+[743365.966] rdpSaveScreen:
+[743965.969] rdpSaveScreen:
+[744565.976] rdpSaveScreen:
+[745165.982] rdpSaveScreen:
+[745765.988] rdpSaveScreen:
+[746365.989] rdpSaveScreen:
+[746965.996] rdpSaveScreen:
+[747566.003] rdpSaveScreen:
+[748166.010] rdpSaveScreen:
+[748766.016] rdpSaveScreen:
+[749366.023] rdpSaveScreen:
+[749966.026] rdpSaveScreen:
+[750566.030] rdpSaveScreen:
+[751166.032] rdpSaveScreen:
+[751766.039] rdpSaveScreen:
+[752366.050] rdpSaveScreen:
+[752966.057] rdpSaveScreen:
+[753566.060] rdpSaveScreen:
+[754166.064] rdpSaveScreen:
+[754766.070] rdpSaveScreen:
+[755366.074] rdpSaveScreen:
+[755966.077] rdpSaveScreen:
+[756566.079] rdpSaveScreen:
+[757166.080] rdpSaveScreen:
+[757766.084] rdpSaveScreen:
+[758366.087] rdpSaveScreen:
+[758966.089] rdpSaveScreen:
+[759566.091] rdpSaveScreen:
+[760166.095] rdpSaveScreen:
+[760766.098] rdpSaveScreen:
+[761366.102] rdpSaveScreen:
+[761966.104] rdpSaveScreen:
+[762566.106] rdpSaveScreen:
+[763166.110] rdpSaveScreen:
+[763766.113] rdpSaveScreen:
+[764366.115] rdpSaveScreen:
+[764966.117] rdpSaveScreen:
+[765566.121] rdpSaveScreen:
+[766166.126] rdpSaveScreen:
+[766766.128] rdpSaveScreen:
+[767366.130] rdpSaveScreen:
+[767966.135] rdpSaveScreen:
+[768566.140] rdpSaveScreen:
+[769166.143] rdpSaveScreen:
+[769766.146] rdpSaveScreen:
+[770366.147] rdpSaveScreen:
+[770966.153] rdpSaveScreen:
+[771566.157] rdpSaveScreen:
+[772166.159] rdpSaveScreen:
+[772766.161] rdpSaveScreen:
+[773366.165] rdpSaveScreen:
+[773966.170] rdpSaveScreen:
+[774566.174] rdpSaveScreen:
+[775166.176] rdpSaveScreen:
+[775766.177] rdpSaveScreen:
+[776366.181] rdpSaveScreen:
+[776966.186] rdpSaveScreen:
+[777566.189] rdpSaveScreen:
+[778166.190] rdpSaveScreen:
+[778766.194] rdpSaveScreen:
+[779366.198] rdpSaveScreen:
+[779966.200] rdpSaveScreen:
+[780566.202] rdpSaveScreen:
+[781166.204] rdpSaveScreen:
+[781766.208] rdpSaveScreen:
+[782366.212] rdpSaveScreen:
+[782966.215] rdpSaveScreen:
+[783566.216] rdpSaveScreen:
+[784166.220] rdpSaveScreen:
+[784766.224] rdpSaveScreen:
+[785366.227] rdpSaveScreen:
+[785966.229] rdpSaveScreen:
+[786566.229] rdpSaveScreen:
+[787166.233] rdpSaveScreen:
+[787766.236] rdpSaveScreen:
+[788366.238] rdpSaveScreen:
+[788966.238] rdpSaveScreen:
+[789566.242] rdpSaveScreen:
+[790166.246] rdpSaveScreen:
+[790766.248] rdpSaveScreen:
+[791366.250] rdpSaveScreen:
+[791966.253] rdpSaveScreen:
+[792566.257] rdpSaveScreen:
+[793166.260] rdpSaveScreen:
+[793766.262] rdpSaveScreen:
+[794366.263] rdpSaveScreen:
+[794966.267] rdpSaveScreen:
+[795566.270] rdpSaveScreen:
+[796166.272] rdpSaveScreen:
+[796766.274] rdpSaveScreen:
+[797366.277] rdpSaveScreen:
+[797966.280] rdpSaveScreen:
+[798566.283] rdpSaveScreen:
+[799166.285] rdpSaveScreen:
+[799766.286] rdpSaveScreen:
+[800366.290] rdpSaveScreen:
+[800966.293] rdpSaveScreen:
+[801566.296] rdpSaveScreen:
+[802166.297] rdpSaveScreen:
+[802766.301] rdpSaveScreen:
+[803366.306] rdpSaveScreen:
+[803966.308] rdpSaveScreen:
+[804566.310] rdpSaveScreen:
+[805166.311] rdpSaveScreen:
+[805766.315] rdpSaveScreen:
+[806366.319] rdpSaveScreen:
+[806966.321] rdpSaveScreen:
+[807566.322] rdpSaveScreen:
+[808166.326] rdpSaveScreen:
+[808766.329] rdpSaveScreen:
+[809366.332] rdpSaveScreen:
+[809966.334] rdpSaveScreen:
+[810566.335] rdpSaveScreen:
+[811166.339] rdpSaveScreen:
+[811766.342] rdpSaveScreen:
+[812366.345] rdpSaveScreen:
+[812966.347] rdpSaveScreen:
+[813566.351] rdpSaveScreen:
+[814166.356] rdpSaveScreen:
+[814766.358] rdpSaveScreen:
+[815366.361] rdpSaveScreen:
+[815966.365] rdpSaveScreen:
+[816566.368] rdpSaveScreen:
+[817166.372] rdpSaveScreen:
+[817766.375] rdpSaveScreen:
+[818366.375] rdpSaveScreen:
+[818966.379] rdpSaveScreen:
+[819566.383] rdpSaveScreen:
+[820166.385] rdpSaveScreen:
+[820766.387] rdpSaveScreen:
+[821366.391] rdpSaveScreen:
+[821966.395] rdpSaveScreen:
+[822566.399] rdpSaveScreen:
+[823166.401] rdpSaveScreen:
+[823766.401] rdpSaveScreen:
+[824366.405] rdpSaveScreen:
+[824966.409] rdpSaveScreen:
+[825566.412] rdpSaveScreen:
+[826166.413] rdpSaveScreen:
+[826766.418] rdpSaveScreen:
+[827366.421] rdpSaveScreen:
+[827966.424] rdpSaveScreen:
+[828566.427] rdpSaveScreen:
+[829166.427] rdpSaveScreen:
+[829766.432] rdpSaveScreen:
+[830366.435] rdpSaveScreen:
+[830966.437] rdpSaveScreen:
+[831566.438] rdpSaveScreen:
+[832166.441] rdpSaveScreen:
+[832766.445] rdpSaveScreen:
+[833366.449] rdpSaveScreen:
+[833966.450] rdpSaveScreen:
+[834566.455] rdpSaveScreen:
+[835166.458] rdpSaveScreen:
+[835766.462] rdpSaveScreen:
+[836366.465] rdpSaveScreen:
+[836966.466] rdpSaveScreen:
+[837566.469] rdpSaveScreen:
+[838166.473] rdpSaveScreen:
+[838766.476] rdpSaveScreen:
+[839366.477] rdpSaveScreen:
+[839966.481] rdpSaveScreen:
+[840566.485] rdpSaveScreen:
+[841166.488] rdpSaveScreen:
+[841766.490] rdpSaveScreen:
+[842366.491] rdpSaveScreen:
+[842966.494] rdpSaveScreen:
+[843566.498] rdpSaveScreen:
+[844166.502] rdpSaveScreen:
+[844766.503] rdpSaveScreen:
+[845366.506] rdpSaveScreen:
+[845966.509] rdpSaveScreen:
+[846566.512] rdpSaveScreen:
+[847166.515] rdpSaveScreen:
+[847766.515] rdpSaveScreen:
+[848366.520] rdpSaveScreen:
+[848966.523] rdpSaveScreen:
+[849566.525] rdpSaveScreen:
+[850166.526] rdpSaveScreen:
+[850766.530] rdpSaveScreen:
+[851366.533] rdpSaveScreen:
+[851966.536] rdpSaveScreen:
+[852566.537] rdpSaveScreen:
+[853166.540] rdpSaveScreen:
+[853766.543] rdpSaveScreen:
+[854366.547] rdpSaveScreen:
+[854966.550] rdpSaveScreen:
+[855566.551] rdpSaveScreen:
+[856166.554] rdpSaveScreen:
+[856766.558] rdpSaveScreen:
+[857366.562] rdpSaveScreen:
+[857966.563] rdpSaveScreen:
+[858566.567] rdpSaveScreen:
+[859166.570] rdpSaveScreen:
+[859766.572] rdpSaveScreen:
+[860366.575] rdpSaveScreen:
+[860966.575] rdpSaveScreen:
+[861566.579] rdpSaveScreen:
+[862166.583] rdpSaveScreen:
+[862766.586] rdpSaveScreen:
+[863366.587] rdpSaveScreen:
+[863966.590] rdpSaveScreen:
+[864566.593] rdpSaveScreen:
+[865166.597] rdpSaveScreen:
+[865766.599] rdpSaveScreen:
+[866366.599] rdpSaveScreen:
+[866966.603] rdpSaveScreen:
+[867566.606] rdpSaveScreen:
+[868166.608] rdpSaveScreen:
+[868766.609] rdpSaveScreen:
+[869366.612] rdpSaveScreen:
+[869966.616] rdpSaveScreen:
+[870566.620] rdpSaveScreen:
+[871166.622] rdpSaveScreen:
+[871766.623] rdpSaveScreen:
+[872366.626] rdpSaveScreen:
+[872966.630] rdpSaveScreen:
+[873566.633] rdpSaveScreen:
+[874166.634] rdpSaveScreen:
+[874766.637] rdpSaveScreen:
+[875366.640] rdpSaveScreen:
+[875966.644] rdpSaveScreen:
+[876566.646] rdpSaveScreen:
+[877166.646] rdpSaveScreen:
+[877766.650] rdpSaveScreen:
+[878366.653] rdpSaveScreen:
+[878966.655] rdpSaveScreen:
+[879566.656] rdpSaveScreen:
+[880166.660] rdpSaveScreen:
+[880766.663] rdpSaveScreen:
+[881366.665] rdpSaveScreen:
+[881966.666] rdpSaveScreen:
+[882566.670] rdpSaveScreen:
+[883166.673] rdpSaveScreen:
+[883766.676] rdpSaveScreen:
+[884366.677] rdpSaveScreen:
+[884966.679] rdpSaveScreen:
+[885566.682] rdpSaveScreen:
+[886166.685] rdpSaveScreen:
+[886766.687] rdpSaveScreen:
+[887366.688] rdpSaveScreen:
+[887966.692] rdpSaveScreen:
+[888566.694] rdpSaveScreen:
+[889166.697] rdpSaveScreen:
+[889766.698] rdpSaveScreen:
+[890366.699] rdpSaveScreen:
+[890966.702] rdpSaveScreen:
+[891566.706] rdpSaveScreen:
+[892166.709] rdpSaveScreen:
+[892766.711] rdpSaveScreen:
+[893366.715] rdpSaveScreen:
+[893966.718] rdpSaveScreen:
+[894566.720] rdpSaveScreen:
+[895166.722] rdpSaveScreen:
+[895766.723] rdpSaveScreen:
+[896366.727] rdpSaveScreen:
+[896966.729] rdpSaveScreen:
+[897566.732] rdpSaveScreen:
+[898166.733] rdpSaveScreen:
+[898766.736] rdpSaveScreen:
+[899366.738] rdpSaveScreen:
+[899966.741] rdpSaveScreen:
+[900566.743] rdpSaveScreen:
+[901166.743] rdpSaveScreen:
+[901766.745] rdpSaveScreen:
+[902366.748] rdpSaveScreen:
+[902966.750] rdpSaveScreen:
+[903566.751] rdpSaveScreen:
+[904166.753] rdpSaveScreen:
+[904766.755] rdpSaveScreen:
+[905366.757] rdpSaveScreen:
+[905966.760] rdpSaveScreen:
+[906566.762] rdpSaveScreen:
+[907166.765] rdpSaveScreen:
+[907766.768] rdpSaveScreen:
+[908366.770] rdpSaveScreen:
+[908966.771] rdpSaveScreen:
+[909566.775] rdpSaveScreen:
+[910166.778] rdpSaveScreen:
+[910766.780] rdpSaveScreen:
+[911366.782] rdpSaveScreen:
+[911966.784] rdpSaveScreen:
+[912566.787] rdpSaveScreen:
+[913166.790] rdpSaveScreen:
+[913766.791] rdpSaveScreen:
+[914366.792] rdpSaveScreen:
+[914966.795] rdpSaveScreen:
+[915566.798] rdpSaveScreen:
+[916166.800] rdpSaveScreen:
+[916766.801] rdpSaveScreen:
+[917366.804] rdpSaveScreen:
+[917966.806] rdpSaveScreen:
+[918566.809] rdpSaveScreen:
+[919166.811] rdpSaveScreen:
+[919766.812] rdpSaveScreen:
+[920366.815] rdpSaveScreen:
+[920966.817] rdpSaveScreen:
+[921566.820] rdpSaveScreen:
+[922166.822] rdpSaveScreen:
+[922766.825] rdpSaveScreen:
+[923366.827] rdpSaveScreen:
+[923966.830] rdpSaveScreen:
+[924566.832] rdpSaveScreen:
+[925166.834] rdpSaveScreen:
+[925766.836] rdpSaveScreen:
+[926366.838] rdpSaveScreen:
+[926966.841] rdpSaveScreen:
+[927566.843] rdpSaveScreen:
+[928166.846] rdpSaveScreen:
+[928766.849] rdpSaveScreen:
+[929366.852] rdpSaveScreen:
+[929966.855] rdpSaveScreen:
+[930566.857] rdpSaveScreen:
+[931166.861] rdpSaveScreen:
+[931766.863] rdpSaveScreen:
+[932366.864] rdpSaveScreen:
+[932966.867] rdpSaveScreen:
+[933566.870] rdpSaveScreen:
+[934166.872] rdpSaveScreen:
+[934766.874] rdpSaveScreen:
+[935366.877] rdpSaveScreen:
+[935966.879] rdpSaveScreen:
+[936566.883] rdpSaveScreen:
+[937166.885] rdpSaveScreen:
+[937766.888] rdpSaveScreen:
+[938366.890] rdpSaveScreen:
+[938966.893] rdpSaveScreen:
+[939566.895] rdpSaveScreen:
+[940166.897] rdpSaveScreen:
+[940766.899] rdpSaveScreen:
+[941366.902] rdpSaveScreen:
+[941966.903] rdpSaveScreen:
+[942566.906] rdpSaveScreen:
+[943166.908] rdpSaveScreen:
+[943766.911] rdpSaveScreen:
+[944366.913] rdpSaveScreen:
+[944966.916] rdpSaveScreen:
+[945566.920] rdpSaveScreen:
+[946166.923] rdpSaveScreen:
+[946766.925] rdpSaveScreen:
+[947366.927] rdpSaveScreen:
+[947966.929] rdpSaveScreen:
+[948566.932] rdpSaveScreen:
+[949166.935] rdpSaveScreen:
+[949766.937] rdpSaveScreen:
+[950366.940] rdpSaveScreen:
+[950966.942] rdpSaveScreen:
+[951566.943] rdpSaveScreen:
+[952166.946] rdpSaveScreen:
+[952766.949] rdpSaveScreen:
+[953366.952] rdpSaveScreen:
+[953966.955] rdpSaveScreen:
+[954566.955] rdpSaveScreen:
+[955166.957] rdpSaveScreen:
+[955766.960] rdpSaveScreen:
+[956366.962] rdpSaveScreen:
+[956966.963] rdpSaveScreen:
+[957566.966] rdpSaveScreen:
+[958166.969] rdpSaveScreen:
+[958766.971] rdpSaveScreen:
+[959366.973] rdpSaveScreen:
+[959966.977] rdpSaveScreen:
+[960566.979] rdpSaveScreen:
+[961166.980] rdpSaveScreen:
+[961766.983] rdpSaveScreen:
+[962366.983] rdpSaveScreen:
+[962966.984] rdpSaveScreen:
+[963566.986] rdpSaveScreen:
+[964166.989] rdpSaveScreen:
+[964766.990] rdpSaveScreen:
+[965366.994] rdpSaveScreen:
+[965966.996] rdpSaveScreen:
+[966566.998] rdpSaveScreen:
+[967166.999] rdpSaveScreen:
+[967767.001] rdpSaveScreen:
+[968367.003] rdpSaveScreen:
+[968967.004] rdpSaveScreen:
+[969567.006] rdpSaveScreen:
+[970167.007] rdpSaveScreen:
+[970767.010] rdpSaveScreen:
+[971367.012] rdpSaveScreen:
+[971967.013] rdpSaveScreen:
+[972567.014] rdpSaveScreen:
+[973167.016] rdpSaveScreen:
+[973767.018] rdpSaveScreen:
+[974367.020] rdpSaveScreen:
+[974967.021] rdpSaveScreen:
+[975567.022] rdpSaveScreen:
+[976167.023] rdpSaveScreen:
+[976767.024] rdpSaveScreen:
+[977367.027] rdpSaveScreen:
+[977967.028] rdpSaveScreen:
+[978567.030] rdpSaveScreen:
+[979167.031] rdpSaveScreen:
+[979767.034] rdpSaveScreen:
+[980367.035] rdpSaveScreen:
+[980967.037] rdpSaveScreen:
+[981567.038] rdpSaveScreen:
+[982167.040] rdpSaveScreen:
+[982767.042] rdpSaveScreen:
+[983367.044] rdpSaveScreen:
+[983967.047] rdpSaveScreen:
+[984567.048] rdpSaveScreen:
+[985167.051] rdpSaveScreen:
+[985767.052] rdpSaveScreen:
+[986367.054] rdpSaveScreen:
+[986967.055] rdpSaveScreen:
+[987567.057] rdpSaveScreen:
+[988167.059] rdpSaveScreen:
+[988767.060] rdpSaveScreen:
+[989367.063] rdpSaveScreen:
+[989967.065] rdpSaveScreen:
+[990567.066] rdpSaveScreen:
+[991167.068] rdpSaveScreen:
+[991767.070] rdpSaveScreen:
+[992367.072] rdpSaveScreen:
+[992967.073] rdpSaveScreen:
+[993567.075] rdpSaveScreen:
+[994167.077] rdpSaveScreen:
+[994767.078] rdpSaveScreen:
+[995367.079] rdpSaveScreen:
+[995967.080] rdpSaveScreen:
+[996567.082] rdpSaveScreen:
+[997167.083] rdpSaveScreen:
+[997767.086] rdpSaveScreen:
+[998367.088] rdpSaveScreen:
+[998967.089] rdpSaveScreen:
+[999567.090] rdpSaveScreen:
+[1000167.092] rdpSaveScreen:
+[1000767.093] rdpSaveScreen:
+[1001367.095] rdpSaveScreen:
+[1001967.095] rdpSaveScreen:
+[1002567.097] rdpSaveScreen:
+[1003167.099] rdpSaveScreen:
+[1003767.100] rdpSaveScreen:
+[1004367.101] rdpSaveScreen:
+[1004967.103] rdpSaveScreen:
+[1005567.105] rdpSaveScreen:
+[1006167.107] rdpSaveScreen:
+[1006767.108] rdpSaveScreen:
+[1007367.110] rdpSaveScreen:
+[1007967.111] rdpSaveScreen:
+[1008567.113] rdpSaveScreen:
+[1009167.115] rdpSaveScreen:
+[1009767.116] rdpSaveScreen:
+[1010367.117] rdpSaveScreen:
+[1010967.119] rdpSaveScreen:
+[1011567.120] rdpSaveScreen:
+[1012167.122] rdpSaveScreen:
+[1012767.122] rdpSaveScreen:
+[1013367.125] rdpSaveScreen:
+[1013967.126] rdpSaveScreen:
+[1014567.127] rdpSaveScreen:
+[1015167.128] rdpSaveScreen:
+[1015767.128] rdpSaveScreen:
+[1016367.129] rdpSaveScreen:
+[1016967.130] rdpSaveScreen:
+[1017567.132] rdpSaveScreen:
+[1018167.133] rdpSaveScreen:
+[1018767.134] rdpSaveScreen:
+[1019367.136] rdpSaveScreen:
+[1019967.138] rdpSaveScreen:
+[1020567.138] rdpSaveScreen:
+[1021167.139] rdpSaveScreen:
+[1021767.141] rdpSaveScreen:
+[1022367.143] rdpSaveScreen:
+[1022967.144] rdpSaveScreen:
+[1023567.145] rdpSaveScreen:
+[1024167.146] rdpSaveScreen:
+[1024767.147] rdpSaveScreen:
+[1025367.148] rdpSaveScreen:
+[1025967.148] rdpSaveScreen:
+[1026567.149] rdpSaveScreen:
+[1027167.150] rdpSaveScreen:
+[1027767.151] rdpSaveScreen:
+[1028367.152] rdpSaveScreen:
+[1028967.152] rdpSaveScreen:
+[1029567.154] rdpSaveScreen:
+[1030167.155] rdpSaveScreen:
+[1030767.156] rdpSaveScreen:
+[1031367.156] rdpSaveScreen:
+[1031967.158] rdpSaveScreen:
+[1032567.159] rdpSaveScreen:
+[1033167.160] rdpSaveScreen:
+[1033767.160] rdpSaveScreen:
+[1034367.162] rdpSaveScreen:
+[1034967.162] rdpSaveScreen:
+[1035567.164] rdpSaveScreen:
+[1036167.165] rdpSaveScreen:
+[1036767.165] rdpSaveScreen:
+[1037367.166] rdpSaveScreen:
+[1037967.167] rdpSaveScreen:
+[1038567.169] rdpSaveScreen:
+[1039167.169] rdpSaveScreen:
+[1039767.170] rdpSaveScreen:
+[1040367.172] rdpSaveScreen:
+[1040967.173] rdpSaveScreen:
+[1041567.174] rdpSaveScreen:
+[1042167.174] rdpSaveScreen:
+[1042767.176] rdpSaveScreen:
+[1043367.177] rdpSaveScreen:
+[1043967.177] rdpSaveScreen:
+[1044567.179] rdpSaveScreen:
+[1045167.179] rdpSaveScreen:
+[1045767.180] rdpSaveScreen:
+[1046367.199] rdpSaveScreen:
+[1046967.199] rdpSaveScreen:
+[1047567.199] rdpSaveScreen:
+[1048167.200] rdpSaveScreen:
+[1048767.201] rdpSaveScreen:
+[1049367.202] rdpSaveScreen:
+[1049967.212] rdpSaveScreen:
+[1050567.214] rdpSaveScreen:
+[1051167.215] rdpSaveScreen:
+[1051767.230] rdpSaveScreen:
+[1052367.230] rdpSaveScreen:
+[1052967.230] rdpSaveScreen:
+[1053567.231] rdpSaveScreen:
+[1054167.231] rdpSaveScreen:
+[1054767.231] rdpSaveScreen:
+[1055367.232] rdpSaveScreen:
+[1055967.236] rdpSaveScreen:
+[1056567.238] rdpSaveScreen:
+[1057167.250] rdpSaveScreen:
+[1057767.250] rdpSaveScreen:
+[1058367.250] rdpSaveScreen:
+[1058967.260] rdpSaveScreen:
+[1059567.260] rdpSaveScreen:
+[1060167.261] rdpSaveScreen:
+[1060767.261] rdpSaveScreen:
+[1061367.270] rdpSaveScreen:
+[1061967.270] rdpSaveScreen:
+[1062567.280] rdpSaveScreen:
+[1063167.280] rdpSaveScreen:
+[1063767.284] rdpSaveScreen:
+[1064367.286] rdpSaveScreen:
+[1064967.287] rdpSaveScreen:
+[1065567.289] rdpSaveScreen:
+[1066167.291] rdpSaveScreen:
+[1066767.291] rdpSaveScreen:
+[1067367.293] rdpSaveScreen:
+[1067967.300] rdpSaveScreen:
+[1068567.305] rdpSaveScreen:
+[1069167.305] rdpSaveScreen:
+[1069767.308] rdpSaveScreen:
+[1070367.310] rdpSaveScreen:
+[1070967.320] rdpSaveScreen:
+[1071567.330] rdpSaveScreen:
+[1072167.340] rdpSaveScreen:
+[1072767.342] rdpSaveScreen:
+[1073367.350] rdpSaveScreen:
+[1073967.355] rdpSaveScreen:
+[1074567.357] rdpSaveScreen:
+[1075167.370] rdpSaveScreen:
+[1075767.371] rdpSaveScreen:
+[1076367.372] rdpSaveScreen:
+[1076967.372] rdpSaveScreen:
+[1077567.376] rdpSaveScreen:
+[1078167.390] rdpSaveScreen:
+[1078767.391] rdpSaveScreen:
+[1079367.400] rdpSaveScreen:
+[1079967.403] rdpSaveScreen:
+[1080567.405] rdpSaveScreen:
+[1081167.410] rdpSaveScreen:
+[1081767.415] rdpSaveScreen:
+[1082367.419] rdpSaveScreen:
+[1082967.430] rdpSaveScreen:
+[1083567.431] rdpSaveScreen:
+[1084167.432] rdpSaveScreen:
+[1084767.436] rdpSaveScreen:
+[1085367.450] rdpSaveScreen:
+[1085967.460] rdpSaveScreen:
+[1086567.461] rdpSaveScreen:
+[1087167.466] rdpSaveScreen:
+[1087767.470] rdpSaveScreen:
+[1088367.470] rdpSaveScreen:
+[1088967.470] rdpSaveScreen:
+[1089567.471] rdpSaveScreen:
+[1090167.490] rdpSaveScreen:
+[1090767.500] rdpSaveScreen:
+[1091367.500] rdpSaveScreen:
+[1091967.510] rdpSaveScreen:
+[1092567.520] rdpSaveScreen:
+[1093167.530] rdpSaveScreen:
+[1093767.540] rdpSaveScreen:
+[1094367.545] rdpSaveScreen:
+[1094967.546] rdpSaveScreen:
+[1095567.560] rdpSaveScreen:
+[1096167.561] rdpSaveScreen:
+[1096767.562] rdpSaveScreen:
+[1097367.562] rdpSaveScreen:
+[1097967.570] rdpSaveScreen:
+[1098567.580] rdpSaveScreen:
+[1099167.585] rdpSaveScreen:
+[1099767.585] rdpSaveScreen:
+[1100367.596] rdpSaveScreen:
+[1100967.596] rdpSaveScreen:
+[1101567.596] rdpSaveScreen:
+[1102167.600] rdpSaveScreen:
+[1102767.600] rdpSaveScreen:
+[1103367.601] rdpSaveScreen:
+[1103967.610] rdpSaveScreen:
+[1104567.615] rdpSaveScreen:
+[1105167.630] rdpSaveScreen:
+[1105767.633] rdpSaveScreen:
+[1106367.633] rdpSaveScreen:
+[1106967.633] rdpSaveScreen:
+[1107567.634] rdpSaveScreen:
+[1108167.636] rdpSaveScreen:
+[1108767.638] rdpSaveScreen:
+[1109367.650] rdpSaveScreen:
+[1109967.660] rdpSaveScreen:
+[1110567.670] rdpSaveScreen:
+[1111167.673] rdpSaveScreen:
+[1111767.680] rdpSaveScreen:
+[1112367.690] rdpSaveScreen:
+[1112967.700] rdpSaveScreen:
+[1113567.703] rdpSaveScreen:
+[1114167.710] rdpSaveScreen:
+[1114767.720] rdpSaveScreen:
+[1115367.730] rdpSaveScreen:
+[1115967.740] rdpSaveScreen:
+[1116567.750] rdpSaveScreen:
+[1117167.760] rdpSaveScreen:
+[1117767.765] rdpSaveScreen:
+[1118367.780] rdpSaveScreen:
+[1118967.783] rdpSaveScreen:
+[1119567.785] rdpSaveScreen:
+[1120167.790] rdpSaveScreen:
+[1120767.800] rdpSaveScreen:
+[1121367.810] rdpSaveScreen:
+[1121967.812] rdpSaveScreen:
+[1122567.820] rdpSaveScreen:
+[1123167.824] rdpSaveScreen:
+[1123767.844] rdpSaveScreen:
+[1124367.860] rdpSaveScreen:
+[1124967.861] rdpSaveScreen:
+[1125567.870] rdpSaveScreen:
+[1126167.880] rdpSaveScreen:
+[1126767.890] rdpSaveScreen:
+[1127367.900] rdpSaveScreen:
+[1127967.901] rdpSaveScreen:
+[1128567.910] rdpSaveScreen:
+[1129167.911] rdpSaveScreen:
+[1129767.913] rdpSaveScreen:
+[1130367.920] rdpSaveScreen:
+[1130967.921] rdpSaveScreen:
+[1131567.930] rdpSaveScreen:
+[1132167.932] rdpSaveScreen:
+[1132767.940] rdpSaveScreen:
+[1133367.957] rdpSaveScreen:
+[1133967.970] rdpSaveScreen:
+[1134567.972] rdpSaveScreen:
+[1135167.973] rdpSaveScreen:
+[1135767.976] rdpSaveScreen:
+[1136367.979] rdpSaveScreen:
+[1136967.989] rdpSaveScreen:
+[1137567.991] rdpSaveScreen:
+[1138168.010] rdpSaveScreen:
+[1138768.010] rdpSaveScreen:
+[1139368.013] rdpSaveScreen:
+[1139968.014] rdpSaveScreen:
+[1140568.019] rdpSaveScreen:
+[1141168.020] rdpSaveScreen:
+[1141768.020] rdpSaveScreen:
+[1142368.021] rdpSaveScreen:
+[1142968.030] rdpSaveScreen:
+[1143568.032] rdpSaveScreen:
+[1144168.040] rdpSaveScreen:
+[1144768.050] rdpSaveScreen:
+[1145368.055] rdpSaveScreen:
+[1145968.070] rdpSaveScreen:
+[1146568.072] rdpSaveScreen:
+[1147168.073] rdpSaveScreen:
+[1147768.078] rdpSaveScreen:
+[1148368.090] rdpSaveScreen:
+[1148968.093] rdpSaveScreen:
+[1149568.100] rdpSaveScreen:
+[1150168.110] rdpSaveScreen:
+[1150768.120] rdpSaveScreen:
+[1151368.140] rdpSaveScreen:
+[1151968.151] rdpSaveScreen:
+[1152568.156] rdpSaveScreen:
+[1153168.170] rdpSaveScreen:
+[1153768.172] rdpSaveScreen:
+[1154368.180] rdpSaveScreen:
+[1154968.188] rdpSaveScreen:
+[1155568.190] rdpSaveScreen:
+[1156168.200] rdpSaveScreen:
+[1156768.202] rdpSaveScreen:
+[1157368.220] rdpSaveScreen:
+[1157968.230] rdpSaveScreen:
+[1158568.240] rdpSaveScreen:
+[1159168.241] rdpSaveScreen:
+[1159768.246] rdpSaveScreen:
+[1160368.250] rdpSaveScreen:
+[1160968.260] rdpSaveScreen:
+[1161568.261] rdpSaveScreen:
+[1162168.262] rdpSaveScreen:
+[1162768.266] rdpSaveScreen:
+[1163368.290] rdpSaveScreen:
+[1163968.291] rdpSaveScreen:
+[1164568.310] rdpSaveScreen:
+[1165168.314] rdpSaveScreen:
+[1165768.316] rdpSaveScreen:
+[1166368.330] rdpSaveScreen:
+[1166968.339] rdpSaveScreen:
+[1167568.352] rdpSaveScreen:
+[1168168.355] rdpSaveScreen:
+[1168768.360] rdpSaveScreen:
+[1169368.360] rdpSaveScreen:
+[1169968.370] rdpSaveScreen:
+[1170568.380] rdpSaveScreen:
+[1171168.390] rdpSaveScreen:
+[1171768.400] rdpSaveScreen:
+[1172368.410] rdpSaveScreen:
+[1172968.420] rdpSaveScreen:
+[1173568.440] rdpSaveScreen:
+[1174168.450] rdpSaveScreen:
+[1174768.454] rdpSaveScreen:
+[1175368.457] rdpSaveScreen:
+[1175968.470] rdpSaveScreen:
+[1176568.471] rdpSaveScreen:
+[1177168.476] rdpSaveScreen:
+[1177768.490] rdpSaveScreen:
+[1178368.500] rdpSaveScreen:
+[1178968.501] rdpSaveScreen:
+[1179568.510] rdpSaveScreen:
+[1180168.514] rdpSaveScreen:
+[1180768.520] rdpSaveScreen:
+[1181368.542] rdpSaveScreen:
+[1181968.545] rdpSaveScreen:
+[1182568.568] rdpSaveScreen:
+[1183168.570] rdpSaveScreen:
+[1183768.572] rdpSaveScreen:
+[1184368.576] rdpSaveScreen:
+[1184968.580] rdpSaveScreen:
+[1185568.584] rdpSaveScreen:
+[1186168.587] rdpSaveScreen:
+[1186768.600] rdpSaveScreen:
+[1187368.612] rdpSaveScreen:
+[1187968.628] rdpSaveScreen:
+[1188568.640] rdpSaveScreen:
+[1189168.642] rdpSaveScreen:
+[1189768.642] rdpSaveScreen:
+[1190368.647] rdpSaveScreen:
+[1190968.660] rdpSaveScreen:
+[1191568.670] rdpSaveScreen:
+[1192168.671] rdpSaveScreen:
+[1192768.676] rdpSaveScreen:
+[1193368.690] rdpSaveScreen:
+[1193968.693] rdpSaveScreen:
+[1194568.695] rdpSaveScreen:
+[1195168.695] rdpSaveScreen:
+[1195768.721] rdpSaveScreen:
+[1196368.725] rdpSaveScreen:
+[1196968.740] rdpSaveScreen:
+[1197568.741] rdpSaveScreen:
+[1198168.760] rdpSaveScreen:
+[1198768.770] rdpSaveScreen:
+[1199368.780] rdpSaveScreen:
+[1199968.781] rdpSaveScreen:
+[1200568.790] rdpSaveScreen:
+[1201168.800] rdpSaveScreen:
+[1201768.803] rdpSaveScreen:
+[1202368.810] rdpSaveScreen:
+[1202968.820] rdpSaveScreen:
+[1203568.830] rdpSaveScreen:
+[1204168.840] rdpSaveScreen:
+[1204768.843] rdpSaveScreen:
+[1205368.849] rdpSaveScreen:
+[1205968.860] rdpSaveScreen:
+[1206568.870] rdpSaveScreen:
+[1207168.873] rdpSaveScreen:
+[1207768.875] rdpSaveScreen:
+[1208368.880] rdpSaveScreen:
+[1208968.890] rdpSaveScreen:
+[1209568.893] rdpSaveScreen:
+[1210168.895] rdpSaveScreen:
+[1210768.896] rdpSaveScreen:
+[1211368.910] rdpSaveScreen:
+[1211968.914] rdpSaveScreen:
+[1212568.930] rdpSaveScreen:
+[1213168.940] rdpSaveScreen:
+[1213768.950] rdpSaveScreen:
+[1214368.955] rdpSaveScreen:
+[1214968.970] rdpSaveScreen:
+[1215568.972] rdpSaveScreen:
+[1216168.980] rdpSaveScreen:
+[1216768.990] rdpSaveScreen:
+[1217368.994] rdpSaveScreen:
+[1217968.996] rdpSaveScreen:
+[1218569.010] rdpSaveScreen:
+[1219169.010] rdpSaveScreen:
+[1219769.014] rdpSaveScreen:
+[1220369.030] rdpSaveScreen:
+[1220969.040] rdpSaveScreen:
+[1221569.060] rdpSaveScreen:
+[1222169.065] rdpSaveScreen:
+[1222769.080] rdpSaveScreen:
+[1223369.083] rdpSaveScreen:
+[1223969.090] rdpSaveScreen:
+[1224569.090] rdpSaveScreen:
+[1225169.095] rdpSaveScreen:
+[1225769.110] rdpSaveScreen:
+[1226369.120] rdpSaveScreen:
+[1226969.130] rdpSaveScreen:
+[1227569.140] rdpSaveScreen:
+[1228169.150] rdpSaveScreen:
+[1228769.152] rdpSaveScreen:
+[1229369.155] rdpSaveScreen:
+[1229969.155] rdpSaveScreen:
+[1230569.160] rdpSaveScreen:
+[1231169.170] rdpSaveScreen:
+[1231769.180] rdpSaveScreen:
+[1232369.181] rdpSaveScreen:
+[1232969.186] rdpSaveScreen:
+[1233569.190] rdpSaveScreen:
+[1234169.220] rdpSaveScreen:
+[1234769.221] rdpSaveScreen:
+[1235369.230] rdpSaveScreen:
+[1235969.240] rdpSaveScreen:
+[1236569.243] rdpSaveScreen:
+[1237169.250] rdpSaveScreen:
+[1237769.251] rdpSaveScreen:
+[1238369.270] rdpSaveScreen:
+[1238969.274] rdpSaveScreen:
+[1239569.280] rdpSaveScreen:
+[1240169.290] rdpSaveScreen:
+[1240769.290] rdpSaveScreen:
+[1241369.295] rdpSaveScreen:
+[1241969.298] rdpSaveScreen:
+[1242569.310] rdpSaveScreen:
+[1243169.320] rdpSaveScreen:
+[1243769.330] rdpSaveScreen:
+[1244369.334] rdpSaveScreen:
+[1244969.340] rdpSaveScreen:
+[1245569.341] rdpSaveScreen:
+[1246169.342] rdpSaveScreen:
+[1246769.346] rdpSaveScreen:
+[1247369.350] rdpSaveScreen:
+[1247969.360] rdpSaveScreen:
+[1248569.361] rdpSaveScreen:
+[1249169.370] rdpSaveScreen:
+[1249769.374] rdpSaveScreen:
+[1250369.376] rdpSaveScreen:
+[1250969.378] rdpSaveScreen:
+[1251569.380] rdpSaveScreen:
+[1252169.384] rdpSaveScreen:
+[1252769.387] rdpSaveScreen:
+[1253369.389] rdpSaveScreen:
+[1253969.390] rdpSaveScreen:
+[1254569.400] rdpSaveScreen:
+[1255169.410] rdpSaveScreen:
+[1255769.420] rdpSaveScreen:
+[1256369.422] rdpSaveScreen:
+[1256969.422] rdpSaveScreen:
+[1257569.430] rdpSaveScreen:
+[1258169.433] rdpSaveScreen:
+[1258769.440] rdpSaveScreen:
+[1259369.441] rdpSaveScreen:
+[1259969.450] rdpSaveScreen:
+[1260569.454] rdpSaveScreen:
+[1261169.460] rdpSaveScreen:
+[1261769.470] rdpSaveScreen:
+[1262369.477] rdpSaveScreen:
+[1262969.480] rdpSaveScreen:
+[1263569.483] rdpSaveScreen:
+[1264169.490] rdpSaveScreen:
+[1264769.491] rdpSaveScreen:
+[1265369.495] rdpSaveScreen:
+[1265969.510] rdpSaveScreen:
+[1266569.512] rdpSaveScreen:
+[1267169.520] rdpSaveScreen:
+[1267769.530] rdpSaveScreen:
+[1268369.549] rdpSaveScreen:
+[1268969.560] rdpSaveScreen:
+[1269569.562] rdpSaveScreen:
+[1270169.570] rdpSaveScreen:
+[1270769.580] rdpSaveScreen:
+[1271369.583] rdpSaveScreen:
+[1271969.586] rdpSaveScreen:
+[1272569.600] rdpSaveScreen:
+[1273169.610] rdpSaveScreen:
+[1273769.620] rdpSaveScreen:
+[1274369.622] rdpSaveScreen:
+[1274969.630] rdpSaveScreen:
+[1275569.630] rdpSaveScreen:
+[1276169.635] rdpSaveScreen:
+[1276769.638] rdpSaveScreen:
+[1277369.648] rdpSaveScreen:
+[1277969.649] rdpSaveScreen:
+[1278569.650] rdpSaveScreen:
+[1279169.654] rdpSaveScreen:
+[1279769.670] rdpSaveScreen:
+[1280369.672] rdpSaveScreen:
+[1280969.680] rdpSaveScreen:
+[1281569.690] rdpSaveScreen:
+[1282169.693] rdpSaveScreen:
+[1282769.695] rdpSaveScreen:
+[1283369.695] rdpSaveScreen:
+[1283969.710] rdpSaveScreen:
+[1284569.720] rdpSaveScreen:
+[1285169.730] rdpSaveScreen:
+[1285769.732] rdpSaveScreen:
+[1286369.732] rdpSaveScreen:
+[1286969.737] rdpSaveScreen:
+[1287569.750] rdpSaveScreen:
+[1288169.752] rdpSaveScreen:
+[1288769.753] rdpSaveScreen:
+[1289369.760] rdpSaveScreen:
+[1289969.764] rdpSaveScreen:
+[1290569.770] rdpSaveScreen:
+[1291169.771] rdpSaveScreen:
+[1291769.777] rdpSaveScreen:
+[1292369.780] rdpSaveScreen:
+[1292969.790] rdpSaveScreen:
+[1293569.792] rdpSaveScreen:
+[1294169.794] rdpSaveScreen:
+[1294769.798] rdpSaveScreen:
+[1295369.810] rdpSaveScreen:
+[1295969.812] rdpSaveScreen:
+[1296569.814] rdpSaveScreen:
+[1297169.821] rdpSaveScreen:
+[1297769.830] rdpSaveScreen:
+[1298369.832] rdpSaveScreen:
+[1298969.834] rdpSaveScreen:
+[1299569.840] rdpSaveScreen:
+[1300169.845] rdpSaveScreen:
+[1300769.848] rdpSaveScreen:
+[1301369.860] rdpSaveScreen:
+[1301969.861] rdpSaveScreen:
+[1302569.870] rdpSaveScreen:
+[1303169.876] rdpSaveScreen:
+[1303769.879] rdpSaveScreen:
+[1304369.890] rdpSaveScreen:
+[1304969.894] rdpSaveScreen:
+[1305569.910] rdpSaveScreen:
+[1306169.920] rdpSaveScreen:
+[1306769.922] rdpSaveScreen:
+[1307369.930] rdpSaveScreen:
+[1307969.935] rdpSaveScreen:
+[1308569.938] rdpSaveScreen:
+[1309169.940] rdpSaveScreen:
+[1309769.950] rdpSaveScreen:
+[1310369.960] rdpSaveScreen:
+[1310969.970] rdpSaveScreen:
+[1311569.980] rdpSaveScreen:
+[1312169.982] rdpSaveScreen:
+[1312769.990] rdpSaveScreen:
+[1313369.995] rdpSaveScreen:
+[1313969.999] rdpSaveScreen:
+[1314570.000] rdpSaveScreen:
+[1315170.002] rdpSaveScreen:
+[1315770.003] rdpSaveScreen:
+[1316370.007] rdpSaveScreen:
+[1316970.020] rdpSaveScreen:
+[1317570.040] rdpSaveScreen:
+[1318170.041] rdpSaveScreen:
+[1318770.050] rdpSaveScreen:
+[1319370.059] rdpSaveScreen:
+[1319970.070] rdpSaveScreen:
+[1320570.072] rdpSaveScreen:
+[1321170.080] rdpSaveScreen:
+[1321770.090] rdpSaveScreen:
+[1322370.093] rdpSaveScreen:
+[1322970.095] rdpSaveScreen:
+[1323570.097] rdpSaveScreen:
+[1324170.100] rdpSaveScreen:
+[1324770.104] rdpSaveScreen:
+[1325370.110] rdpSaveScreen:
+[1325970.120] rdpSaveScreen:
+[1326570.130] rdpSaveScreen:
+[1327170.140] rdpSaveScreen:
+[1327770.150] rdpSaveScreen:
+[1328370.151] rdpSaveScreen:
+[1328970.160] rdpSaveScreen:
+[1329570.165] rdpSaveScreen:
+[1330170.169] rdpSaveScreen:
+[1330770.169] rdpSaveScreen:
+[1331370.180] rdpSaveScreen:
+[1331970.181] rdpSaveScreen:
+[1332570.190] rdpSaveScreen:
+[1333170.193] rdpSaveScreen:
+[1333770.194] rdpSaveScreen:
+[1334370.195] rdpSaveScreen:
+[1334970.200] rdpSaveScreen:
+[1335570.204] rdpSaveScreen:
+[1336170.205] rdpSaveScreen:
+[1336770.220] rdpSaveScreen:
+[1337370.230] rdpSaveScreen:
+[1337970.234] rdpSaveScreen:
+[1338570.237] rdpSaveScreen:
+[1339170.250] rdpSaveScreen:
+[1339770.251] rdpSaveScreen:
+[1340370.270] rdpSaveScreen:
+[1340970.280] rdpSaveScreen:
+[1341570.282] rdpSaveScreen:
+[1342170.290] rdpSaveScreen:
+[1342770.291] rdpSaveScreen:
+[1343370.300] rdpSaveScreen:
+[1343970.310] rdpSaveScreen:
+[1344570.312] rdpSaveScreen:
+[1345170.330] rdpSaveScreen:
+[1345770.332] rdpSaveScreen:
+[1346370.340] rdpSaveScreen:
+[1346970.343] rdpSaveScreen:
+[1347570.351] rdpSaveScreen:
+[1348170.360] rdpSaveScreen:
+[1348770.370] rdpSaveScreen:
+[1349370.380] rdpSaveScreen:
+[1349970.381] rdpSaveScreen:
+[1350570.383] rdpSaveScreen:
+[1351170.388] rdpSaveScreen:
+[1351770.390] rdpSaveScreen:
+[1352370.392] rdpSaveScreen:
+[1352970.392] rdpSaveScreen:
+[1353570.398] rdpSaveScreen:
+[1354170.400] rdpSaveScreen:
+[1354770.403] rdpSaveScreen:
+[1355370.404] rdpSaveScreen:
+[1355970.410] rdpSaveScreen:
+[1356570.414] rdpSaveScreen:
+[1357170.417] rdpSaveScreen:
+[1357770.419] rdpSaveScreen:
+[1358370.420] rdpSaveScreen:
+[1358970.421] rdpSaveScreen:
+[1359570.425] rdpSaveScreen:
+[1360170.427] rdpSaveScreen:
+[1360770.429] rdpSaveScreen:
+[1361370.434] rdpSaveScreen:
+[1361970.438] rdpSaveScreen:
+[1362570.442] rdpSaveScreen:
+[1363170.444] rdpSaveScreen:
+[1363770.445] rdpSaveScreen:
+[1364370.449] rdpSaveScreen:
+[1364970.450] rdpSaveScreen:
+[1365570.452] rdpSaveScreen:
+[1366170.453] rdpSaveScreen:
+[1366770.458] rdpSaveScreen:
+[1367370.460] rdpSaveScreen:
+[1367970.461] rdpSaveScreen:
+[1368570.462] rdpSaveScreen:
+[1369170.467] rdpSaveScreen:
+[1369770.471] rdpSaveScreen:
+[1370141.727] rdpmouseControl: what 2
+[1370141.729] rdpmouseDeviceOff:
+[1370141.753] rdpkeybControl: what 2
+[1370141.754] rdpkeybDeviceOff:
+[1370141.798] rdpSaveScreen:
+[1370141.913] rdpkeybControl: what 3
+[1370141.919] rdpkeybUnInit: drv 0x138c4b0 info 0x168c8c8, flags 0x0
+[1370141.926] rdpUnregisterInputCallback: proc 0xb61d6380
+[1370141.926] rdpmouseControl: what 3
+[1370141.932] rdpmouseUnInit: drv 0x1383fa0 info 0x1510980, flags 0x0
+[1370141.934] rdpUnregisterInputCallback: proc 0xb6509944
+[1370142.084] rdpCloseScreen:
+[1370142.101] xorgxrdpDownDown:
+[1370142.110] xorgxrdpDownDown: 1
+[1370142.111] rdpClientConDeinit:
+[1370142.122] rdpClientConDeinit: deleting file /var/run/xrdp/sockdir/xrdp_display_10
+[1370142.125] rdpClientConDeinit: deleting file /var/run/xrdp/sockdir/xrdp_disconnect_display_10
+[1370145.285] (II) Server terminated successfully (0). Closing log file.

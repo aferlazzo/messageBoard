@@ -1,0 +1,7 @@
+2020/11/12-15:15:56.217 3a2c Recovering log #94
+2020/11/12-15:15:56.285 3a2c Delete type=0 #94
+2020/11/12-15:15:56.286 3a2c Delete type=3 #92
+2020/11/12-15:15:58.391 3bad Level-0 table #99: started
+2020/11/12-15:15:58.391 3bad Level-0 table #99: 0 bytes OK
+2020/11/12-15:15:58.402 3bad Delete type=0 #97
+2020/11/12-15:15:58.410 3bad Manual compaction at level-0 from (begin) .. (end); will stop at (end)

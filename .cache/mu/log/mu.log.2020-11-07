@@ -1,0 +1,3769 @@
+2020-11-07 11:44:17,037 - root:112(run) INFO: 
+
+-----------------
+
+Starting Mu 1.0.2
+2020-11-07 11:44:17,049 - root:113(run) INFO: uname_result(system='Linux', node='pi-zero', release='5.4.72+', version='#1356 Thu Oct 22 13:56:00 BST 2020', machine='armv6l', processor='')
+2020-11-07 11:44:17,051 - root:114(run) INFO: Python path: ['/usr/share/mu-editor', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/home/pi/.local/lib/python3.7/site-packages', '/usr/local/lib/python3.7/dist-packages', '/usr/local/lib/python3.7/dist-packages/luma.led_matrix-1.5.0-py3.7.egg', '/usr/lib/python3/dist-packages', '/usr/lib/python3/dist-packages/IPython/extensions']
+2020-11-07 11:44:17,053 - root:115(run) INFO: Language code: en_US
+2020-11-07 11:44:22,023 - mu.logic:543(__init__) INFO: Setting up editor.
+2020-11-07 11:44:22,031 - mu.logic:562(__init__) INFO: Settings path: /home/pi/.local/share/mu/settings.json
+2020-11-07 11:44:22,034 - mu.logic:563(__init__) INFO: Session path: /home/pi/.local/share/mu/session.json
+2020-11-07 11:44:22,041 - mu.logic:564(__init__) INFO: Log directory: /home/pi/.cache/mu/log
+2020-11-07 11:44:22,048 - mu.logic:565(__init__) INFO: Data directory: /home/pi/.local/share/mu
+2020-11-07 11:44:22,989 - mu.logic:578(setup) INFO: Available modes: python, adafruit, microbit, debugger, pygamezero
+2020-11-07 11:44:24,278 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-07 11:44:24,297 - mu.logic:625(restore_session) INFO: Restoring session from: /home/pi/.local/share/mu/session.json
+2020-11-07 11:44:24,299 - mu.logic:626(restore_session) DEBUG: {'theme': 'day', 'mode': 'adafruit', 'paths': [], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-07 11:44:24,300 - mu.logic:647(restore_session) INFO: Loaded files.
+2020-11-07 11:44:24,302 - mu.logic:651(restore_session) INFO: User defined environment variables: []
+2020-11-07 11:44:24,310 - mu.logic:655(restore_session) INFO: Minify scripts on micro:bit? False
+2020-11-07 11:44:24,940 - mu.logic:678(restore_session) INFO: Starting with blank file.
+2020-11-07 11:44:27,516 - mu.interface.main:723(show_message) DEBUG: Could not find an attached Adafruit CircuitPython device.
+2020-11-07 11:44:27,521 - mu.interface.main:724(show_message) DEBUG: Python files for Adafruit CircuitPython devices are stored on the device. Therefore, to edit these files you need to have the device plugged in. Until you plug in a device, Mu will use the directory found here:
+
+ /home/pi/mu_code
+
+...to store your code.
+2020-11-07 11:44:42,605 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-07 11:51:19,874 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/mu_code
+2020-11-07 11:52:42,541 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: /home/pi/mu_code/first-test.py
+2020-11-07 11:52:42,568 - mu.logic:903(check_for_shadow_module) INFO: Checking path "/home/pi/mu_code/first-test.py" for shadow module.
+2020-11-07 11:52:42,571 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/first-test.py
+2020-11-07 11:52:42,579 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    time.sleep(0.5)
+    led.value = False
+    time.sleep(0.5)
+    
+    
+2020-11-07 11:52:57,842 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 11:52:58,761 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 11:53:02,526 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 11:54:07,397 - mu.logic:1105(select_mode) INFO: Showing available modes: ['python', 'adafruit', 'microbit', 'debugger', 'pygamezero']
+2020-11-07 11:56:24,553 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/first-test.py
+2020-11-07 11:56:24,555 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    time.sleep(0.5)
+    led.value = False
+    time.sleep(0.5)
+    
+    
+2020-11-07 11:56:27,375 - mu.logic:1051(quit) DEBUG: Session: {'theme': 'day', 'mode': 'adafruit', 'paths': ['/home/pi/mu_code/first-test.py'], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-07 11:56:27,377 - mu.logic:1052(quit) DEBUG: Saving session to: /home/pi/.local/share/mu/session.json
+2020-11-07 11:56:27,381 - mu.logic:1066(quit) INFO: Quitting.
+
+
+2020-11-07 12:00:12,909 - root:112(run) INFO: 
+
+-----------------
+
+Starting Mu 1.0.2
+2020-11-07 12:00:12,912 - root:113(run) INFO: uname_result(system='Linux', node='pi-zero', release='5.4.72+', version='#1356 Thu Oct 22 13:56:00 BST 2020', machine='armv6l', processor='')
+2020-11-07 12:00:12,924 - root:114(run) INFO: Python path: ['/usr/share/mu-editor', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/home/pi/.local/lib/python3.7/site-packages', '/usr/local/lib/python3.7/dist-packages', '/usr/local/lib/python3.7/dist-packages/luma.led_matrix-1.5.0-py3.7.egg', '/usr/lib/python3/dist-packages', '/usr/lib/python3/dist-packages/IPython/extensions']
+2020-11-07 12:00:12,926 - root:115(run) INFO: Language code: en_US
+2020-11-07 12:00:15,020 - mu.logic:543(__init__) INFO: Setting up editor.
+2020-11-07 12:00:15,026 - mu.logic:562(__init__) INFO: Settings path: /home/pi/.local/share/mu/settings.json
+2020-11-07 12:00:15,029 - mu.logic:563(__init__) INFO: Session path: /home/pi/.local/share/mu/session.json
+2020-11-07 12:00:15,031 - mu.logic:564(__init__) INFO: Log directory: /home/pi/.cache/mu/log
+2020-11-07 12:00:15,043 - mu.logic:565(__init__) INFO: Data directory: /home/pi/.local/share/mu
+2020-11-07 12:00:15,701 - mu.logic:578(setup) INFO: Available modes: python, adafruit, microbit, debugger, pygamezero
+2020-11-07 12:00:17,143 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-07 12:00:17,153 - mu.logic:625(restore_session) INFO: Restoring session from: /home/pi/.local/share/mu/session.json
+2020-11-07 12:00:17,154 - mu.logic:626(restore_session) DEBUG: {'theme': 'day', 'mode': 'adafruit', 'paths': ['/home/pi/mu_code/first-test.py'], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-07 12:00:17,157 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/first-test.py
+2020-11-07 12:00:17,159 - mu.logic:722(_load) INFO: The file /home/pi/mu_code/first-test.py does not exist.
+2020-11-07 12:00:17,161 - mu.logic:647(restore_session) INFO: Loaded files.
+2020-11-07 12:00:17,163 - mu.logic:651(restore_session) INFO: User defined environment variables: []
+2020-11-07 12:00:17,164 - mu.logic:655(restore_session) INFO: Minify scripts on micro:bit? False
+2020-11-07 12:00:17,735 - mu.logic:678(restore_session) INFO: Starting with blank file.
+2020-11-07 12:00:19,563 - mu.interface.main:723(show_message) DEBUG: Could not find an attached Adafruit CircuitPython device.
+2020-11-07 12:00:19,565 - mu.interface.main:724(show_message) DEBUG: Python files for Adafruit CircuitPython devices are stored on the device. Therefore, to edit these files you need to have the device plugged in. Until you plug in a device, Mu will use the directory found here:
+
+ /home/pi/mu_code
+
+...to store your code.
+2020-11-07 12:00:50,771 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-07 12:01:10,942 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/mu_code
+2020-11-07 12:01:17,301 - mu.interface.main:251(get_load_path) DEBUG: Getting load path: /home/pi/mu_code/code.py
+2020-11-07 12:01:17,316 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/code.py
+2020-11-07 12:01:17,321 - mu.logic:274(read_and_decode) DEBUG: Trying to decode with utf-8
+2020-11-07 12:01:17,335 - mu.logic:277(read_and_decode) INFO: Decoded with utf-8
+2020-11-07 12:01:17,342 - mu.logic:290(read_and_decode) DEBUG: Detected newline '\n'
+2020-11-07 12:01:17,351 - mu.logic:787(_load) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    time.sleep(0.5)
+    led.value = False
+    time.sleep(0.5)
+
+
+2020-11-07 12:02:27,230 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/code.py
+2020-11-07 12:02:27,232 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    echo  True
+    time.sleep(0.5)
+    led.value = False
+    echo False
+    time.sleep(0.5)
+
+
+2020-11-07 12:02:57,177 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/code.py
+2020-11-07 12:02:57,179 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    echo "False"
+    time.sleep(0.5)
+
+
+2020-11-07 12:03:09,029 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 12:03:09,034 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 15, 'source': '    echo  "True"\n'}]}
+2020-11-07 12:03:23,741 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 12:03:23,746 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 18, 'source': '    display  "True"\n'}]}
+2020-11-07 12:03:45,349 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 12:03:45,360 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 15, 'source': '    echo  "True"\n'}]}
+2020-11-07 12:03:54,232 - mu.logic:1015(show_help) INFO: Showing help at 'https://codewith.mu/en/help/1.0'.
+2020-11-07 12:14:51,396 - root:112(run) INFO: 
+
+-----------------
+
+Starting Mu 1.0.2
+2020-11-07 12:14:51,399 - root:113(run) INFO: uname_result(system='Linux', node='pi-zero', release='5.4.72+', version='#1356 Thu Oct 22 13:56:00 BST 2020', machine='armv6l', processor='')
+2020-11-07 12:14:51,401 - root:114(run) INFO: Python path: ['/usr/share/mu-editor', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/home/pi/.local/lib/python3.7/site-packages', '/usr/local/lib/python3.7/dist-packages', '/usr/local/lib/python3.7/dist-packages/luma.led_matrix-1.5.0-py3.7.egg', '/usr/lib/python3/dist-packages', '/usr/lib/python3/dist-packages/IPython/extensions']
+2020-11-07 12:14:51,404 - root:115(run) INFO: Language code: en_US
+2020-11-07 12:14:53,624 - mu.logic:543(__init__) INFO: Setting up editor.
+2020-11-07 12:14:53,628 - mu.logic:562(__init__) INFO: Settings path: /home/pi/.local/share/mu/settings.json
+2020-11-07 12:14:53,631 - mu.logic:563(__init__) INFO: Session path: /home/pi/.local/share/mu/session.json
+2020-11-07 12:14:53,632 - mu.logic:564(__init__) INFO: Log directory: /home/pi/.cache/mu/log
+2020-11-07 12:14:53,634 - mu.logic:565(__init__) INFO: Data directory: /home/pi/.local/share/mu
+2020-11-07 12:14:54,317 - mu.logic:578(setup) INFO: Available modes: python, adafruit, microbit, debugger, pygamezero
+2020-11-07 12:14:55,681 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-07 12:14:55,701 - mu.logic:625(restore_session) INFO: Restoring session from: /home/pi/.local/share/mu/session.json
+2020-11-07 12:14:55,703 - mu.logic:626(restore_session) DEBUG: {'theme': 'day', 'mode': 'adafruit', 'paths': ['/home/pi/mu_code/first-test.py'], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-07 12:14:55,705 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/first-test.py
+2020-11-07 12:14:55,708 - mu.logic:722(_load) INFO: The file /home/pi/mu_code/first-test.py does not exist.
+2020-11-07 12:14:55,709 - mu.logic:647(restore_session) INFO: Loaded files.
+2020-11-07 12:14:55,711 - mu.logic:651(restore_session) INFO: User defined environment variables: []
+2020-11-07 12:14:55,713 - mu.logic:655(restore_session) INFO: Minify scripts on micro:bit? False
+2020-11-07 12:14:56,255 - mu.logic:678(restore_session) INFO: Starting with blank file.
+2020-11-07 12:14:58,022 - mu.interface.main:723(show_message) DEBUG: Could not find an attached Adafruit CircuitPython device.
+2020-11-07 12:14:58,024 - mu.interface.main:724(show_message) DEBUG: Python files for Adafruit CircuitPython devices are stored on the device. Therefore, to edit these files you need to have the device plugged in. Until you plug in a device, Mu will use the directory found here:
+
+ /home/pi/mu_code
+
+...to store your code.
+2020-11-07 12:15:10,573 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-07 12:15:27,788 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/mu_code
+2020-11-07 12:15:41,777 - mu.interface.main:251(get_load_path) DEBUG: Getting load path: /home/pi/mu_code/code.py
+2020-11-07 12:15:41,791 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/code.py
+2020-11-07 12:15:41,816 - mu.logic:274(read_and_decode) DEBUG: Trying to decode with utf-8
+2020-11-07 12:15:41,820 - mu.logic:277(read_and_decode) INFO: Decoded with utf-8
+2020-11-07 12:15:41,832 - mu.logic:290(read_and_decode) DEBUG: Detected newline '\n'
+2020-11-07 12:15:41,834 - mu.logic:787(_load) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    echo "False"
+    time.sleep(0.5)
+
+2020-11-07 12:15:52,032 - mu.logic:1105(select_mode) INFO: Showing available modes: ['python', 'adafruit', 'microbit', 'debugger', 'pygamezero']
+2020-11-07 12:16:01,545 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/code.py
+2020-11-07 12:16:01,547 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    echo "False"
+    time.sleep(0.5)
+
+2020-11-07 12:16:01,760 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/code.py
+2020-11-07 12:16:01,762 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    echo "False"
+    time.sleep(0.5)
+
+2020-11-07 12:16:13,852 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/mu_code
+2020-11-07 12:17:08,657 - mu.interface.main:251(get_load_path) DEBUG: Getting load path: /home/pi/mu_code/testcode.py
+2020-11-07 12:17:08,660 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/testcode.py
+2020-11-07 12:17:08,690 - mu.logic:274(read_and_decode) DEBUG: Trying to decode with utf-8
+2020-11-07 12:17:08,700 - mu.logic:277(read_and_decode) INFO: Decoded with utf-8
+2020-11-07 12:17:08,715 - mu.logic:290(read_and_decode) DEBUG: Detected newline '\n'
+2020-11-07 12:17:08,720 - mu.logic:787(_load) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    echo "False"
+    time.sleep(0.5)
+2020-11-07 12:18:39,529 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:18:39,531 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+i = 1
+while i == 1:
+    led.value = True
+    #echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    #echo "False"
+    time.sleep(0.5)
+    i += 1
+2020-11-07 12:18:39,837 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:18:39,839 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+i = 1
+while i == 1:
+    led.value = True
+    #echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    #echo "False"
+    time.sleep(0.5)
+    i += 1
+2020-11-07 12:19:21,016 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:19:21,019 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.D13)
+led.direction = digitalio.Direction.OUTPUT
+i = 1
+while i < 100:
+    led.value = True
+    #echo  "True"
+    time.sleep(0.5)
+    led.value = False
+    #echo "False"
+    time.sleep(0.5)
+    i += 100
+2020-11-07 12:43:14,062 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 12:43:14,067 - mu.logic:985(check_code) INFO: {15: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 15, 'column': 16, 'source': '    echo  "True ", i\n'}]}
+2020-11-07 12:43:14,362 - mu.logic:989(check_code) INFO: {4: [{'line_no': 4, 'column': 0, 'message': "Block comment should start with '# '", 'code': 'E265'}], 5: [{'line_no': 5, 'column': 0, 'message': "Block comment should start with '# '", 'code': 'E265'}], 8: [{'line_no': 8, 'column': 0, 'message': "Block comment should start with '# '", 'code': 'E265'}], 9: [{'line_no': 9, 'column': 0, 'message': "Block comment should start with '# '", 'code': 'E265'}], 10: [{'line_no': 10, 'column': 3, 'message': 'Missing whitespace around operator', 'code': 'E225'}]}
+2020-11-07 12:44:48,160 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:44:48,161 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+# import board
+# import digitalio
+import time
+
+# led = digitalio.DigitalInOut(board.D13)
+# led.direction = digitalio.Direction.
+led = true
+i = 1
+
+while i < 100:
+    led.value = True
+    echo  "True ", i
+    time.sleep(0.5)
+    led.value = False
+    echo "False"
+    time.sleep(0.5)
+    i += 100
+2020-11-07 12:45:29,020 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 12:45:29,024 - mu.logic:985(check_code) INFO: {15: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 15, 'column': 16, 'source': '    echo  "True ", i\n'}]}
+2020-11-07 12:46:01,592 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 12:46:01,597 - mu.logic:985(check_code) INFO: {15: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 15, 'column': 17, 'source': '    print  "True ", i\n'}]}
+2020-11-07 12:46:01,757 - mu.logic:989(check_code) INFO: {15: [{'line_no': 15, 'column': 9, 'message': 'Multiple spaces after keyword', 'code': 'E271'}]}
+2020-11-07 12:46:38,509 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:46:38,511 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+# import board
+# import digitalio
+import time
+
+# led = digitalio.DigitalInOut(board.D13)
+# led.direction = digitalio.Direction.
+led = true
+i = 1
+
+while i < 100:
+    led.value = True
+    print("True ", i)
+    time.sleep(0.5)
+    led.value = False
+    print("False")
+    time.sleep(0.5)
+    i += 100
+2020-11-07 12:47:12,676 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:47:12,681 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+# import board
+# import digitalio
+import time
+
+# led = digitalio.DigitalInOut(board.D13)
+# led.direction = digitalio.Direction.
+led = True
+i = 1
+
+while i < 100:
+    led.value = True
+    print("True ", i)
+    time.sleep(0.5)
+    led.value = False
+    print("False")
+    time.sleep(0.5)
+    i += 100
+2020-11-07 12:47:13,210 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:47:13,217 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+# import board
+# import digitalio
+import time
+
+# led = digitalio.DigitalInOut(board.D13)
+# led.direction = digitalio.Direction.
+led = True
+i = 1
+
+while i < 100:
+    led.value = True
+    print("True ", i)
+    time.sleep(0.5)
+    led.value = False
+    print("False")
+    time.sleep(0.5)
+    i += 100
+2020-11-07 12:48:01,526 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:48:01,529 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+# import board
+# import digitalio
+import time
+
+# led = digitalio.DigitalInOut(board.D13)
+# led.direction = digitalio.Direction.
+led = True
+i = 1
+
+while i < 100:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 100
+2020-11-07 12:48:33,629 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:48:33,631 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+# I'm using mu, the editor that works y well with Circuit Python
+# This code is to be run on board
+
+# import board
+# import digitalio
+import time
+
+# led = digitalio.DigitalInOut(board.D13)
+# led.direction = digitalio.Direction.
+led = True
+i = 1
+
+while i < 100:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 12:56:57,529 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:56:57,531 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+import gpiozero as LED
+import RPi.GPIO GPIO
+import time
+
+pin19 = 
+led = True
+i = 1
+
+while i < 100:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 12:57:20,506 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:57:20,508 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+import gpiozero as LED
+import RPi.GPIO as GPIO
+import time
+
+pin19 = 
+led = True
+i = 1
+
+while i < 100:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 12:57:48,596 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:57:48,598 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+import gpiozero as LED
+import RPi.GPIO as GPIO
+import time
+
+pin19 = 
+led = True
+i = 0
+
+while i < 50:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 12:57:53,612 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:57:53,614 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+import gpiozero as LED
+import RPi.GPIO as GPIO
+import time
+
+pin19 = 
+led = True
+i = 0
+
+while i < 50:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 12:57:53,874 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 12:57:53,876 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+import gpiozero as LED
+import RPi.GPIO as GPIO
+import time
+
+pin19 = 
+led = True
+i = 0
+
+while i < 50:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:01:15,619 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:01:15,621 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = 
+led = True
+i = 0
+
+while i < 50:
+    led = True
+    print("True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:03:12,501 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:03:12,506 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 50:
+    led = True
+    print("pin19 ", pin19, " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:03:56,569 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:03:56,584 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 10:
+    led = True
+    print("pin19 ", pin19, " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:05:47,829 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:05:47,834 - mu.logic:985(check_code) INFO: {14: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 14, 'column': 26, 'source': '    print("pin19 ", pin19., " True ", i)\n'}]}
+2020-11-07 13:08:55,731 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:08:55,733 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 10:
+    led = True
+    print("pin19 ", pin19.value, " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:10:42,528 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:10:42,533 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 10:
+    led = True
+    print("pin19 ", pin19. " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:15:25,983 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:15:25,985 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 10:
+    led = True
+    print("pin19's value ", pin19.value. " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:15:40,679 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:15:40,681 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 2:
+    led = True
+    print("pin19's value ", pin19.value. " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:16:14,842 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:16:14,846 - mu.logic:985(check_code) INFO: {15: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 15, 'column': 48, 'source': '    print("pin19\'s value ", pin19.value. " True ", i)\n'}]}
+2020-11-07 13:16:27,593 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:16:27,595 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 2:
+    led = True
+    print("pin19'''s value ", pin19.value. " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:17:02,973 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:17:02,975 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 2:
+    led = True
+    print("pin19'''s value ", pin19.value, " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:20:35,497 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:20:35,500 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+led = True
+i = 0
+
+while i < 2:
+    led = True
+    print("pin19\'s value ", pin19.value, " True ", i)
+    time.sleep(0.5)
+    led = False
+    print("False")
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:22:00,509 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:22:00,512 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+i = 0
+
+while i < 2:
+    print("pin19\'s value ", pin19.value, " i\'s value ", i)
+    time.sleep(0.5)
+
+    i += 1
+2020-11-07 13:23:08,735 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:23:08,737 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+i = 0
+
+while i < 2:
+    print("pin19: ", pin19, " i: ", i)
+    time.sleep(0.5)
+
+    i += 1
+2020-11-07 13:23:15,991 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:23:16,013 - mu.logic:985(check_code) INFO: {5: [{'line_no': 5, 'column': 0, 'message': "'RPi.GPIO' imported but unused"}]}
+2020-11-07 13:23:33,029 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:23:33,031 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+# import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+i = 0
+
+while i < 2:
+    print("pin19: ", pin19, " i: ", i)
+    time.sleep(0.5)
+
+    i += 1
+2020-11-07 13:25:26,493 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:25:26,495 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+# import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+pin19.on()
+i = 0
+
+while i < 2:
+    print("pin19: ", pin19.value " i: ", i)
+    time.sleep(0.5)
+
+    i += 1
+2020-11-07 13:25:29,547 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:25:29,551 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 38, 'source': '    print("pin19: ", pin19.value " i: ", i)\n'}]}
+2020-11-07 13:25:33,081 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:25:33,085 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 38, 'source': '    print("pin19: ", pin19.value " i: ", i)\n'}]}
+2020-11-07 13:25:40,999 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:25:41,001 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+# import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+pin19.on()
+i = 0
+
+while i < 2:
+    print("pin19: ", pin19.value, " i: ", i)
+    time.sleep(0.5)
+
+    i += 1
+2020-11-07 13:25:46,400 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:27:21,987 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:27:21,990 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+# import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+i = 0
+
+while i < 2:
+    pin19.on()
+    print("pin19: ", pin19.value, " i: ", i)
+    time.sleep(0.5)
+    pin19.off()
+    print("pin19: ", pin19.value, " i: ", i)
+    time.sleep(0.5)
+
+    i += 1
+2020-11-07 13:27:30,407 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:27:35,155 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 13:28:38,011 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 13:28:38,013 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+# import RPi.GPIO as GPIO
+import time
+
+pin19 = LED(19)
+
+i = 0
+
+while i < 2:
+    pin19.on()
+    print("pin19: ", pin19.value, " iteration: ", i)
+    time.sleep(0.5)
+    pin19.off()
+    print("pin19: ", pin19.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 13:38:41,366 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 14:01:46,530 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:01:46,533 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+
+i = 0
+
+while i < 2:
+    DIN.on()
+    print("DIN: ",DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    DIN.off()
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:01:49,576 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:01:49,766 - mu.logic:989(check_code) INFO: {25: [{'line_no': 25, 'column': 17, 'message': "Missing whitespace after ','", 'code': 'E231'}]}
+2020-11-07 14:01:51,789 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:01:51,980 - mu.logic:989(check_code) INFO: {25: [{'line_no': 25, 'column': 17, 'message': "Missing whitespace after ','", 'code': 'E231'}]}
+2020-11-07 14:02:02,518 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:02:02,520 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+
+i = 0
+
+while i < 2:
+    DIN.on()
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    DIN.off()
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:04:47,114 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:04:48,214 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:05:48,000 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:05:48,003 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+
+i = 0
+
+while i < 2:
+    DIN.value = int(0b1111111100000000)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:06:32,971 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:06:32,974 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+
+i = 0
+
+while i < 2:
+    DIN.value = int(0xf0)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:11:10,028 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:11:10,030 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+
+i = 0
+
+while i < 2:
+    DIN.value = 1111 << 8
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:11:27,467 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:13:02,160 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 14:13:03,404 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/mu_code
+2020-11-07 14:13:23,295 - mu.interface.main:251(get_load_path) DEBUG: Getting load path: /home/pi/open-sign-project/matrix8x8.py
+2020-11-07 14:13:23,299 - mu.logic:713(_load) INFO: Loading script from: /home/pi/open-sign-project/matrix8x8.py
+2020-11-07 14:13:23,324 - mu.logic:274(read_and_decode) DEBUG: Trying to decode with utf-8
+2020-11-07 14:13:23,334 - mu.logic:277(read_and_decode) INFO: Decoded with utf-8
+2020-11-07 14:13:23,336 - mu.logic:290(read_and_decode) DEBUG: Detected newline '\n'
+2020-11-07 14:13:23,338 - mu.logic:787(_load) DEBUG: from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busio
+import digitalio
+import time
+
+clk = RX
+
+din = TX
+
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+
+display = matrices.Matrix8x8(spi, cs)
+
+while True:
+    display.brightness(3)
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+    display.clear_all()
+    s = 'Hello, World!'
+
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s,-c,0)
+        display.show()
+        time.sleep(0.25)
+
+2020-11-07 14:14:08,696 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 14:14:11,497 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-07 14:14:12,872 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-07 14:14:17,589 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/open-sign-project
+2020-11-07 14:14:48,732 - mu.interface.main:251(get_load_path) DEBUG: Getting load path: /home/pi/tests/writetest.py
+2020-11-07 14:14:48,795 - mu.logic:713(_load) INFO: Loading script from: /home/pi/tests/writetest.py
+2020-11-07 14:14:48,800 - mu.logic:274(read_and_decode) DEBUG: Trying to decode with utf-8
+2020-11-07 14:14:48,801 - mu.logic:277(read_and_decode) INFO: Decoded with utf-8
+2020-11-07 14:14:48,855 - mu.logic:290(read_and_decode) DEBUG: Detected newline '\n'
+2020-11-07 14:14:48,857 - mu.logic:787(_load) DEBUG: import time
+import board
+import digitalio
+
+# There are 16 registers on the Max7219
+
+#It’s then a matter of sending commands to the Max7219 via the data in, clock and load line.
+
+#For instance, to display the number 4 on digit 1 we would send the command 0x104 (0x01 : use
+#digit 1, 0x04 : display the number 4). Which might look something like this :
+
+#     Set LOAD to 1
+#     Send 16 bits command and data (0x104 = 0000000100000100), and for each binary digit we
+#         set CLOCK to 0
+#         send the binary digit
+#         set CLOCK to 1.
+#     Set LOAD to 0 then set LOAD to 1.
+
+#At this point it might be worth mentioning that the Max7219 can work in two modes, BCD decode on or BCD decode off.
+
+i = 0
+while i < 16:
+    #print('register ', i)
+    if i == 0:
+        cmd = int('00000010', 2)
+    print('register ', i, ' in binary ', bin(i))  # print in binary
+    
+    packet = i << 8
+    print('16-bit packet with 4-bit command and 8-bit value', bin(packet))
+    i += 1
+
+
+i = 0
+while i < 16:
+    cmd = i
+    value = int("00000000", 2)
+    print('cmd ', bin(cmd))  # print in binary
+    #print('cmd %4d %8d' bin(cmd), ' value ', value)  # print in binary
+    #
+    i += 1
+
+
+#led = digitalio.DigitalInOut(board.D18)
+#led.direction = digitalio.Direction.OUTPUT
+
+#button = digitalio.DigitalInOut(board.D4)
+#button.direction = digitalio.Direction.INPUT
+#button.pull = digitalio.Pull.UP
+
+#while True:
+#    led.value = not button.value # light when button is pressed!
+
+2020-11-07 14:15:23,776 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 14:27:47,991 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:27:48,194 - mu.logic:989(check_code) INFO: {15: [{'line_no': 15, 'column': 79, 'message': 'Line too long (96 > 79 characters)', 'code': 'E501'}]}
+2020-11-07 14:28:09,855 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:28:10,049 - mu.logic:989(check_code) INFO: {16: [{'line_no': 16, 'column': 0, 'message': "Block comment should start with '# '", 'code': 'E265'}]}
+2020-11-07 14:28:15,002 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:28:15,005 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+DIN.value = 0x00001111
+i = 0
+
+while i < 2:
+    DIN.value = 0b0000111100000000
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:28:24,443 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:28:52,052 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:28:52,054 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+DIN.value = 0x00001111
+i = 0
+
+while i < 2:
+    DIN.value = 0b0000111100000000
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:28:55,363 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:28:56,541 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:30:37,169 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:30:37,171 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+DIN.value = 0x00001111
+i = 0
+
+while i < 2:
+    DIN.value = hex255)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:30:45,153 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:30:45,159 - mu.logic:985(check_code) INFO: {27: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 27, 'column': 22, 'source': '    DIN.value = hex255)\n'}]}
+2020-11-07 14:30:45,406 - mu.logic:989(check_code) INFO: {28: [{'line_no': 28, 'column': 4, 'message': 'Continuation line missing indentation or outdented', 'code': 'E122'}], 29: [{'line_no': 29, 'column': 4, 'message': 'Continuation line missing indentation or outdented', 'code': 'E122'}], 30: [{'line_no': 30, 'column': 4, 'message': 'Continuation line missing indentation or outdented', 'code': 'E122'}], 31: [{'line_no': 31, 'column': 4, 'message': 'Continuation line missing indentation or outdented', 'code': 'E122'}], 32: [{'line_no': 32, 'column': 4, 'message': 'Continuation line missing indentation or outdented', 'code': 'E122'}], 33: [{'line_no': 33, 'column': 0, 'message': 'Tokenerror: eof in multi-line statement', 'code': 'E901'}]}
+2020-11-07 14:30:59,981 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:30:59,985 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+DIN.value = 0x00001111
+i = 0
+
+while i < 2:
+    DIN.value = hex(255)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    time.sleep(0.5)
+    i += 1
+2020-11-07 14:31:14,851 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:31:33,470 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:31:34,746 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:32:57,037 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:32:57,039 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+DIN.value = 0x00001111
+i = 0
+
+while i < 2:
+    DIN.value = hex(255)
+    #print("DIN: ", DIN.value, " iteration: ", i)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    i += 1
+2020-11-07 14:32:57,618 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:32:57,621 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+DIN.value = 0x00001111
+i = 0
+
+while i < 2:
+    DIN.value = hex(255)
+    #print("DIN: ", DIN.value, " iteration: ", i)
+    print("DIN: ", DIN.value, " iteration: ", i)
+    i += 1
+2020-11-07 14:33:23,976 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:33:23,980 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+DIN.value = 0x00001111
+i = 0
+
+while i < 2:
+    DIN.value = hex(255)
+    #print("DIN: ", DIN.value, " iteration: ", i)
+    i += 1
+2020-11-07 14:34:31,192 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:34:31,194 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+i = 0
+
+DIN.value = hex(255)
+#print("DIN: ", DIN.value, " iteration: ", i)
+i += 1
+
+2020-11-07 14:35:59,980 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:35:59,983 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+DIN = LED(19)
+
+DIN.value = hex(255)
+time.sleep(0.5)
+#   print("DIN: ", DIN.value, " iteration: ", i)
+
+2020-11-07 14:39:28,015 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:39:28,017 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = hex(255
+time.sleep(0.5)
+#   print("DIN: ", DIN.value, " iteration: ", i)
+
+2020-11-07 14:40:31,149 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:40:31,151 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", DIN.value, " iteration: ", i)
+
+2020-11-07 14:41:02,057 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:41:02,059 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", DIN.value)
+
+2020-11-07 14:44:22,099 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:44:22,101 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", DIN.value)
+print("DIN: ", DIN.value)
+
+2020-11-07 14:45:00,209 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:45:00,223 - mu.logic:985(check_code) INFO: {26: [{'line_no': 26, 'column': 0, 'message': "undefined name 'printDIN'"}]}
+2020-11-07 14:45:21,625 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:45:22,008 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:48:20,596 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:48:20,598 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", DIN.value)
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", DIN.value)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", DIN.value)
+
+2020-11-07 14:48:24,510 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:50:15,893 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:50:15,895 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 14:50:18,933 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:51:31,947 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:51:31,949 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = bin(0xff)
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 14:51:34,824 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:56:09,522 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:56:10,191 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:56:13,504 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:56:13,507 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = bin(0xff) << 8
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 14:56:57,801 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:56:57,803 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff << 8
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 14:57:02,686 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:57:03,780 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 14:57:54,744 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:57:54,746 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 14:58:19,635 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 14:58:19,637 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", DIN.value)
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:00:03,499 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:00:03,501 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0x0f
+time.sleep(0.5)
+print("DIN: ", DIN.value)
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:01:43,528 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:01:43,530 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0x0f
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:01:46,511 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:02:41,571 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:02:41,573 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0x0f
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:03:38,807 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:03:38,809 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN = 0x0f
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:05:43,606 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:05:43,609 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0x0f
+time.sleep(0.5)
+print("DIN: ", int(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:05:47,513 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:05:49,145 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:06:31,500 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:06:31,502 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", int(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:07:08,587 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:07:08,596 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", int(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 0xff
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 15:08:32,507 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:08:32,509 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", int(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 0xffff
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:11:22,611 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:11:22,613 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 0xf0
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 0xffff
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:11:57,948 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:11:58,887 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:12:01,512 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:12:01,515 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = "0xf0"
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 0xffff
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:12:46,848 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:12:46,850 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = "0xff"
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 0xffff
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:14:22,499 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:14:22,501 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = 255
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 0xffff
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:14:54,628 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:14:54,630 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = int(255)
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 0xffff
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:14:57,536 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:15:40,626 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:15:40,628 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = int(255)
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 160xffff
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:15:47,477 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:15:47,480 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 0xf
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+DIN.value = int(255)
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+DIN.value = 16
+time.sleep(0.5)
+print("DIN: ", hex(DIN.value))
+
+2020-11-07 15:33:23,336 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-07 15:33:41,766 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/tests
+2020-11-07 15:34:24,309 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: /home/pi/mu_code/testhex.py
+2020-11-07 15:34:24,329 - mu.logic:903(check_for_shadow_module) INFO: Checking path "/home/pi/mu_code/testhex.py" for shadow module.
+2020-11-07 15:34:24,343 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testhex.py
+2020-11-07 15:34:24,355 - mu.logic:870(save_tab_to_file) DEBUG: # TypeConversion from decimal with base 10 
+# to hexadecimal form with base 16 
+
+
+# Taking input from user 
+# an integer with base 10 
+number = int(input("Enter a number with base 10\n")) 
+
+# The choices present to the user 
+print("a. Decimal to Hexadecimal ") 
+print("b. Decimal to Octal") 
+print("c. Decimal to Binary") 
+
+# taking user input 
+print("Enter your choice :- ") 
+choice = input() 
+
+# Running a variable choice 
+# Hexadecimal form if choice 
+# is set to 'a' 
+if choice is 'a': 
+
+	# lstrip helps remove "0x" from the left 
+	# rstrip helps remove "L" from the right, 
+	# L represents a long number 
+	print("Hexadecimal form of " + str(number) +
+		" is " + hex(number).lstrip("0x").rstrip("L")) 
+		
+if choice is 'b': 
+	
+	# Octal representation is done 
+	# by adding a prefix "0o" 
+	print("Octal form of " + str(number) +
+		" is " + oct(number).lstrip("0o").rstrip("L")) 
+		
+if choice is 'c': 
+	
+	# Binary representation is done by 
+	# the addition of prefix "0b" 
+	print("Binary form of " + str(number) +
+		" is "+bin(number).lstrip("0b").rstrip("L")) 
+
+2020-11-07 15:51:11,542 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:51:11,566 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 4095; # 4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(255)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = 16
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 15:52:55,772 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:52:56,427 - mu.logic:989(check_code) INFO: {25: [{'line_no': 25, 'column': 16, 'message': 'Statement ends with a semicolon', 'code': 'E703'}, {'line_no': 25, 'column': 17, 'message': 'At least two spaces before inline comment', 'code': 'E261'}]}
+2020-11-07 15:53:03,026 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:53:03,230 - mu.logic:989(check_code) INFO: {25: [{'line_no': 25, 'column': 16, 'message': 'Statement ends with a semicolon', 'code': 'E703'}, {'line_no': 25, 'column': 17, 'message': 'At least two spaces before inline comment', 'code': 'E261'}]}
+2020-11-07 15:53:21,002 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:53:21,004 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 4095 # 4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(255)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = 16
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 15:53:24,531 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:53:24,760 - mu.logic:989(check_code) INFO: {25: [{'line_no': 25, 'column': 16, 'message': 'At least two spaces before inline comment', 'code': 'E261'}]}
+2020-11-07 15:53:27,699 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:53:27,908 - mu.logic:989(check_code) INFO: {25: [{'line_no': 25, 'column': 16, 'message': 'At least two spaces before inline comment', 'code': 'E261'}]}
+2020-11-07 15:53:38,503 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:53:38,505 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 4095     4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(255)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = 16
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 15:53:43,147 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:53:43,156 - mu.logic:985(check_code) INFO: {25: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 25, 'column': 24, 'source': 'DIN.value = 4095     4095 = decimal, fff = hex, 0000111111111111 = binary\n'}]}
+2020-11-07 15:53:47,657 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 15:53:47,662 - mu.logic:985(check_code) INFO: {25: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 25, 'column': 24, 'source': 'DIN.value = 4095     4095 = decimal, fff = hex, 0000111111111111 = binary\n'}]}
+2020-11-07 15:54:24,511 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 15:54:24,513 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 4095  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(255)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = 16
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 16:06:44,736 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-07 16:06:58,558 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/tests
+2020-11-07 16:07:15,733 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: /home/pi/mu_code/testbin.py
+2020-11-07 16:07:15,737 - mu.logic:903(check_for_shadow_module) INFO: Checking path "/home/pi/mu_code/testbin.py" for shadow module.
+2020-11-07 16:07:15,739 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testbin.py
+2020-11-07 16:07:15,741 - mu.logic:870(save_tab_to_file) DEBUG: # Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value of N: "))
+ 
+# printing the binary value from 1 to N
+for i in range(1, n+1):
+    print("Binary value of ", i, " is: ", bin(i))# Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value of N: "))
+ 
+# printing the binary value from 1 to N
+for i in range(1, n+1):
+    print("Binary value of ", i, " is: ", bin(i))
+2020-11-07 16:10:46,358 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testbin.py
+2020-11-07 16:10:46,368 - mu.logic:870(save_tab_to_file) DEBUG: # Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value of N: "))
+ 
+# printing the binary value from 1 to N
+for i in range(1, n+1):
+    print("Binary value of ", i, " is: ", bin(i))# Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value of N: "))
+ 
+# printing the binary value from 0 to N
+for i in range(0, n):
+    print("Binary value of ", i, " is: ", bin(i + 1))
+2020-11-07 16:14:37,788 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testbin.py
+2020-11-07 16:14:37,790 - mu.logic:870(save_tab_to_file) DEBUG: # Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value of N: "))
+ 
+print("Binary value of ", n, " is: ", bin(n))# Python program to print the binary value 
+
+ 
+
+2020-11-07 16:21:53,612 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:21:53,616 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value of N: "))
+ 
+# printing the binary value from 1 to N
+for i in range(1, n+1):
+    print("Binary value of ", i, " is: ", bin(i))
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = 4095  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(255)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = 16
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 16:25:54,319 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:25:54,321 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value of N: "))
+    
+#   pin Name    Name    
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+# import RPi.GPIO as GPIO
+import time
+
+# send test command to Max7219: 0b1111111111111111
+DIN = LED(19)
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(255)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = 16
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 16:28:07,031 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 16:28:07,252 - mu.logic:989(check_code) INFO: {7: [{'line_no': 7, 'column': 79, 'message': 'Line too long (81 > 79 characters)', 'code': 'E501'}], 24: [{'line_no': 24, 'column': 0, 'message': 'Module level import not at top of file', 'code': 'E402'}], 27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 16:28:26,574 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 16:28:26,792 - mu.logic:989(check_code) INFO: {7: [{'line_no': 7, 'column': 79, 'message': 'Line too long (81 > 79 characters)', 'code': 'E501'}], 24: [{'line_no': 24, 'column': 0, 'message': 'Module level import not at top of file', 'code': 'E402'}], 27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 16:30:55,856 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:30:55,860 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value to send: "))
+    
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(255)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = 16
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 16:31:58,662 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:31:58,664 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to print the binary value 
+# of the numbers from 1 to N
+ 
+# input the value of N
+n = int(input("Enter the value to send: "))
+    
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+#
+# DIN.value = int(n)
+# time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+#  DIN.value = n
+#  time.sleep(0.5)
+#  print("DIN: ", hex(DIN.value))
+
+
+2020-11-07 16:33:18,647 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:33:18,650 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of N
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:33:33,493 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 16:33:33,687 - mu.logic:989(check_code) INFO: {8: [{'line_no': 8, 'column': 79, 'message': 'Line too long (81 > 79 characters)', 'code': 'E501'}], 26: [{'line_no': 26, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 16:33:51,563 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:33:51,565 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of N
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:36:17,890 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:36:17,892 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:37:21,520 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:37:21,522 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(int(DIN.value)))
+
+2020-11-07 16:38:53,504 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:38:53,506 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = int(n)  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(int(DIN.value)))
+
+2020-11-07 16:41:08,510 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:41:08,512 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:41:11,525 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 16:41:11,733 - mu.logic:989(check_code) INFO: {9: [{'line_no': 9, 'column': 0, 'message': "Block comment should start with '# '", 'code': 'E265'}], 27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 16:42:01,823 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:42:01,826 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:42:07,941 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 16:42:08,148 - mu.logic:989(check_code) INFO: {27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 16:44:03,526 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:44:03,528 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN))
+
+2020-11-07 16:45:06,668 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:45:06,671 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:45:56,529 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 16:45:56,536 - mu.logic:985(check_code) INFO: {27: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 27, 'column': -1, 'source': 'DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary\n'}]}
+2020-11-07 16:45:56,733 - mu.logic:989(check_code) INFO: {27: [{'line_no': 27, 'column': 20, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 16:46:46,799 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:46:46,801 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = int(n)  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:52:37,696 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-07 16:53:30,580 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 16:54:19,201 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 16:54:19,203 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)   ???????
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = int(n)  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 16:54:28,608 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 16:58:25,569 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/tests
+2020-11-07 16:58:52,710 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 17:00:13,004 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/tests
+2020-11-07 17:00:45,478 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: /home/pi/mu_code/testpin19.py
+2020-11-07 17:00:45,481 - mu.logic:903(check_for_shadow_module) INFO: Checking path "/home/pi/mu_code/testpin19.py" for shadow module.
+2020-11-07 17:00:45,504 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:00:45,506 - mu.logic:870(save_tab_to_file) DEBUG: from machine import Pin
+
+#   set pin 19 to be an output pin
+pin19 = Pin(0, Pin.OUT
+pin19.value(4095)
+#
+print("pin19: ", pin19.value())
+
+
+2020-11-07 17:00:55,426 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:00:55,430 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': 4, 'source': 'pin19.value(4095)\n'}]}
+2020-11-07 17:00:55,512 - mu.logic:989(check_code) INFO: {4: [{'line_no': 4, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}], 5: [{'line_no': 5, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}], 6: [{'line_no': 6, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}], 7: [{'line_no': 7, 'column': 0, 'message': 'Tokenerror: eof in multi-line statement', 'code': 'E901'}]}
+2020-11-07 17:01:29,742 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:01:29,746 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': 4, 'source': 'pin19.value() = 4095\n'}]}
+2020-11-07 17:01:29,847 - mu.logic:989(check_code) INFO: {4: [{'line_no': 4, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}, {'line_no': 4, 'column': 13, 'message': 'Unexpected spaces around keyword / parameter equals', 'code': 'E251'}, {'line_no': 4, 'column': 15, 'message': 'Unexpected spaces around keyword / parameter equals', 'code': 'E251'}], 5: [{'line_no': 5, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}], 6: [{'line_no': 6, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}], 7: [{'line_no': 7, 'column': 0, 'message': 'Tokenerror: eof in multi-line statement', 'code': 'E901'}]}
+2020-11-07 17:01:57,775 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:01:57,801 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': -1, 'source': 'pin19.value(4095)\n'}]}
+2020-11-07 17:02:00,564 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:02:00,574 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': -1, 'source': 'pin19.value(4095)\n'}]}
+2020-11-07 17:02:44,530 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:02:49,737 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:02:49,747 - mu.logic:870(save_tab_to_file) DEBUG: from machine import Pin
+
+#   set pin 19 to be an output pin
+pin19 = Pin(0, Pin.OUT)
+pin19.value(4095)
+#
+print("pin19: ", pin19.value())
+
+
+2020-11-07 17:02:50,046 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:02:50,047 - mu.logic:870(save_tab_to_file) DEBUG: from machine import Pin
+
+#   set pin 19 to be an output pin
+pin19 = Pin(0, Pin.OUT)
+pin19.value(4095)
+#
+print("pin19: ", pin19.value())
+
+
+2020-11-07 17:03:35,523 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:03:35,526 - mu.logic:870(save_tab_to_file) DEBUG: import Pin
+
+#   set pin 19 to be an output pin
+pin19 = Pin(0, Pin.OUT)
+pin19.value(4095)
+#
+print("pin19: ", pin19.value())
+
+
+2020-11-07 17:03:38,526 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:03:38,781 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:05:11,655 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:05:11,676 - mu.logic:985(check_code) INFO: {0: [{'line_no': 0, 'column': 0, 'message': "'GPIO' imported but unused"}], 3: [{'line_no': 3, 'column': 0, 'message': "undefined name 'Pin'"}, {'line_no': 3, 'column': 0, 'message': "undefined name 'Pin'"}]}
+2020-11-07 17:05:45,420 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:05:45,425 - mu.logic:985(check_code) INFO: {0: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 0, 'column': 14, 'source': 'import Pin from GPIO\n'}]}
+2020-11-07 17:05:48,125 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:05:48,128 - mu.logic:985(check_code) INFO: {0: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 0, 'column': 14, 'source': 'import Pin from GPIO\n'}]}
+2020-11-07 17:08:32,947 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:08:32,963 - mu.logic:985(check_code) INFO: {0: [{'line_no': 0, 'column': 0, 'message': "'RPi.GPIO' imported but unused"}], 3: [{'line_no': 3, 'column': 0, 'message': "undefined name 'Pin'"}, {'line_no': 3, 'column': 0, 'message': "undefined name 'Pin'"}]}
+2020-11-07 17:13:24,259 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:13:24,279 - mu.logic:985(check_code) INFO: {6: [{'line_no': 6, 'column': 0, 'message': "undefined name 'Pin'"}], 7: [{'line_no': 7, 'column': 0, 'message': "undefined name 'pin19'"}], 9: [{'line_no': 9, 'column': 0, 'message': "undefined name 'pin19'"}]}
+2020-11-07 17:14:29,071 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:14:29,083 - mu.logic:985(check_code) INFO: {6: [{'line_no': 6, 'column': 0, 'message': "undefined name 'OUT'"}], 7: [{'line_no': 7, 'column': 0, 'message': "undefined name 'pin19'"}], 9: [{'line_no': 9, 'column': 0, 'message': "undefined name 'pin19'"}]}
+2020-11-07 17:14:57,150 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:14:57,152 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+
+#   address GPIOs via their GPIO number
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO(19, GPIO.OUT)
+pin19.value(4095)
+#
+print("pin19: ", pin19.value())
+
+
+2020-11-07 17:15:06,994 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:15:07,006 - mu.logic:985(check_code) INFO: {7: [{'line_no': 7, 'column': 0, 'message': "undefined name 'pin19'"}], 9: [{'line_no': 9, 'column': 0, 'message': "undefined name 'pin19'"}]}
+2020-11-07 17:15:46,070 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:15:46,085 - mu.logic:985(check_code) INFO: {7: [{'line_no': 7, 'column': 0, 'message': "undefined name 'pin19'"}], 9: [{'line_no': 9, 'column': 0, 'message': "undefined name 'pin19'"}]}
+2020-11-07 17:15:52,090 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:15:52,097 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+
+#   address GPIOs via their GPIO number
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+pin19.value(4095)
+#
+print("pin19: ", pin19.value())
+
+
+2020-11-07 17:15:52,379 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:15:52,380 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+
+#   address GPIOs via their GPIO number
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+pin19.value(4095)
+#
+print("pin19: ", pin19.value())
+
+
+2020-11-07 17:22:02,329 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 17:22:08,220 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 17:22:27,684 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:22:27,686 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   address GPIOs via their GPIO number
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+
+
+#   send 4095 to GPIO 
+GPIO.output(19, INT(4095))
+
+time.sleep(0.5)
+
+2020-11-07 17:22:29,516 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:22:29,562 - mu.logic:985(check_code) INFO: {12: [{'line_no': 12, 'column': 0, 'message': "undefined name 'INT'"}]}
+2020-11-07 17:22:29,664 - mu.logic:989(check_code) INFO: {11: [{'line_no': 11, 'column': 0, 'message': 'Too many blank lines (3) above this line', 'code': 'E303'}]}
+2020-11-07 17:22:41,652 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:22:41,654 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   address GPIOs via their GPIO number
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, INT(4095))
+
+time.sleep(0.5)
+
+2020-11-07 17:22:44,727 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:22:44,740 - mu.logic:985(check_code) INFO: {10: [{'line_no': 10, 'column': 0, 'message': "undefined name 'INT'"}]}
+2020-11-07 17:22:58,605 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:22:58,607 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   address GPIOs via their GPIO number
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+2020-11-07 17:23:04,175 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:23:04,458 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:23:20,253 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:23:20,536 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:25:40,412 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:25:40,414 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+2020-11-07 17:34:10,257 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 17:34:43,535 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 17:34:43,537 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)   ???????
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 17:34:50,059 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:34:50,065 - mu.logic:985(check_code) INFO: {23: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 23, 'column': 16, 'source': 'DIN = LED(19)   ???????\n'}]}
+2020-11-07 17:34:50,233 - mu.logic:989(check_code) INFO: {27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 17:34:59,940 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:34:59,945 - mu.logic:985(check_code) INFO: {23: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 23, 'column': 16, 'source': 'DIN = LED(19)   ???????\n'}]}
+2020-11-07 17:35:00,135 - mu.logic:989(check_code) INFO: {27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 17:35:15,988 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 17:35:15,990 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n  #   4095 = decimal, fff = hex, 0000111111111111 = binary
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 17:35:19,695 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:35:19,879 - mu.logic:989(check_code) INFO: {27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 17:35:21,869 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:35:22,050 - mu.logic:989(check_code) INFO: {27: [{'line_no': 27, 'column': 15, 'message': "Inline comment should start with '# '", 'code': 'E262'}]}
+2020-11-07 17:35:50,170 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testcode.py
+2020-11-07 17:35:50,172 - mu.logic:870(save_tab_to_file) DEBUG: # Write your code here :-)
+
+# gpiozero is a simple interface to GPIO devices with Raspberry Pi
+from gpiozero import LED
+import time
+
+#   RPi Zero's pinouts Should be
+
+#   RPI Signal  GPIO     PCB-to-Max7219# Python program to 
+#  print the binary value 
+# of the numbers from 1 to N
+     
+#   pin Name    Name    PCB pin
+#   6   GND     Ground  1
+#   19  DIN     GPIO10  2
+#   24  CS      GPIO8   3
+#   23  SCLK    GPIO11  4   Chip Select
+#   2   5V      VCC     5
+
+# 
+# 7219 commands are ('16-bit packet with 4-bit junk, 
+# 4-bit command and 8-bit data', bin(packet))
+
+DIN = LED(19)
+# input the value of n
+n = int(input("Enter the value to send: "))
+
+DIN.value = n
+time.sleep(0.5)
+print("n: ", bin(n))
+print("DIN: ", bin(DIN.value))
+
+2020-11-07 17:35:54,959 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:37:06,466 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: 
+2020-11-07 17:37:35,379 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:39:41,995 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:39:41,998 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5
+GPIO.cleanup()
+
+2020-11-07 17:39:45,041 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:39:45,045 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 3, 'source': 'GPIO.cleanup()\n'}]}
+2020-11-07 17:39:45,173 - mu.logic:989(check_code) INFO: {13: [{'line_no': 13, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}], 14: [{'line_no': 14, 'column': 0, 'message': 'Tokenerror: eof in multi-line statement', 'code': 'E901'}]}
+2020-11-07 17:39:50,911 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:39:50,922 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 3, 'source': 'GPIO.cleanup()\n'}]}
+2020-11-07 17:39:51,046 - mu.logic:989(check_code) INFO: {13: [{'line_no': 13, 'column': 0, 'message': 'Continuation line under-indented for visual indent', 'code': 'E128'}], 14: [{'line_no': 14, 'column': 0, 'message': 'Tokenerror: eof in multi-line statement', 'code': 'E901'}]}
+2020-11-07 17:40:08,053 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:40:08,055 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+GPIO.cleanup()
+
+2020-11-07 17:40:16,871 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:40:17,140 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:41:51,997 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:41:51,999 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-07 17:45:47,999 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:45:48,000 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+# the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-07 17:46:25,147 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:46:25,149 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-07 17:46:28,107 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:46:28,399 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:57:27,273 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:57:27,275 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data 
+#   that isn't used
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   command to resume Normal Operation
+GPIO.output(19, bin(110000000001))
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-07 17:57:30,038 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:57:30,359 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:57:30,688 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 17:59:31,057 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-07 17:59:31,059 - mu.logic:870(save_tab_to_file) DEBUG: import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data 
+#   that isn't used
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   command to resume Normal Operation
+GPIO.output(19, bin(110000000001))
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-07 17:59:35,008 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 18:00:51,438 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-07 18:00:52,719 - mu.logic:979(check_code) INFO: Checking code.

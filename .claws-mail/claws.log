@@ -1,0 +1,162 @@
+[07:12:31] * message: Account 'aferlazzo@mail.google.com': Connecting to POP3 server: mail.google.com:995...
+[07:13:31] ** warning: Session timed out. You may be able to recover by increasing the timeout value in Preferences/Other/Miscellaneous.
+[07:17:48] * message: Account 'aferlazzo@mail.google.com': Connecting to POP3 server: pop.gmail.com:995...
+[07:17:54] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 q8mb73577771otl
+[07:17:54] POP> USER aferlazzo
+[07:17:55] POP< +OK send PASS
+[07:17:55] POP> PASS ********
+[07:17:56] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:17:56] *** error: error occurred on authentication
+[07:17:56] *** error: Authentication failed.
+[07:18:49] * message: Account 'aferlazzo@mail.google.com': Connecting to POP3 server: pop.gmail.com:995...
+[07:18:50] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 c21mb76545063oct
+[07:18:50] POP> USER aferlazzo
+[07:18:50] POP< +OK send PASS
+[07:18:50] POP> PASS ********
+[07:18:51] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:18:51] *** error: error occurred on authentication
+[07:18:51] *** error: Authentication failed.
+[07:21:10] * message: Account 'aferlazzo@mail.google.com': Connecting to POP3 server: pop.gmail.com:995...
+[07:21:16] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 s16mb12937458oij
+[07:21:16] POP> USER aferlazzo
+[07:21:16] POP< +OK send PASS
+[07:21:16] POP> PASS ********
+[07:21:17] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:21:17] *** error: error occurred on authentication
+[07:21:17] *** error: Authentication failed.
+[07:25:31] * message: Account 'aferlazzo@mail.google.com': Connecting to POP3 server: pop.gmail.com:995...
+[07:25:31] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 x41mb68925129occ
+[07:25:31] POP> USER aferlazzo
+[07:25:32] POP< +OK send PASS
+[07:25:32] POP> PASS ********
+[07:25:33] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:25:33] *** error: error occurred on authentication
+[07:25:33] *** error: Authentication failed.
+[07:28:05] * message: Account 'aferlazzo@gmail.google.com': Connecting to POP3 server: pop.gmail.com:995...
+[07:28:06] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 l31mb64090065otc
+[07:28:06] POP> USER aferlazzo
+[07:28:06] POP< +OK send PASS
+[07:28:06] POP> PASS ********
+[07:28:07] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:28:07] *** error: error occurred on authentication
+[07:28:07] *** error: Authentication failed.
+[07:30:30] * message: Account 'aferlazzo@gmail.google.com': Connecting to POP3 server: pop.gmail.com:995...
+[07:30:31] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 33mb78171934ocf
+[07:30:31] POP> USER aferlazzo
+[07:30:31] POP< +OK send PASS
+[07:30:31] POP> PASS ********
+[07:30:32] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:30:32] *** error: error occurred on authentication
+[07:30:32] *** error: Authentication failed.
+[07:31:21] * message: Account 'aferlazzo@gmail.google.com': Connecting to POP3 server: pop.gmail.com:995...
+[07:31:21] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 h25mb79555582otl
+[07:31:21] POP> USER aferlazzo
+[07:31:21] POP< +OK send PASS
+[07:31:21] POP> PASS ********
+[07:31:22] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:31:22] *** error: error occurred on authentication
+[07:31:22] *** error: Authentication failed.
+[07:33:08] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:33:09] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 i10mb37297307oos
+[07:33:09] POP> USER aferlazzo
+[07:33:09] POP< +OK send PASS
+[07:33:09] POP> PASS ********
+[07:33:10] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:33:10] *** error: error occurred on authentication
+[07:33:10] *** error: Authentication failed.
+[07:35:12] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:35:13] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 a8mb83322708ocg
+[07:35:13] POP> USER aferlazzo
+[07:35:13] POP< +OK send PASS
+[07:35:13] POP> PASS ********
+[07:35:14] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:35:14] *** error: error occurred on authentication
+[07:35:14] *** error: Authentication failed.
+[07:36:53] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:36:53] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 m3mb65672131otr
+[07:36:53] POP> USER aferlazzo
+[07:36:53] POP< +OK send PASS
+[07:36:53] POP> PASS ********
+[07:36:54] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:36:54] *** error: error occurred on authentication
+[07:36:54] *** error: Authentication failed.
+[07:39:33] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:39:33] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 s26mb32223976ooh
+[07:39:33] POP> USER aferlazzo
+[07:39:33] POP< +OK send PASS
+[07:39:33] POP> PASS ********
+[07:39:34] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:39:34] *** error: error occurred on authentication
+[07:39:35] *** error: Authentication failed.
+[07:41:05] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:41:06] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 a9mb30685466oci
+[07:41:06] POP> USER aferlazzo
+[07:41:06] POP< +OK send PASS
+[07:41:06] POP> PASS ********
+[07:41:07] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:41:07] *** error: error occurred on authentication
+[07:41:07] *** error: Authentication failed.
+[07:43:17] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:43:18] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 t12mb56964332oor
+[07:43:18] POP> USER aferlazzo@gmail.com
+[07:43:18] POP< +OK send PASS
+[07:43:18] POP> PASS ********
+[07:43:20] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:43:20] *** error: error occurred on authentication
+[07:43:20] *** error: Authentication failed.
+[07:44:33] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:44:34] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 x13mb51406209otg
+[07:44:34] *** error: Required APOP timestamp not found in greeting
+[07:44:34] *** error: Error occurred while processing mail.
+[07:46:22] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:46:23] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 o7mb76709598ook
+[07:46:23] POP> USER aferlazzo@gmail.com
+[07:46:23] POP< +OK send PASS
+[07:46:23] POP> PASS ********
+[07:46:24] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:46:24] *** error: error occurred on authentication
+[07:46:24] *** error: Authentication failed.
+[07:49:11] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:49:11] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 q4mb51202574occ
+[07:49:11] POP> USER aferlazzo@gmail.com
+[07:49:12] POP< +OK send PASS
+[07:49:12] POP> PASS ********
+[07:49:13] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:49:13] *** error: error occurred on authentication
+[07:49:13] *** error: Authentication failed.
+[07:50:15] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:50:16] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 k14mb74793744occ
+[07:50:16] POP> USER aferlazzo@gmail.com
+[07:50:16] POP< +OK send PASS
+[07:50:16] POP> PASS ********
+[07:50:17] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:50:17] *** error: error occurred on authentication
+[07:50:17] *** error: Authentication failed.
+[07:52:01] * message: Account 'aferlazzo': Connecting to POP3 server: pop.gmail.com:995...
+[07:52:02] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 b18mb85002053otp
+[07:52:02] POP> USER aferlazzo@gmail.com
+[07:52:02] POP< +OK send PASS
+[07:52:02] POP> PASS ********
+[07:52:03] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:52:03] *** error: error occurred on authentication
+[07:52:03] *** error: Authentication failed.
+[07:53:55] * message: Account 'aferlazzo': Connecting to POP3 server: imap.gmail.com:995...
+[07:53:56] POP< +OK Gpop ready for requests from 2601:500:8500:4420::bbc6 d2mb74858089ool
+[07:53:56] POP> USER aferlazzo@gmail.com
+[07:53:56] POP< +OK send PASS
+[07:53:56] POP> PASS ********
+[07:53:57] POP< -ERR [AUTH] Application-specific password required: https://support.google.com/accounts/answer/185833
+[07:53:57] *** error: error occurred on authentication
+[07:53:57] *** error: Authentication failed.
+[07:59:39] * message: Account 'aferlazzo': Connecting to POP3 server: imap.gmail.com:993...
+[07:59:40] POP< * OK Gimap ready for requests from 2601:500:8500:4420::bbc6 b61mb69363934otc
+[07:59:40] *** error: Error occurred while processing mail.
+[08:01:21] * message: Account 'aferlazzo': Connecting to POP3 server: imap.gmail.com:993...
+[08:01:22] POP< * OK Gimap ready for requests from 2601:500:8500:4420::bbc6 w4mb38903186otq
+[08:01:22] *** error: Error occurred while processing mail.
+[08:06:38] * message: Account 'aferlazzo': Connecting to POP3 server: imap.gmail.com:993...
+[08:06:39] POP< * OK Gimap ready for requests from 2601:500:8500:4420::bbc6 w10mb24823621ooe
+[08:06:39] *** error: Error occurred while processing mail.
+[08:10:03] * message: Account 'aferlazzo': Connecting to POP3 server: imap.gmail.com:993...
+[08:10:04] POP< * OK Gimap ready for requests from 2601:500:8500:4420::bbc6 l11mb63755786ocd
+[08:10:04] *** error: Error occurred while processing mail.

@@ -1,0 +1,8 @@
+2020/11/12-15:15:19.913 3a5f Recovering log #963
+2020/11/12-15:15:19.921 3a5f Level-0 table #965: started
+2020/11/12-15:15:19.962 3a5f Level-0 table #965: 6937 bytes OK
+2020/11/12-15:15:19.992 3a5f Delete type=0 #963
+2020/11/12-15:15:19.993 3a5f Delete type=3 #961
+2020/11/12-20:28:06.117 1a64 Level-0 table #968: started
+2020/11/12-20:28:06.342 1a64 Level-0 table #968: 18909 bytes OK
+2020/11/12-20:28:06.586 1a64 Delete type=0 #966

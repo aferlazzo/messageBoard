@@ -1,0 +1,6 @@
+[20201113-11:30:45] [CORE ] main: app started pid 19704(0x00004cf8)
+[20201113-11:30:45] [INFO ] main: DISPLAY env var set to :10.0
+[20201113-11:30:45] [INFO ] main: using DISPLAY 10
+[20201113-11:30:45] [INFO ] channel_thread_loop: thread start
+[20201113-11:30:46] [INFO ] Socket 12: AF_UNIX connection received
+[20201113-11:32:24] [INFO ] channel_thread_loop: trans_check_wait_objs error resetting

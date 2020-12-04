@@ -1,0 +1,7 @@
+2020/11/12-15:07:32.258 31b9 Recovering log #90
+2020/11/12-15:07:32.350 31b9 Delete type=3 #88
+2020/11/12-15:07:32.351 31b9 Delete type=0 #90
+2020/11/12-15:07:34.452 3280 Level-0 table #95: started
+2020/11/12-15:07:34.453 3280 Level-0 table #95: 0 bytes OK
+2020/11/12-15:07:34.475 3280 Delete type=0 #93
+2020/11/12-15:07:34.493 3280 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

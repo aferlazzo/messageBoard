@@ -1,0 +1,15 @@
+2020/11/10-11:35:11.176 7a0c Recovering log #3
+2020/11/10-11:35:11.218 7a0c Level-0 table #5: started
+2020/11/10-11:35:11.397 7a0c Level-0 table #5: 812 bytes OK
+2020/11/10-11:35:11.648 7a0c Delete type=0 #3
+2020/11/10-11:35:11.658 7a0c Delete type=3 #2
+2020/11/10-11:35:13.935 7ceb Level-0 table #8: started
+2020/11/10-11:35:13.971 7ceb Level-0 table #8: 0 bytes OK
+2020/11/10-11:35:14.106 7ceb Delete type=0 #6
+2020/11/10-11:35:14.176 7ceb Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x01\x00\x00\xc8\x05\x00u\x00s\x00e\x00r\x00s' @ 20 : 1
+2020/11/10-11:35:14.191 7ceb Compacting 1@0 + 0@1 files
+2020/11/10-11:35:14.310 7ceb Generated table #9@0: 17 keys, 486 bytes
+2020/11/10-11:35:14.310 7ceb Compacted 1@0 + 0@1 files => 486 bytes
+2020/11/10-11:35:14.335 7ceb compacted to: files[ 0 1 0 0 0 0 0 ]
+2020/11/10-11:35:14.355 7ceb Delete type=2 #5
+2020/11/10-11:35:14.379 7ceb Manual compaction at level-0 from '\x00\x01\x00\x00\xc8\x05\x00u\x00s\x00e\x00r\x00s' @ 20 : 1 .. (end); will stop at (end)

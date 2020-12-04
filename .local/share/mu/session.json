@@ -1,0 +1,11 @@
+{
+  "theme": "day",
+  "mode": "adafruit",
+  "paths": [
+    "/home/pi/mu_code/test-max7219.py"
+  ],
+  "envars": [],
+  "minify": false,
+  "microbit_runtime": "",
+  "zoom_level": 2
+}

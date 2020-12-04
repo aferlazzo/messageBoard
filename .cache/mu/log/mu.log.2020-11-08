@@ -1,0 +1,418 @@
+2020-11-08 11:42:59,359 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-08 11:42:59,506 - mu.logic:870(save_tab_to_file) DEBUG: 
+#   This library is from Circuit Python
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data 
+#   that isn't used
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   command to resume Normal Operation
+GPIO.output(19, bin(110000000001))
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-08 11:43:09,778 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-08 11:43:09,782 - mu.logic:870(save_tab_to_file) DEBUG: 
+#   This library is from Circuit Python
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data 
+#   that isn't used
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   command to resume Normal Operation
+GPIO.output(19, bin(110000000001))
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-08 11:43:15,693 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-08 11:43:15,695 - mu.logic:870(save_tab_to_file) DEBUG: 
+#   This library is from Circuit Python
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data 
+#   that isn't used
+
+#   address GPIOs via their GPIO number using the following
+GPIO.setmode(GPIO.BCM)
+
+#   set pin 19 to be an output pin
+GPIO.setup(19, GPIO.OUT)
+
+#   command to resume Normal Operation
+GPIO.output(19, bin(110000000001))
+
+#   send 4095 to GPIO 
+GPIO.output(19, int(4095))
+
+time.sleep(0.5)
+
+#   cleanup all the ports
+GPIO.cleanup()
+
+2020-11-08 11:45:51,959 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-08 11:45:54,442 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-08 11:45:55,193 - mu.logic:700(new) INFO: Added a new tab.
+2020-11-08 11:46:45,527 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/tests
+2020-11-08 11:47:36,376 - mu.interface.main:263(get_save_path) DEBUG: Getting save path: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:47:36,379 - mu.logic:903(check_for_shadow_module) INFO: Checking path "/home/pi/mu_code/testmax7219.py" for shadow module.
+2020-11-08 11:47:36,381 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:47:36,395 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busioimport digitalioimport time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s,-c,0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:47:47,147 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:47:47,185 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': 33, 'source': 'import busioimport digitalioimport time\n'}]}
+2020-11-08 11:47:48,068 - mu.logic:989(check_code) INFO: {26: [{'line_no': 26, 'column': 22, 'message': "Missing whitespace after ','", 'code': 'E231'}, {'line_no': 26, 'column': 25, 'message': "Missing whitespace after ','", 'code': 'E231'}]}
+2020-11-08 11:47:57,632 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:47:57,638 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': 33, 'source': 'import busioimport digitalioimport time\n'}]}
+2020-11-08 11:47:58,097 - mu.logic:989(check_code) INFO: {26: [{'line_no': 26, 'column': 22, 'message': "Missing whitespace after ','", 'code': 'E231'}, {'line_no': 26, 'column': 25, 'message': "Missing whitespace after ','", 'code': 'E231'}]}
+2020-11-08 11:48:41,703 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:48:41,726 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': 33, 'source': 'import busioimport digitalioimport time\n'}]}
+2020-11-08 11:49:19,430 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:49:19,432 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busioimport digitalioimport time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:49:19,764 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:49:19,766 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busioimport digitalioimport time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:49:22,658 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:49:22,663 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': 33, 'source': 'import busioimport digitalioimport time\n'}]}
+2020-11-08 11:49:33,389 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:49:33,395 - mu.logic:985(check_code) INFO: {4: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 4, 'column': 33, 'source': 'import busioimport digitalioimport time\n'}]}
+2020-11-08 11:50:04,180 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:50:04,183 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busioimport 
+import digitalioimport 
+import time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:50:09,283 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:50:09,296 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 41, 'source': 'display = matrices.Matrix8x8(spi, cs)while True:\n'}]}
+2020-11-08 11:50:39,305 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:50:39,307 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busioimport 
+import digitalioimport time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)
+
+while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:50:44,005 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:50:44,010 - mu.logic:985(check_code) INFO: {5: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 5, 'column': 26, 'source': 'import digitalioimport time\n'}]}
+2020-11-08 11:50:54,605 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:50:54,607 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busioimport 
+import digitalio
+import time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)
+
+while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:50:58,789 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:50:58,906 - mu.logic:985(check_code) INFO: {4: [{'line_no': 4, 'column': 0, 'message': "'busioimport' imported but unused"}], 12: [{'line_no': 12, 'column': 0, 'message': "undefined name 'busio'"}]}
+2020-11-08 11:51:37,758 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:51:37,760 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busio
+import digitalio
+import time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:51:43,615 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:51:43,621 - mu.logic:985(check_code) INFO: {13: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 13, 'column': 41, 'source': 'display = matrices.Matrix8x8(spi, cs)while True:\n'}]}
+2020-11-08 11:52:03,690 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:52:03,694 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX, RX, A2
+import busio
+import digitalio
+import time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)
+
+while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:52:08,311 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-08 11:53:12,533 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testmax7219.py
+2020-11-08 11:53:12,535 - mu.logic:870(save_tab_to_file) DEBUG: 
+
+from adafruit_max7219 import matrices
+from board import TX
+from board import RX
+from board import A2
+import busio
+import digitalio
+import time
+
+clk = RX
+din = TX
+cs = digitalio.DigitalInOut(A2)
+
+spi = busio.SPI(clk, MOSI=din)
+display = matrices.Matrix8x8(spi, cs)
+
+while True:
+    display.brightness(3)
+
+    display.fill(1)
+    display.pixel(3, 3)
+    display.pixel(3, 4)
+    display.pixel(4, 3)
+    display.pixel(4, 4)
+    display.show()
+    time.sleep(3.0)
+
+    display.clear_all()
+    s = 'Hello, World!'
+    for c in range(len(s)*8):
+        display.fill(0)
+        display.text(s, -c, 0)
+        display.show()
+        time.sleep(0.25)
+
+
+2020-11-08 11:53:17,144 - mu.logic:979(check_code) INFO: Checking code.

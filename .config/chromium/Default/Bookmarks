@@ -1,0 +1,40 @@
+{
+   "checksum": "5035072e4d98cabcf84bcdcc5da9584e",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13248382068426439",
+            "guid": "406e917d-1790-493b-a18f-cdefe1d9d6eb",
+            "id": "5",
+            "name": "Raspberry Pi GPIO Pinout: What Each Pin Does on Pi 4, Earlier Models | Tom's Hardware",
+            "type": "url",
+            "url": "https://www.tomshardware.com/reviews/raspberry-pi-gpio-pinout,6122.html"
+         } ],
+         "date_added": "13248217374833921",
+         "date_modified": "13248382068426439",
+         "guid": "00000000-0000-4000-A000-000000000002",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13248217374833989",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-A000-000000000003",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13248217374834028",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-A000-000000000004",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

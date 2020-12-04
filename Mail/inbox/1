@@ -1,0 +1,62 @@
+From: The Claws Mail Team <users@lists.claws-mail.org>
+To: Anthony Ferlazzo <aferlazzo@gmail.com>
+Date: Tue, 10 Nov 2020 07:12:13 -0700
+Subject: Welcome to Claws Mail
+X-Face: +}Axz@~a,-Yx?0Ysa|q}CLRH=89Y]"')DSX^<6p"d)'81yx5%G#u^o*7JG&[aPU0h1Ux.vb2yIjH83{5`/bVo|~nn/i83vE^E)qk-4W)_E.4Y=D*qvf/,Ci_=P<iY<M6
+Face: iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAM1BMVEUAAAAcJCI
+ ONl1JUi0+Z4daY2NZciPabV9ykS5kj6Wsl2ybmZOBsMjZxK2wzN3Pzczs7OsCAGN0AAAAAXRSTlM
+ AQObYZgAAAAFiS0dEAIgFHUgAAAIVSURBVEjH1ZbtlqMgDIaFECoGhPu/2s0b0Lais/NzN6d1OJ7
+ 3yReQzrL8B5Zy3rvl9At52Pf2tv1vSMjtYj8jaa8XUyI/yn3YD6sigj/2Tf5Bn069MIsTPHvx/t5
+ /3rU/6JCIY3YwGe26r/cwUfE3cFe5T28L0K5rJAUHEeYAQxs8DHojjk3M9wECU4xxjXisI8RA0gy
+ oczJZJOjxiTFZVTchAnIRJrgdmEGDyFfAI3UuG5FmYTkR9RDrIC4H0SqV4pzpEcUp0HNLjwBv+jA
+ dikUE5g9iBvzmu3sH2oDk4lnHd829+2Q9gj6kDqDPg7hsGwBzH02fE3ZCt6ZHmlNKIMjMeRwra5I
+ ecgNoBnLGPmzaHPJIwLY8Sq2M/tLUJfj0QcqmfVXAdLSStIYF8dzWjBBb2VgvDa4mO9oc651OiUo
+ BEKbZokdPATF9E9oKAjQJcJOniaPXrVZRAnVWaqIyqRoNC8ZJvgCcW8XN39RqxVP1rS8Yd4WnCdN
+ aRTo2jJRDbg3vtCpEUGffgDPhqKDaSuVqYtOplFIvIcx3HUI5/MuIWl6vKyBjNlqEru8hbFXqBPA
+ 5TpHGIUZOePeaIyzfQ/g9Xg0opU1AvdfXM9floYhv92pPAE96OZtkPV8eivgQi9RTfwPUU36I26n
+ Hy+WuCJzAT7efMSeA1TNf2/VugDz+dN139xfA5ffxGZDD+MvcP/uvyB80wzZ76wbz8gAAAABJRU5
+ ErkJggg==
+Content-Type: text/plain; charset=UTF-8
+
+Welcome to Claws Mail
+---------------------
+
+Now that you have set up your account you can fetch your
+mail by clicking the 'Get Mail' button at the left of the
+toolbar.
+
+Claws Mail has lots of extra features accessible via plugins,
+like anti-spam filtering and learning (via the Bogofilter or
+SpamAssassin plugins), privacy protection (via PGP/Mime), an RSS
+aggregator, a calendar, and much more. You can load them from
+the menu entry '/Configuration/Plugins'.
+
+You can change your Account Preferences by using the menu
+entry '/Configuration/Preferences for current account'
+and change the general Preferences by using
+'/Configuration/Preferences'.
+
+You can find further information in the Claws Mail manual,
+which can be accessed by using the menu entry '/Help/Manual'
+or online at the URL given below.
+
+Useful URLs
+-----------
+Homepage:      <https://www.claws-mail.org/>
+Manual:        <https://www.claws-mail.org/documentation.php>
+FAQ:           <https://www.claws-mail.org/faq/index.php>
+Themes:        <https://www.claws-mail.org/themes.php>
+Mailing Lists: <https://www.claws-mail.org/MLs.php>
+
+LICENSE
+-------
+Claws Mail is free software, released under the terms
+of the GNU General Public License, version 3 or later, as
+published by the Free Software Foundation. The license can
+be found at <https://www.gnu.org/licenses/gpl.html>.
+
+DONATIONS
+---------
+If you wish to donate to the Claws Mail project you can do
+so at <https://www.claws-mail.org/sponsors.php>.
+

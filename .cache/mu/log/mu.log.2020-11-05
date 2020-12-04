@@ -1,0 +1,41 @@
+2020-11-05 13:29:33,089 - root:112(run) INFO: 
+
+-----------------
+
+Starting Mu 1.0.2
+2020-11-05 13:29:33,091 - root:113(run) INFO: uname_result(system='Linux', node='pi-zero', release='5.4.72+', version='#1356 Thu Oct 22 13:56:00 BST 2020', machine='armv6l', processor='')
+2020-11-05 13:29:33,093 - root:114(run) INFO: Python path: ['/usr/share/mu-editor', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/home/pi/.local/lib/python3.7/site-packages', '/usr/local/lib/python3.7/dist-packages', '/usr/local/lib/python3.7/dist-packages/luma.led_matrix-1.5.0-py3.7.egg', '/usr/lib/python3/dist-packages', '/usr/lib/python3/dist-packages/IPython/extensions']
+2020-11-05 13:29:33,094 - root:115(run) INFO: Language code: en_US
+2020-11-05 13:29:36,506 - mu.logic:543(__init__) INFO: Setting up editor.
+2020-11-05 13:29:36,508 - mu.logic:560(__init__) DEBUG: Creating directory: /home/pi/.local/share/mu
+2020-11-05 13:29:36,514 - mu.logic:316(get_admin_file_path) DEBUG: Creating admin file: /home/pi/.local/share/mu/settings.json
+2020-11-05 13:29:36,518 - mu.logic:562(__init__) INFO: Settings path: /home/pi/.local/share/mu/settings.json
+2020-11-05 13:29:36,521 - mu.logic:316(get_admin_file_path) DEBUG: Creating admin file: /home/pi/.local/share/mu/session.json
+2020-11-05 13:29:36,523 - mu.logic:563(__init__) INFO: Session path: /home/pi/.local/share/mu/session.json
+2020-11-05 13:29:36,525 - mu.logic:564(__init__) INFO: Log directory: /home/pi/.cache/mu/log
+2020-11-05 13:29:36,526 - mu.logic:565(__init__) INFO: Data directory: /home/pi/.local/share/mu
+2020-11-05 13:29:37,000 - mu.logic:578(setup) INFO: Available modes: python, adafruit, microbit, debugger, pygamezero
+2020-11-05 13:29:37,004 - mu.logic:582(setup) DEBUG: Creating directory: /home/pi/mu_code
+2020-11-05 13:29:37,010 - mu.logic:590(setup) DEBUG: Creating directory: /home/pi/mu_code/images
+2020-11-05 13:29:37,036 - mu.logic:597(setup) DEBUG: Creating directory: /home/pi/mu_code/fonts
+2020-11-05 13:29:37,039 - mu.logic:600(setup) DEBUG: Creating directory: /home/pi/mu_code/sounds
+2020-11-05 13:29:37,042 - mu.logic:603(setup) DEBUG: Creating directory: /home/pi/mu_code/music
+2020-11-05 13:29:38,823 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-05 13:29:38,887 - mu.logic:625(restore_session) INFO: Restoring session from: /home/pi/.local/share/mu/session.json
+2020-11-05 13:29:38,888 - mu.logic:626(restore_session) DEBUG: {}
+2020-11-05 13:29:38,905 - mu.logic:1105(select_mode) INFO: Showing available modes: ['python', 'adafruit', 'microbit', 'debugger', 'pygamezero']
+2020-11-05 13:30:29,381 - mu.logic:1110(select_mode) INFO: New mode selected: adafruit
+2020-11-05 13:30:31,023 - mu.interface.main:723(show_message) DEBUG: Could not find an attached Adafruit CircuitPython device.
+2020-11-05 13:30:31,025 - mu.interface.main:724(show_message) DEBUG: Python files for Adafruit CircuitPython devices are stored on the device. Therefore, to edit these files you need to have the device plugged in. Until you plug in a device, Mu will use the directory found here:
+
+ /home/pi/mu_code
+
+...to store your code.
+2020-11-05 13:30:36,929 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-05 13:30:37,803 - mu.logic:678(restore_session) INFO: Starting with blank file.
+2020-11-05 13:30:38,151 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-05 13:30:51,549 - mu.logic:1051(quit) DEBUG: Session: {'theme': 'day', 'mode': 'adafruit', 'paths': [], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-05 13:30:51,551 - mu.logic:1052(quit) DEBUG: Saving session to: /home/pi/.local/share/mu/session.json
+2020-11-05 13:30:51,556 - mu.logic:1066(quit) INFO: Quitting.
+
+
