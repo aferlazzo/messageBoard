@@ -2,7 +2,7 @@
   "theme": "day",
   "mode": "adafruit",
   "paths": [
-    "/home/pi/mu_code/test-max7219.py"
+    "/home/pi/mu_code/message-sign-demo.py"
   ],
   "envars": [],
   "minify": false,

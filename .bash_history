@@ -462,3 +462,129 @@ python3 messagesign-demopy
 python3 message-sign-demo.py
 startx
 top
+git init
+git commit -m "first commit"
+git config --global user.email "aferlazzo@gmail.com"
+git config --global user.name "Anthony Ferlazzo"
+git commit -m "first commit"
+git remote add messageBoard github.com/aferlazzo/messageBoard.git
+git remote
+git -v remote
+git --version remote
+git remote --version
+git remote add messageBoard https://github.com/aferlazzo/messageBoard.git
+git remote
+git remote --help
+git remote remove
+git remote remove messageBoard
+git remote add messageBoard https://github.com/aferlazzo/messageBoard.git
+git remote
+git pull origin master
+git commit -m "first commit"
+git remote add messageBoard https://github.com/aferlazzo/messageBoard.git
+git remote
+git pull origin master
+git remote -v
+git remote add origin https://github.com/aferlazzo/messageBoard.git
+git pull origin master
+git pull origin main
+git pull origin master
+git remote
+git pull origin main
+git pull origin master
+git remote push -u messageBoard main
+git push -u messageBoard main
+git pull origin main
+git config
+git --local
+git config -get
+git config --get
+git config --get-all
+git config --get-all --global[A
+git --get-all config
+git --verbose config
+git --version config
+git config -l
+echo "# messageBoard" >> READ.ME
+git init
+echo "# messageBoard" >> README.md
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github/aferlazzo/messageBoard.git
+git push -u origin main
+git push messageBoard main
+cd mu_code
+ls
+git init
+cd ..
+git push messageBoard main
+git init
+git commit -m "first commit"
+git remote add messageBoard https://github.com/aferlazzo/messageBoard.git
+git remore messageBoard
+git remove messageBoard
+git remote remove messageBoard
+git remote add messageBoard https://github.com/aferlazzo/messageBoard.git
+git remote
+git pull origin main
+git push -u messageBoard main
+git push origin main:main
+git checkout ,
+pwd
+git checkout /hom/pi
+git checkout /home/pi
+git push origin main:main
+git add .
+git commit -m "first population of repo"
+git push origin main:main
+pwd
+sudo nano /etc/rc.local
+cd mu_code
+ls
+cp message-sign-demo.py start-message-sign.py
+sudo nano /etc/rc.local
+sudo reboot
+sudo nano /etc/rc.local
+sudo nano /home/pi.,bashrc
+sudo restart
+sudo reboot
+startx
+cat
+systemctl status /etc/rc-local.service
+systemctl status rc-local.service
+systemctl daemon-reload
+systemctl status rc-local.service
+sudo nano mu_code start-message-sign.py
+sudo nano mu_code/start-message-sign.py
+sudo reboot
+sudo halt
+cd mu_code
+start-message-sign.py
+python3 start-message-sign.py
+sudo halt
+ls
+cd mu_code
+python3 start-message-sign.py
+ls
+nano start-message-sign.py
+python3 start-message-sign.py
+sudo halt
+cd mu_code
+python3 start-message-sign.py
+sudo halt
+cd mu_code
+ls
+nano start-message-sign.py
+python3 start-message-sign.py
+cd mu_code
+nano start-message-sign.py
+python3 start-message-sign.py
+sudo halo
+sudo halt
+cd mu_code
+nano start-message-sign.py
+python3 start-message-sign.py
+cd mu_code
+python3 start-message-sign.py
+sudo halt

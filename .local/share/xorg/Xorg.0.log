@@ -1,35 +1,35 @@
-[   163.622] 
+[ 19941.618] 
 X.Org X Server 1.20.4
 X Protocol Version 11, Revision 0
-[   163.634] Build Operating System: Linux 4.15.0-99-generic armv8l Raspbian
-[   163.638] Current Operating System: Linux pi-zero 5.4.72+ #1356 Thu Oct 22 13:56:00 BST 2020 armv6l
-[   163.639] Kernel command line: coherent_pool=1M 8250.nr_uarts=0 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1 snd_bcm2835.enable_headphones=1 bcm2708_fb.fbwidth=1280 bcm2708_fb.fbheight=720 bcm2708_fb.fbswap=1 smsc95xx.macaddr=B8:27:EB:15:8E:53 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  console=ttyS0,115200 console=tty1 root=PARTUUID=240f108e-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
-[   163.658] Build Date: 27 August 2020  08:51:48AM
-[   163.663] xorg-server 2:1.20.4-1+rpt2+deb10u1 (https://www.debian.org/support) 
-[   163.668] Current version of pixman: 0.36.0
-[   163.678] 	Before reporting problems, check http://wiki.x.org
+[ 19941.639] Build Operating System: Linux 4.15.0-99-generic armv8l Raspbian
+[ 19941.644] Current Operating System: Linux pi-zero 5.4.72+ #1356 Thu Oct 22 13:56:00 BST 2020 armv6l
+[ 19941.644] Kernel command line: coherent_pool=1M 8250.nr_uarts=0 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1 snd_bcm2835.enable_headphones=1 bcm2708_fb.fbwidth=1280 bcm2708_fb.fbheight=720 bcm2708_fb.fbswap=1 smsc95xx.macaddr=B8:27:EB:15:8E:53 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  console=ttyS0,115200 console=tty1 root=PARTUUID=240f108e-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
+[ 19941.665] Build Date: 27 August 2020  08:51:48AM
+[ 19941.670] xorg-server 2:1.20.4-1+rpt2+deb10u1 (https://www.debian.org/support) 
+[ 19941.676] Current version of pixman: 0.36.0
+[ 19941.686] 	Before reporting problems, check http://wiki.x.org
 	to make sure that you have the latest version.
-[   163.678] Markers: (--) probed, (**) from config file, (==) default setting,
+[ 19941.686] Markers: (--) probed, (**) from config file, (==) default setting,
 	(++) from command line, (!!) notice, (II) informational,
 	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
-[   163.700] (==) Log file: "/home/pi/.local/share/xorg/Xorg.0.log", Time: Tue Dec  1 15:34:31 2020
-[   163.717] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
-[   163.722] (==) No Layout section.  Using the first Screen section.
-[   163.722] (==) No screen section available. Using defaults.
-[   163.723] (**) |-->Screen "Default Screen Section" (0)
-[   163.723] (**) |   |-->Monitor "<default monitor>"
-[   163.733] (==) No device specified for screen "Default Screen Section".
+[ 19941.708] (==) Log file: "/home/pi/.local/share/xorg/Xorg.0.log", Time: Sun Dec  6 14:23:05 2020
+[ 19941.725] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[ 19941.730] (==) No Layout section.  Using the first Screen section.
+[ 19941.730] (==) No screen section available. Using defaults.
+[ 19941.730] (**) |-->Screen "Default Screen Section" (0)
+[ 19941.731] (**) |   |-->Monitor "<default monitor>"
+[ 19941.740] (==) No device specified for screen "Default Screen Section".
 	Using the first device section listed.
-[   163.733] (**) |   |-->Device "Allwinner A10/A13 FBDEV"
-[   163.733] (==) No monitor specified for screen "Default Screen Section".
+[ 19941.741] (**) |   |-->Device "Allwinner A10/A13 FBDEV"
+[ 19941.741] (==) No monitor specified for screen "Default Screen Section".
 	Using a default monitor configuration.
-[   163.733] (==) Automatically adding devices
-[   163.733] (==) Automatically enabling devices
-[   163.734] (==) Automatically adding GPU devices
-[   163.734] (==) Max clients allowed: 256, resource mask: 0x1fffff
-[   163.746] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
-[   163.746] 	Entry deleted from font path.
-[   163.760] (==) FontPath set to:
+[ 19941.741] (==) Automatically adding devices
+[ 19941.741] (==) Automatically enabling devices
+[ 19941.741] (==) Automatically adding GPU devices
+[ 19941.741] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[ 19941.753] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
+[ 19941.753] 	Entry deleted from font path.
+[ 19941.765] (==) FontPath set to:
 	/usr/share/fonts/X11/misc,
 	/usr/share/fonts/X11/100dpi/:unscaled,
 	/usr/share/fonts/X11/75dpi/:unscaled,
@@ -37,179 +37,179 @@ X Protocol Version 11, Revision 0
 	/usr/share/fonts/X11/100dpi,
 	/usr/share/fonts/X11/75dpi,
 	built-ins
-[   163.760] (==) ModulePath set to "/usr/lib/xorg/modules"
-[   163.761] (II) The server relies on udev to provide the list of input devices.
+[ 19941.765] (==) ModulePath set to "/usr/lib/xorg/modules"
+[ 19941.766] (II) The server relies on udev to provide the list of input devices.
 	If no devices become available, reconfigure udev or disable AutoAddDevices.
-[   163.761] (II) Loader magic: 0x1fcf80
-[   163.761] (II) Module ABI versions:
-[   163.761] 	X.Org ANSI C Emulation: 0.4
-[   163.761] 	X.Org Video Driver: 24.0
-[   163.761] 	X.Org XInput driver : 24.1
-[   163.761] 	X.Org Server Extension : 10.0
-[   163.770] (++) using VT number 1
+[ 19941.766] (II) Loader magic: 0x1fcf80
+[ 19941.766] (II) Module ABI versions:
+[ 19941.766] 	X.Org ANSI C Emulation: 0.4
+[ 19941.766] 	X.Org Video Driver: 24.0
+[ 19941.766] 	X.Org XInput driver : 24.1
+[ 19941.766] 	X.Org Server Extension : 10.0
+[ 19941.775] (++) using VT number 1
 
-[   163.789] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
-[   163.791] (II) no primary bus or device found
-[   163.791] (II) LoadModule: "glx"
-[   163.795] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
-[   163.874] (II) Module glx: vendor="X.Org Foundation"
-[   163.874] 	compiled for 1.20.4, module version = 1.0.0
-[   163.875] 	ABI class: X.Org Server Extension, version 10.0
-[   163.875] (II) LoadModule: "fbturbo"
-[   163.878] (II) Loading /usr/lib/xorg/modules/drivers/fbturbo_drv.so
-[   163.884] (II) Module fbturbo: vendor="X.Org Foundation"
-[   163.884] 	compiled for 1.20.3, module version = 0.5.1
-[   163.884] 	Module class: X.Org Video Driver
-[   163.884] 	ABI class: X.Org Video Driver, version 24.0
-[   163.884] (II) FBTURBO: driver for framebuffer: fbturbo
-[   163.885] (WW) Falling back to old probe method for fbturbo
-[   163.885] (II) Loading sub module "fbdevhw"
-[   163.885] (II) LoadModule: "fbdevhw"
-[   163.886] (II) Loading /usr/lib/xorg/modules/libfbdevhw.so
-[   163.891] (II) Module fbdevhw: vendor="X.Org Foundation"
-[   163.891] 	compiled for 1.20.4, module version = 0.0.2
-[   163.891] 	ABI class: X.Org Video Driver, version 24.0
-[   163.892] (II) FBTURBO(0): using /dev/fb0
-[   163.892] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
-[   163.893] (II) FBTURBO(0): Creating default Display subsection in Screen section
+[ 19941.796] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[ 19941.797] (II) no primary bus or device found
+[ 19941.797] (II) LoadModule: "glx"
+[ 19941.801] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[ 19941.877] (II) Module glx: vendor="X.Org Foundation"
+[ 19941.877] 	compiled for 1.20.4, module version = 1.0.0
+[ 19941.878] 	ABI class: X.Org Server Extension, version 10.0
+[ 19941.878] (II) LoadModule: "fbturbo"
+[ 19941.881] (II) Loading /usr/lib/xorg/modules/drivers/fbturbo_drv.so
+[ 19941.886] (II) Module fbturbo: vendor="X.Org Foundation"
+[ 19941.886] 	compiled for 1.20.3, module version = 0.5.1
+[ 19941.887] 	Module class: X.Org Video Driver
+[ 19941.887] 	ABI class: X.Org Video Driver, version 24.0
+[ 19941.887] (II) FBTURBO: driver for framebuffer: fbturbo
+[ 19941.888] (WW) Falling back to old probe method for fbturbo
+[ 19941.888] (II) Loading sub module "fbdevhw"
+[ 19941.888] (II) LoadModule: "fbdevhw"
+[ 19941.889] (II) Loading /usr/lib/xorg/modules/libfbdevhw.so
+[ 19941.893] (II) Module fbdevhw: vendor="X.Org Foundation"
+[ 19941.893] 	compiled for 1.20.4, module version = 0.0.2
+[ 19941.893] 	ABI class: X.Org Video Driver, version 24.0
+[ 19941.894] (II) FBTURBO(0): using /dev/fb0
+[ 19941.894] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[ 19941.895] (II) FBTURBO(0): Creating default Display subsection in Screen section
 	"Default Screen Section" for depth/fbbpp 24/32
-[   163.893] (==) FBTURBO(0): Depth 24, (==) framebuffer bpp 32
-[   163.893] (==) FBTURBO(0): RGB weight 888
-[   163.893] (==) FBTURBO(0): Default visual is TrueColor
-[   163.893] (==) FBTURBO(0): Using gamma correction (1.0, 1.0, 1.0)
-[   163.894] (II) FBTURBO(0): hardware: BCM2708 FB (video memory: 3600kB)
-[   163.894] (DB) xf86MergeOutputClassOptions unsupported bus type 0
-[   163.894] (**) FBTURBO(0): Option "fbdev" "/dev/fb0"
-[   163.894] (**) FBTURBO(0): Option "SwapbuffersWait" "true"
-[   163.895] (II) FBTURBO(0): processor: ARM1176
-[   163.895] (II) FBTURBO(0): checking modes against framebuffer device...
-[   163.895] (II) FBTURBO(0): checking modes against monitor...
-[   163.896] (II) FBTURBO(0): Virtual size is 1280x720 (pitch 1280)
-[   163.896] (**) FBTURBO(0):  Built-in mode "current"
-[   163.896] (==) FBTURBO(0): DPI set to (96, 96)
-[   163.896] (II) Loading sub module "fb"
-[   163.896] (II) LoadModule: "fb"
-[   163.900] (II) Loading /usr/lib/xorg/modules/libfb.so
-[   163.909] (II) Module fb: vendor="X.Org Foundation"
-[   163.909] 	compiled for 1.20.4, module version = 1.0.0
-[   163.909] 	ABI class: X.Org ANSI C Emulation, version 0.4
-[   163.931] (II) FBTURBO(0): using backing store heuristics
-[   163.937] (WW) LoadKernelModule: Setting of real/effective user Id to 0/0 failed[   163.962] (II) FBTURBO(0): can't load 'g2d_23' kernel module
-[   163.963] (II) FBTURBO(0): failed to enable the use of sunxi display controller
-[   163.963] (II) FBTURBO(0): No sunxi-g2d hardware detected (check /dev/disp and /dev/g2d)
-[   163.963] (II) FBTURBO(0): G2D hardware acceleration can't be enabled
-[   163.963] (II) FBTURBO(0): enabled fbdev copyarea acceleration
-[   163.963] (==) FBTURBO(0): Backing store enabled
-[   163.974] (==) FBTURBO(0): DPMS enabled
-[   163.974] (II) FBTURBO(0): failed to enable hardware cursor
-[   163.975] (II) FBTURBO(0): no 3D acceleration because the driver has been compiled without libUMP
-[   163.975] (II) FBTURBO(0): if this is wrong and needs to be fixed, please check ./configure log
-[   163.977] (II) Initializing extension Generic Event Extension
-[   163.979] (II) Initializing extension SHAPE
-[   163.982] (II) Initializing extension MIT-SHM
-[   163.984] (II) Initializing extension XInputExtension
-[   163.991] (II) Initializing extension XTEST
-[   163.993] (II) Initializing extension BIG-REQUESTS
-[   163.995] (II) Initializing extension SYNC
-[   163.998] (II) Initializing extension XKEYBOARD
-[   164.000] (II) Initializing extension XC-MISC
-[   164.002] (II) Initializing extension SECURITY
-[   164.005] (II) Initializing extension XFIXES
-[   164.007] (II) Initializing extension RENDER
-[   164.009] (II) Initializing extension RANDR
-[   164.014] (II) Initializing extension COMPOSITE
-[   164.018] (II) Initializing extension DAMAGE
-[   164.020] (II) Initializing extension MIT-SCREEN-SAVER
-[   164.022] (II) Initializing extension DOUBLE-BUFFER
-[   164.025] (II) Initializing extension RECORD
-[   164.027] (II) Initializing extension DPMS
-[   164.029] (II) Initializing extension Present
-[   164.031] (II) Initializing extension DRI3
-[   164.032] (II) Initializing extension X-Resource
-[   164.034] (II) Initializing extension XVideo
-[   164.036] (II) Initializing extension XVideo-MotionCompensation
-[   164.036] (II) Initializing extension SELinux
-[   164.036] (II) SELinux: Disabled on system
-[   164.036] (II) Initializing extension GLX
-[   164.039] (II) AIGLX: Screen 0 is not DRI2 capable
-[   165.833] (II) IGLX: Loaded and initialized swrast
-[   165.833] (II) GLX: Initialized DRISWRAST GL provider for screen 0
-[   165.833] (II) Initializing extension XFree86-VidModeExtension
-[   165.835] (II) Initializing extension XFree86-DGA
-[   165.838] (II) Initializing extension XFree86-DRI
-[   165.841] (II) Initializing extension DRI2
-[   166.566] (II) config/udev: Adding input device Logitech USB Optical Mouse (/dev/input/event0)
-[   166.566] (**) Logitech USB Optical Mouse: Applying InputClass "libinput pointer catchall"
-[   166.567] (II) LoadModule: "libinput"
-[   166.568] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
-[   166.660] (II) Module libinput: vendor="X.Org Foundation"
-[   166.660] 	compiled for 1.20.3, module version = 0.28.2
-[   166.660] 	Module class: X.Org XInput Driver
-[   166.660] 	ABI class: X.Org XInput driver, version 24.1
-[   166.660] (II) Using input driver 'libinput' for 'Logitech USB Optical Mouse'
-[   166.671] (II) systemd-logind: got fd for /dev/input/event0 13:64 fd 19 paused 0
-[   166.671] (**) Logitech USB Optical Mouse: always reports core events
-[   166.671] (**) Option "Device" "/dev/input/event0"
-[   166.672] (**) Option "_source" "server/udev"
-[   166.744] (II) event0  - Logitech USB Optical Mouse: is tagged by udev as: Mouse
-[   166.746] (II) event0  - Logitech USB Optical Mouse: device is a pointer
-[   166.748] (II) event0  - Logitech USB Optical Mouse: device removed
-[   166.750] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/0003:046D:C077.0001/input/input0/event0"
-[   166.750] (II) XINPUT: Adding extended input device "Logitech USB Optical Mouse" (type: MOUSE, id 6)
-[   166.753] (**) Option "AccelerationScheme" "none"
-[   166.753] (**) Logitech USB Optical Mouse: (accel) selected scheme none/0
-[   166.754] (**) Logitech USB Optical Mouse: (accel) acceleration factor: 2.000
-[   166.754] (**) Logitech USB Optical Mouse: (accel) acceleration threshold: 4
-[   166.777] (II) event0  - Logitech USB Optical Mouse: is tagged by udev as: Mouse
-[   166.779] (II) event0  - Logitech USB Optical Mouse: device is a pointer
-[   166.792] (II) config/udev: Adding input device Logitech USB Optical Mouse (/dev/input/mouse0)
-[   166.792] (II) No input driver specified, ignoring this device.
-[   166.792] (II) This device may have been added with another device file.
-[   166.804] (II) config/udev: Adding input device Logitech USB Keyboard (/dev/input/event1)
-[   166.804] (**) Logitech USB Keyboard: Applying InputClass "libinput keyboard catchall"
-[   166.804] (II) Using input driver 'libinput' for 'Logitech USB Keyboard'
-[   166.815] (II) systemd-logind: got fd for /dev/input/event1 13:65 fd 22 paused 0
-[   166.815] (**) Logitech USB Keyboard: always reports core events
-[   166.816] (**) Option "Device" "/dev/input/event1"
-[   166.816] (**) Option "_source" "server/udev"
-[   166.842] (II) event1  - Logitech USB Keyboard: is tagged by udev as: Keyboard
-[   166.842] (II) event1  - Logitech USB Keyboard: device is a keyboard
-[   166.845] (II) event1  - Logitech USB Keyboard: device removed
-[   166.845] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.4/1-1.4:1.0/0003:046D:C31C.0002/input/input1/event1"
-[   166.846] (II) XINPUT: Adding extended input device "Logitech USB Keyboard" (type: KEYBOARD, id 7)
-[   166.846] (**) Option "xkb_model" "logicd"
-[   166.846] (**) Option "xkb_layout" "us"
-[   167.095] (II) event1  - Logitech USB Keyboard: is tagged by udev as: Keyboard
-[   167.095] (II) event1  - Logitech USB Keyboard: device is a keyboard
-[   167.111] (II) config/udev: Adding input device Logitech USB Keyboard Consumer Control (/dev/input/event2)
-[   167.111] (**) Logitech USB Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
-[   167.111] (II) Using input driver 'libinput' for 'Logitech USB Keyboard Consumer Control'
-[   167.123] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 23 paused 0
-[   167.123] (**) Logitech USB Keyboard Consumer Control: always reports core events
-[   167.124] (**) Option "Device" "/dev/input/event2"
-[   167.124] (**) Option "_source" "server/udev"
-[   167.152] (II) event2  - Logitech USB Keyboard Consumer Control: is tagged by udev as: Keyboard
-[   167.153] (II) event2  - Logitech USB Keyboard Consumer Control: device is a keyboard
-[   167.155] (II) event2  - Logitech USB Keyboard Consumer Control: device removed
-[   167.155] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.4/1-1.4:1.1/0003:046D:C31C.0003/input/input2/event2"
-[   167.155] (II) XINPUT: Adding extended input device "Logitech USB Keyboard Consumer Control" (type: KEYBOARD, id 8)
-[   167.155] (**) Option "xkb_model" "logicd"
-[   167.156] (**) Option "xkb_layout" "us"
-[   167.183] (II) event2  - Logitech USB Keyboard Consumer Control: is tagged by udev as: Keyboard
-[   167.183] (II) event2  - Logitech USB Keyboard Consumer Control: device is a keyboard
-[   167.196] (II) config/udev: Adding input device Logitech USB Keyboard System Control (/dev/input/event3)
-[   167.197] (**) Logitech USB Keyboard System Control: Applying InputClass "libinput keyboard catchall"
-[   167.197] (II) Using input driver 'libinput' for 'Logitech USB Keyboard System Control'
-[   167.208] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 24 paused 0
-[   167.208] (**) Logitech USB Keyboard System Control: always reports core events
-[   167.208] (**) Option "Device" "/dev/input/event3"
-[   167.208] (**) Option "_source" "server/udev"
-[   167.234] (II) event3  - Logitech USB Keyboard System Control: is tagged by udev as: Keyboard
-[   167.235] (II) event3  - Logitech USB Keyboard System Control: device is a keyboard
-[   167.237] (II) event3  - Logitech USB Keyboard System Control: device removed
-[   167.237] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.4/1-1.4:1.1/0003:046D:C31C.0003/input/input3/event3"
-[   167.237] (II) XINPUT: Adding extended input device "Logitech USB Keyboard System Control" (type: KEYBOARD, id 9)
-[   167.237] (**) Option "xkb_model" "logicd"
-[   167.238] (**) Option "xkb_layout" "us"
-[   167.264] (II) event3  - Logitech USB Keyboard System Control: is tagged by udev as: Keyboard
-[   167.265] (II) event3  - Logitech USB Keyboard System Control: device is a keyboard
+[ 19941.895] (==) FBTURBO(0): Depth 24, (==) framebuffer bpp 32
+[ 19941.895] (==) FBTURBO(0): RGB weight 888
+[ 19941.895] (==) FBTURBO(0): Default visual is TrueColor
+[ 19941.896] (==) FBTURBO(0): Using gamma correction (1.0, 1.0, 1.0)
+[ 19941.896] (II) FBTURBO(0): hardware: BCM2708 FB (video memory: 3600kB)
+[ 19941.896] (DB) xf86MergeOutputClassOptions unsupported bus type 0
+[ 19941.896] (**) FBTURBO(0): Option "fbdev" "/dev/fb0"
+[ 19941.896] (**) FBTURBO(0): Option "SwapbuffersWait" "true"
+[ 19941.897] (II) FBTURBO(0): processor: ARM1176
+[ 19941.897] (II) FBTURBO(0): checking modes against framebuffer device...
+[ 19941.898] (II) FBTURBO(0): checking modes against monitor...
+[ 19941.898] (II) FBTURBO(0): Virtual size is 1280x720 (pitch 1280)
+[ 19941.898] (**) FBTURBO(0):  Built-in mode "current"
+[ 19941.898] (==) FBTURBO(0): DPI set to (96, 96)
+[ 19941.898] (II) Loading sub module "fb"
+[ 19941.898] (II) LoadModule: "fb"
+[ 19941.902] (II) Loading /usr/lib/xorg/modules/libfb.so
+[ 19941.910] (II) Module fb: vendor="X.Org Foundation"
+[ 19941.911] 	compiled for 1.20.4, module version = 1.0.0
+[ 19941.911] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[ 19941.932] (II) FBTURBO(0): using backing store heuristics
+[ 19941.938] (WW) LoadKernelModule: Setting of real/effective user Id to 0/0 failed[ 19941.963] (II) FBTURBO(0): can't load 'g2d_23' kernel module
+[ 19941.964] (II) FBTURBO(0): failed to enable the use of sunxi display controller
+[ 19941.964] (II) FBTURBO(0): No sunxi-g2d hardware detected (check /dev/disp and /dev/g2d)
+[ 19941.964] (II) FBTURBO(0): G2D hardware acceleration can't be enabled
+[ 19941.964] (II) FBTURBO(0): enabled fbdev copyarea acceleration
+[ 19941.965] (==) FBTURBO(0): Backing store enabled
+[ 19941.975] (==) FBTURBO(0): DPMS enabled
+[ 19941.975] (II) FBTURBO(0): failed to enable hardware cursor
+[ 19941.975] (II) FBTURBO(0): no 3D acceleration because the driver has been compiled without libUMP
+[ 19941.975] (II) FBTURBO(0): if this is wrong and needs to be fixed, please check ./configure log
+[ 19941.977] (II) Initializing extension Generic Event Extension
+[ 19941.979] (II) Initializing extension SHAPE
+[ 19941.982] (II) Initializing extension MIT-SHM
+[ 19941.984] (II) Initializing extension XInputExtension
+[ 19941.991] (II) Initializing extension XTEST
+[ 19941.993] (II) Initializing extension BIG-REQUESTS
+[ 19941.995] (II) Initializing extension SYNC
+[ 19941.998] (II) Initializing extension XKEYBOARD
+[ 19942.000] (II) Initializing extension XC-MISC
+[ 19942.002] (II) Initializing extension SECURITY
+[ 19942.005] (II) Initializing extension XFIXES
+[ 19942.007] (II) Initializing extension RENDER
+[ 19942.009] (II) Initializing extension RANDR
+[ 19942.014] (II) Initializing extension COMPOSITE
+[ 19942.017] (II) Initializing extension DAMAGE
+[ 19942.019] (II) Initializing extension MIT-SCREEN-SAVER
+[ 19942.022] (II) Initializing extension DOUBLE-BUFFER
+[ 19942.024] (II) Initializing extension RECORD
+[ 19942.026] (II) Initializing extension DPMS
+[ 19942.029] (II) Initializing extension Present
+[ 19942.031] (II) Initializing extension DRI3
+[ 19942.031] (II) Initializing extension X-Resource
+[ 19942.033] (II) Initializing extension XVideo
+[ 19942.036] (II) Initializing extension XVideo-MotionCompensation
+[ 19942.036] (II) Initializing extension SELinux
+[ 19942.036] (II) SELinux: Disabled on system
+[ 19942.036] (II) Initializing extension GLX
+[ 19942.039] (II) AIGLX: Screen 0 is not DRI2 capable
+[ 19943.788] (II) IGLX: Loaded and initialized swrast
+[ 19943.789] (II) GLX: Initialized DRISWRAST GL provider for screen 0
+[ 19943.789] (II) Initializing extension XFree86-VidModeExtension
+[ 19943.791] (II) Initializing extension XFree86-DGA
+[ 19943.794] (II) Initializing extension XFree86-DRI
+[ 19943.797] (II) Initializing extension DRI2
+[ 19944.592] (II) config/udev: Adding input device Logitech USB Optical Mouse (/dev/input/event0)
+[ 19944.592] (**) Logitech USB Optical Mouse: Applying InputClass "libinput pointer catchall"
+[ 19944.592] (II) LoadModule: "libinput"
+[ 19944.594] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[ 19944.697] (II) Module libinput: vendor="X.Org Foundation"
+[ 19944.697] 	compiled for 1.20.3, module version = 0.28.2
+[ 19944.697] 	Module class: X.Org XInput Driver
+[ 19944.698] 	ABI class: X.Org XInput driver, version 24.1
+[ 19944.698] (II) Using input driver 'libinput' for 'Logitech USB Optical Mouse'
+[ 19944.708] (II) systemd-logind: got fd for /dev/input/event0 13:64 fd 19 paused 0
+[ 19944.709] (**) Logitech USB Optical Mouse: always reports core events
+[ 19944.709] (**) Option "Device" "/dev/input/event0"
+[ 19944.710] (**) Option "_source" "server/udev"
+[ 19944.777] (II) event0  - Logitech USB Optical Mouse: is tagged by udev as: Mouse
+[ 19944.779] (II) event0  - Logitech USB Optical Mouse: device is a pointer
+[ 19944.782] (II) event0  - Logitech USB Optical Mouse: device removed
+[ 19944.784] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.3/1-1.3:1.0/0003:046D:C077.0001/input/input0/event0"
+[ 19944.784] (II) XINPUT: Adding extended input device "Logitech USB Optical Mouse" (type: MOUSE, id 6)
+[ 19944.787] (**) Option "AccelerationScheme" "none"
+[ 19944.787] (**) Logitech USB Optical Mouse: (accel) selected scheme none/0
+[ 19944.787] (**) Logitech USB Optical Mouse: (accel) acceleration factor: 2.000
+[ 19944.787] (**) Logitech USB Optical Mouse: (accel) acceleration threshold: 4
+[ 19944.812] (II) event0  - Logitech USB Optical Mouse: is tagged by udev as: Mouse
+[ 19944.813] (II) event0  - Logitech USB Optical Mouse: device is a pointer
+[ 19944.825] (II) config/udev: Adding input device Logitech USB Optical Mouse (/dev/input/mouse0)
+[ 19944.826] (II) No input driver specified, ignoring this device.
+[ 19944.826] (II) This device may have been added with another device file.
+[ 19944.837] (II) config/udev: Adding input device Logitech USB Keyboard (/dev/input/event1)
+[ 19944.837] (**) Logitech USB Keyboard: Applying InputClass "libinput keyboard catchall"
+[ 19944.838] (II) Using input driver 'libinput' for 'Logitech USB Keyboard'
+[ 19944.848] (II) systemd-logind: got fd for /dev/input/event1 13:65 fd 22 paused 0
+[ 19944.849] (**) Logitech USB Keyboard: always reports core events
+[ 19944.849] (**) Option "Device" "/dev/input/event1"
+[ 19944.849] (**) Option "_source" "server/udev"
+[ 19944.874] (II) event1  - Logitech USB Keyboard: is tagged by udev as: Keyboard
+[ 19944.875] (II) event1  - Logitech USB Keyboard: device is a keyboard
+[ 19944.878] (II) event1  - Logitech USB Keyboard: device removed
+[ 19944.878] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.4/1-1.4:1.0/0003:046D:C31C.0002/input/input1/event1"
+[ 19944.879] (II) XINPUT: Adding extended input device "Logitech USB Keyboard" (type: KEYBOARD, id 7)
+[ 19944.879] (**) Option "xkb_model" "logicd"
+[ 19944.879] (**) Option "xkb_layout" "us"
+[ 19945.184] (II) event1  - Logitech USB Keyboard: is tagged by udev as: Keyboard
+[ 19945.184] (II) event1  - Logitech USB Keyboard: device is a keyboard
+[ 19945.198] (II) config/udev: Adding input device Logitech USB Keyboard Consumer Control (/dev/input/event2)
+[ 19945.199] (**) Logitech USB Keyboard Consumer Control: Applying InputClass "libinput keyboard catchall"
+[ 19945.199] (II) Using input driver 'libinput' for 'Logitech USB Keyboard Consumer Control'
+[ 19945.210] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 23 paused 0
+[ 19945.211] (**) Logitech USB Keyboard Consumer Control: always reports core events
+[ 19945.211] (**) Option "Device" "/dev/input/event2"
+[ 19945.211] (**) Option "_source" "server/udev"
+[ 19945.237] (II) event2  - Logitech USB Keyboard Consumer Control: is tagged by udev as: Keyboard
+[ 19945.237] (II) event2  - Logitech USB Keyboard Consumer Control: device is a keyboard
+[ 19945.239] (II) event2  - Logitech USB Keyboard Consumer Control: device removed
+[ 19945.240] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.4/1-1.4:1.1/0003:046D:C31C.0003/input/input2/event2"
+[ 19945.241] (II) XINPUT: Adding extended input device "Logitech USB Keyboard Consumer Control" (type: KEYBOARD, id 8)
+[ 19945.241] (**) Option "xkb_model" "logicd"
+[ 19945.241] (**) Option "xkb_layout" "us"
+[ 19945.267] (II) event2  - Logitech USB Keyboard Consumer Control: is tagged by udev as: Keyboard
+[ 19945.268] (II) event2  - Logitech USB Keyboard Consumer Control: device is a keyboard
+[ 19945.281] (II) config/udev: Adding input device Logitech USB Keyboard System Control (/dev/input/event3)
+[ 19945.282] (**) Logitech USB Keyboard System Control: Applying InputClass "libinput keyboard catchall"
+[ 19945.282] (II) Using input driver 'libinput' for 'Logitech USB Keyboard System Control'
+[ 19945.293] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 24 paused 0
+[ 19945.293] (**) Logitech USB Keyboard System Control: always reports core events
+[ 19945.293] (**) Option "Device" "/dev/input/event3"
+[ 19945.293] (**) Option "_source" "server/udev"
+[ 19945.319] (II) event3  - Logitech USB Keyboard System Control: is tagged by udev as: Keyboard
+[ 19945.319] (II) event3  - Logitech USB Keyboard System Control: device is a keyboard
+[ 19945.322] (II) event3  - Logitech USB Keyboard System Control: device removed
+[ 19945.322] (**) Option "config_info" "udev:/sys/devices/platform/soc/20980000.usb/usb1/1-1/1-1.4/1-1.4:1.1/0003:046D:C31C.0003/input/input3/event3"
+[ 19945.323] (II) XINPUT: Adding extended input device "Logitech USB Keyboard System Control" (type: KEYBOARD, id 9)
+[ 19945.323] (**) Option "xkb_model" "logicd"
+[ 19945.323] (**) Option "xkb_layout" "us"
+[ 19945.349] (II) event3  - Logitech USB Keyboard System Control: is tagged by udev as: Keyboard
+[ 19945.349] (II) event3  - Logitech USB Keyboard System Control: device is a keyboard

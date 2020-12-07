@@ -6,6 +6,7 @@
 import re
 import time
 import argparse
+import datetime
 
 from luma.led_matrix.device import max7219
 from luma.core.interface.serial import spi, noop
@@ -18,9 +19,32 @@ from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT, SINCLAIR_
 def demo(n, block_orientation, rotate, inreverse):
     # create matrix device
     serial = spi(port=0, device=0, gpio=noop())
-    device = max7219(serial, cascaded=2, block_orientation=block_orientation,
+    device = max7219(serial, cascaded=10, block_orientation=block_orientation,
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
-    print("Created device")
+
+    print("Enter message to display (Ctl-C to End): ")
+
+    while (True):
+        now = datetime.datetime.now()
+        nowString = str(now.strftime('%m-%d-%Y %H:%M:%S'))
+        msg = input()
+
+        if msg == "":
+            msg = nowString + " Hours: 8:88 AM - 5:00 PM     \
+Inspirational thoughtfor the day \
+Covid-19 Safety Tips 1, 2, 3, ...  \
+Fun Fact 24: there are 30 days in September"
+
+        print("Speed (1-10): ")
+        speed = float(input())
+        delay = float(11.0 - speed)
+        delay = float(delay / 10)
+        print("Msg: ", msg, " New Speed: ", speed, " Delay: ", delay)
+        print("Watch message board")
+        show_message(device, msg, fill="white", font=proportional(LCD_FONT), scroll_delay=delay)
+        time.sleep(10)
+        print("Enter message to display (Ctl-C to End): ")
+"""
 
     # start demo
     msg = "LED Message Demo"
@@ -99,7 +123,7 @@ def demo(n, block_orientation, rotate, inreverse):
         with canvas(device) as draw:
             text(draw, (0, 0), chr(x), fill="white")
             time.sleep(0.1)
-
+"""
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='matrix_demo arguments',

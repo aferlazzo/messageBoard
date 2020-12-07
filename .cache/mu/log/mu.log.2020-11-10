@@ -1,0 +1,3138 @@
+2020-11-10 08:43:52,031 - root:112(run) INFO: 
+
+-----------------
+
+Starting Mu 1.0.2
+2020-11-10 08:43:52,060 - root:113(run) INFO: uname_result(system='Linux', node='pi-zero', release='5.4.72+', version='#1356 Thu Oct 22 13:56:00 BST 2020', machine='armv6l', processor='')
+2020-11-10 08:43:52,063 - root:114(run) INFO: Python path: ['/usr/share/mu-editor', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/home/pi/.local/lib/python3.7/site-packages', '/usr/local/lib/python3.7/dist-packages', '/usr/local/lib/python3.7/dist-packages/luma.led_matrix-1.5.0-py3.7.egg', '/usr/lib/python3/dist-packages', '/usr/lib/python3/dist-packages/IPython/extensions']
+2020-11-10 08:43:52,095 - root:115(run) INFO: Language code: en_US
+2020-11-10 08:46:20,937 - mu.logic:543(__init__) INFO: Setting up editor.
+2020-11-10 08:46:21,758 - mu.logic:562(__init__) INFO: Settings path: /home/pi/.local/share/mu/settings.json
+2020-11-10 08:46:21,837 - mu.logic:563(__init__) INFO: Session path: /home/pi/.local/share/mu/session.json
+2020-11-10 08:46:21,847 - mu.logic:564(__init__) INFO: Log directory: /home/pi/.cache/mu/log
+2020-11-10 08:46:21,856 - mu.logic:565(__init__) INFO: Data directory: /home/pi/.local/share/mu
+2020-11-10 08:46:42,677 - mu.logic:578(setup) INFO: Available modes: python, adafruit, microbit, debugger, pygamezero
+2020-11-10 09:19:29,348 - root:112(run) INFO: 
+
+-----------------
+
+Starting Mu 1.0.2
+2020-11-10 09:19:29,353 - root:113(run) INFO: uname_result(system='Linux', node='pi-zero', release='5.4.72+', version='#1356 Thu Oct 22 13:56:00 BST 2020', machine='armv6l', processor='')
+2020-11-10 09:19:29,355 - root:114(run) INFO: Python path: ['/usr/share/mu-editor', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/home/pi/.local/lib/python3.7/site-packages', '/usr/local/lib/python3.7/dist-packages', '/usr/local/lib/python3.7/dist-packages/luma.led_matrix-1.5.0-py3.7.egg', '/usr/lib/python3/dist-packages', '/usr/lib/python3/dist-packages/IPython/extensions']
+2020-11-10 09:19:29,356 - root:115(run) INFO: Language code: en_US
+2020-11-10 09:19:31,845 - mu.logic:543(__init__) INFO: Setting up editor.
+2020-11-10 09:19:31,850 - mu.logic:562(__init__) INFO: Settings path: /home/pi/.local/share/mu/settings.json
+2020-11-10 09:19:31,853 - mu.logic:563(__init__) INFO: Session path: /home/pi/.local/share/mu/session.json
+2020-11-10 09:19:31,855 - mu.logic:564(__init__) INFO: Log directory: /home/pi/.cache/mu/log
+2020-11-10 09:19:31,856 - mu.logic:565(__init__) INFO: Data directory: /home/pi/.local/share/mu
+2020-11-10 09:19:32,407 - mu.logic:578(setup) INFO: Available modes: python, adafruit, microbit, debugger, pygamezero
+2020-11-10 09:19:33,848 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-10 09:19:33,863 - mu.logic:625(restore_session) INFO: Restoring session from: /home/pi/.local/share/mu/session.json
+2020-11-10 09:19:33,865 - mu.logic:626(restore_session) DEBUG: {'theme': 'day', 'mode': 'adafruit', 'paths': ['/home/pi/mu_code/testpin19.py'], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-10 09:19:33,867 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/testpin19.py
+2020-11-10 09:19:33,875 - mu.logic:274(read_and_decode) DEBUG: Trying to decode with utf-8
+2020-11-10 09:19:33,878 - mu.logic:277(read_and_decode) INFO: Decoded with utf-8
+2020-11-10 09:19:33,884 - mu.logic:290(read_and_decode) DEBUG: Detected newline '\n'
+2020-11-10 09:19:33,887 - mu.logic:787(_load) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19 # pin 19 aka SPI pin MOSI
+GPIO11 = 23 # pin 23 aka SPI Pin SCLK
+CLK = 12    # pin 12 aka CLK
+CS = 24     # pin 24 aka SPI CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH =0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 to be output pins\n")
+#   GPIO.setup(GPIO10, GPIO.OUT)
+#   GPIO.setup(GPIO11, GPIO.OUT)
+
+
+#   drive CS LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the SPI CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:19:34,438 - mu.logic:647(restore_session) INFO: Loaded files.
+2020-11-10 09:19:34,444 - mu.logic:651(restore_session) INFO: User defined environment variables: []
+2020-11-10 09:19:34,446 - mu.logic:655(restore_session) INFO: Minify scripts on micro:bit? False
+2020-11-10 09:19:36,149 - mu.interface.main:723(show_message) DEBUG: Could not find an attached Adafruit CircuitPython device.
+2020-11-10 09:19:36,152 - mu.interface.main:724(show_message) DEBUG: Python files for Adafruit CircuitPython devices are stored on the device. Therefore, to edit these files you need to have the device plugged in. Until you plug in a device, Mu will use the directory found here:
+
+ /home/pi/mu_code
+
+...to store your code.
+2020-11-10 09:20:56,427 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-10 09:36:28,002 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:36:28,005 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19 # pin 19 aka SPI pin MOSI
+GPIO11 = 23 # pin 23 aka SPI Pin SCLK
+CLK = 12    # pin 12 aka CLK
+CS = 24     # pin 24 aka SPI CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH =0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 to be output pins\n")
+#   GPIO.setup(GPIO10, GPIO.OUT)
+#   GPIO.setup(GPIO11, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to resume normal operation for display intensity: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   To start, CS LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:38:08,907 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:38:08,909 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19 # pin 19 aka SPI pin MOSI
+GPIO11 = 23 # pin 23 aka SPI Pin SCLK
+CLK = 12    # pin 12 aka CLK
+CS = 24     # pin 24 aka SPI CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH =0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 to be output pins\n")
+#   GPIO.setup(GPIO10, GPIO.OUT)
+#   GPIO.setup(GPIO11, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   To start, CS LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:41:29,920 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:41:29,923 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19 # pin 19 aka SPI pin MOSI
+GPIO11 = 23 # pin 23 aka SPI Pin SCLK
+CLK = 12    # pin 12 aka CLK
+CS = 24     # pin 24 aka SPI CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH =0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 to be output pins\n")
+#   GPIO.setup(GPIO10, GPIO.OUT)
+#   GPIO.setup(GPIO11, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:41:30,386 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:41:30,388 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19 # pin 19 aka SPI pin MOSI
+GPIO11 = 23 # pin 23 aka SPI Pin SCLK
+CLK = 12    # pin 12 aka CLK
+CS = 24     # pin 24 aka SPI CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH =0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 to be output pins\n")
+#   GPIO.setup(GPIO10, GPIO.OUT)
+#   GPIO.setup(GPIO11, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:47:31,313 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:47:31,316 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19 # pin 19 aka SPI pin MOSI
+GPIO11 = 23 # pin 23 aka SPI Pin SCLK
+CLK = 12    # pin 12 aka CLK
+CS = 24     # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH =0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 and 12 and 24 to be output pins\n")
+    GPIO.setup(GPIO10, GPIO.OUT)
+    GPIO.setup(GPIO11, GPIO.OUT)
+    GPIO.setup(CS, GPIO.OUT)
+    GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:47:31,708 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:47:31,711 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19 # pin 19 aka SPI pin MOSI
+GPIO11 = 23 # pin 23 aka SPI Pin SCLK
+CLK = 12    # pin 12 aka CLK
+CS = 24     # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH =0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 and 12 and 24 to be output pins\n")
+    GPIO.setup(GPIO10, GPIO.OUT)
+    GPIO.setup(GPIO11, GPIO.OUT)
+    GPIO.setup(CS, GPIO.OUT)
+    GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:47:32,789 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:47:32,797 - mu.logic:985(check_code) INFO: {22: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 22, 'column': 3, 'source': '    GPIO.setup(GPIO10, GPIO.OUT)\n'}]}
+2020-11-10 09:47:33,409 - mu.logic:989(check_code) INFO: {9: [{'line_no': 9, 'column': 11, 'message': 'At least two spaces before inline comment', 'code': 'E261'}], 10: [{'line_no': 10, 'column': 11, 'message': 'At least two spaces before inline comment', 'code': 'E261'}], 14: [{'line_no': 14, 'column': 6, 'message': 'Missing whitespace around operator', 'code': 'E225'}], 21: [{'line_no': 21, 'column': 79, 'message': 'Line too long (86 > 79 characters)', 'code': 'E501'}], 22: [{'line_no': 22, 'column': 4, 'message': 'Unexpected indentation', 'code': 'E113'}], 39: [{'line_no': 39, 'column': 79, 'message': 'Line too long (94 > 79 characters)', 'code': 'E501'}], 43: [{'line_no': 43, 'column': 79, 'message': 'Line too long (98 > 79 characters)', 'code': 'E501'}], 44: [{'line_no': 44, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 52: [{'line_no': 52, 'column': 79, 'message': 'Line too long (90 > 79 characters)', 'code': 'E501'}], 53: [{'line_no': 53, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 59: [{'line_no': 59, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 66: [{'line_no': 66, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 67: [{'line_no': 67, 'column': 79, 'message': 'Line too long (101 > 79 characters)', 'code': 'E501'}], 73: [{'line_no': 73, 'column': 79, 'message': 'Line too long (112 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:48:30,494 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:48:30,496 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19 and 23 and 12 and 24 to be output pins\n")
+    GPIO.setup(GPIO10, GPIO.OUT)
+    GPIO.setup(GPIO11, GPIO.OUT)
+    GPIO.setup(CS, GPIO.OUT)
+    GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:48:34,548 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:48:34,559 - mu.logic:985(check_code) INFO: {22: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 22, 'column': 3, 'source': '    GPIO.setup(GPIO10, GPIO.OUT)\n'}]}
+2020-11-10 09:48:34,998 - mu.logic:989(check_code) INFO: {21: [{'line_no': 21, 'column': 79, 'message': 'Line too long (86 > 79 characters)', 'code': 'E501'}], 22: [{'line_no': 22, 'column': 4, 'message': 'Unexpected indentation', 'code': 'E113'}], 39: [{'line_no': 39, 'column': 79, 'message': 'Line too long (94 > 79 characters)', 'code': 'E501'}], 43: [{'line_no': 43, 'column': 79, 'message': 'Line too long (98 > 79 characters)', 'code': 'E501'}], 44: [{'line_no': 44, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 52: [{'line_no': 52, 'column': 79, 'message': 'Line too long (90 > 79 characters)', 'code': 'E501'}], 53: [{'line_no': 53, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 59: [{'line_no': 59, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 66: [{'line_no': 66, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 67: [{'line_no': 67, 'column': 79, 'message': 'Line too long (101 > 79 characters)', 'code': 'E501'}], 73: [{'line_no': 73, 'column': 79, 'message': 'Line too long (112 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:49:34,779 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:49:34,781 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins 19, 23, 12, and 24 to be output pins\n")
+    GPIO.setup(GPIO10, GPIO.OUT)
+    GPIO.setup(GPIO11, GPIO.OUT)
+    GPIO.setup(CS, GPIO.OUT)
+    GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:49:59,616 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:49:59,625 - mu.logic:985(check_code) INFO: {22: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 22, 'column': 3, 'source': '    GPIO.setup(GPIO10, GPIO.OUT)\n'}]}
+2020-11-10 09:50:00,056 - mu.logic:989(check_code) INFO: {21: [{'line_no': 21, 'column': 79, 'message': 'Line too long (81 > 79 characters)', 'code': 'E501'}], 22: [{'line_no': 22, 'column': 4, 'message': 'Unexpected indentation', 'code': 'E113'}], 39: [{'line_no': 39, 'column': 79, 'message': 'Line too long (94 > 79 characters)', 'code': 'E501'}], 43: [{'line_no': 43, 'column': 79, 'message': 'Line too long (98 > 79 characters)', 'code': 'E501'}], 44: [{'line_no': 44, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 52: [{'line_no': 52, 'column': 79, 'message': 'Line too long (90 > 79 characters)', 'code': 'E501'}], 53: [{'line_no': 53, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 59: [{'line_no': 59, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 66: [{'line_no': 66, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 67: [{'line_no': 67, 'column': 79, 'message': 'Line too long (101 > 79 characters)', 'code': 'E501'}], 73: [{'line_no': 73, 'column': 79, 'message': 'Line too long (112 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:50:51,512 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:50:51,515 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19 and 23 will be set to be output pins
+#   print("\nSetting the RPi's GPIO pins ")
+    print("19, 23, 12, and 24 to be output pins\n")
+    GPIO.setup(GPIO10, GPIO.OUT)
+    GPIO.setup(GPIO11, GPIO.OUT)
+    GPIO.setup(CS, GPIO.OUT)
+    GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:51:15,259 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:51:15,267 - mu.logic:985(check_code) INFO: {22: [{'message': 'Syntax error. Python cannot understand this line. Check for missing characters!', 'line_no': 22, 'column': 3, 'source': '    print("19, 23, 12, and 24 to be output pins\\n")\n'}]}
+2020-11-10 09:51:15,723 - mu.logic:989(check_code) INFO: {22: [{'line_no': 22, 'column': 4, 'message': 'Unexpected indentation', 'code': 'E113'}], 40: [{'line_no': 40, 'column': 79, 'message': 'Line too long (94 > 79 characters)', 'code': 'E501'}], 44: [{'line_no': 44, 'column': 79, 'message': 'Line too long (98 > 79 characters)', 'code': 'E501'}], 45: [{'line_no': 45, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 53: [{'line_no': 53, 'column': 79, 'message': 'Line too long (90 > 79 characters)', 'code': 'E501'}], 54: [{'line_no': 54, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 60: [{'line_no': 60, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 67: [{'line_no': 67, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 68: [{'line_no': 68, 'column': 79, 'message': 'Line too long (101 > 79 characters)', 'code': 'E501'}], 74: [{'line_no': 74, 'column': 79, 'message': 'Line too long (112 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:53:49,573 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:53:49,575 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a or binary 0b1010 (command portion) and data portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:53:52,615 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:53:53,117 - mu.logic:989(check_code) INFO: {40: [{'line_no': 40, 'column': 79, 'message': 'Line too long (94 > 79 characters)', 'code': 'E501'}], 44: [{'line_no': 44, 'column': 79, 'message': 'Line too long (98 > 79 characters)', 'code': 'E501'}], 45: [{'line_no': 45, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 53: [{'line_no': 53, 'column': 79, 'message': 'Line too long (90 > 79 characters)', 'code': 'E501'}], 54: [{'line_no': 54, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 60: [{'line_no': 60, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 67: [{'line_no': 67, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 68: [{'line_no': 68, 'column': 79, 'message': 'Line too long (101 > 79 characters)', 'code': 'E501'}], 74: [{'line_no': 74, 'column': 79, 'message': 'Line too long (112 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:55:11,673 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:55:11,675 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:55:31,172 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:55:31,675 - mu.logic:989(check_code) INFO: {47: [{'line_no': 47, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 55: [{'line_no': 55, 'column': 79, 'message': 'Line too long (90 > 79 characters)', 'code': 'E501'}], 56: [{'line_no': 56, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 62: [{'line_no': 62, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 69: [{'line_no': 69, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 70: [{'line_no': 70, 'column': 79, 'message': 'Line too long (101 > 79 characters)', 'code': 'E501'}], 76: [{'line_no': 76, 'column': 79, 'message': 'Line too long (112 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:56:44,388 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:56:44,391 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the SPI CLK pin")
+
+#   Data is loaded into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:56:47,389 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:56:48,056 - mu.logic:989(check_code) INFO: {56: [{'line_no': 56, 'column': 79, 'message': 'Line too long (90 > 79 characters)', 'code': 'E501'}], 57: [{'line_no': 57, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 63: [{'line_no': 63, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 70: [{'line_no': 70, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 71: [{'line_no': 71, 'column': 79, 'message': 'Line too long (101 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:58:17,390 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:58:17,393 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal ")
+print("operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:58:21,483 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:58:22,074 - mu.logic:989(check_code) INFO: {58: [{'line_no': 58, 'column': 79, 'message': 'Line too long (109 > 79 characters)', 'code': 'E501'}], 64: [{'line_no': 64, 'column': 79, 'message': 'Line too long (91 > 79 characters)', 'code': 'E501'}], 71: [{'line_no': 71, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 72: [{'line_no': 72, 'column': 79, 'message': 'Line too long (97 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 09:59:29,424 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:59:29,426 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal ")
+print("operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command ")
+print("data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:59:30,065 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:59:30,067 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal ")
+print("operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command ")
+print("data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:59:31,329 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 09:59:31,332 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal ")
+print("operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command ")
+print("data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 09:59:39,667 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 09:59:40,204 - mu.logic:989(check_code) INFO: {73: [{'line_no': 73, 'column': 79, 'message': 'Line too long (83 > 79 characters)', 'code': 'E501'}], 74: [{'line_no': 74, 'column': 79, 'message': 'Line too long (97 > 79 characters)', 'code': 'E501'}]}
+2020-11-10 10:00:31,189 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:00:31,191 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal ")
+print("operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command ")
+print("data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by ")
+print("lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:00:31,685 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:00:31,688 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal ")
+print("operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command ")
+print("data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by ")
+print("lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:01:00,390 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 10:01:01,751 - mu.logic:979(check_code) INFO: Checking code.
+2020-11-10 10:04:55,542 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:04:55,545 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select)\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock)\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command to set LED display ")
+print("intensity to max: 0b101000001111")
+print("Preparing to tell Max7219 to initiate a transfer of ")
+print("command data by lowering and raising the CLK pin")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command to resume normal ")
+print("operations: 0b001100000001")
+print("Preparing to tell Max7219 to initiate a transfer of command ")
+print("data by lowering and raising the CLK pin")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by ")
+print("lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:35:11,700 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:35:11,703 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of ")
+print("command data by lowering and raising the CLK pin\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operations: 0b001100000001")
+print("That is, Max7219 to initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on SPI Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by ")
+print("lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:42:21,452 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:42:21,455 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operations: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by ")
+print("lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:43:31,585 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:43:31,587 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operations: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("Preparing to tell Max7219 to initiate a display test by ")
+print("lowering and raising the CLK pin")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:50:36,284 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:50:36,287 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operations: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("That is, Max7219: initiate a display test by ")
+print("lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:50:38,037 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:50:38,046 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operations: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("That is, Max7219: initiate a display test by ")
+print("lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 10:56:08,130 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 10:56:08,133 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operations: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command perform ")
+print("a display test: 0b1111000000")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 11:00:17,942 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 11:00:17,944 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Starting\nSetting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operations: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal Operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command data to perform ")
+print("a display test: 0b1111000000")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 11:11:27,884 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/testpin19.py
+2020-11-10 11:11:27,887 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+#   the purpose of the script is to send 4095 (binary 111111111111) to GPIO 10
+#   0000111111111111 is the Display test register, followed by 8 bits of data
+#   that isn't used
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nStarting\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and 
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operation: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b111100000000)
+print("Preparing to send Max7219 the command data to perform ")
+print("a display test: 0b1111000000")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and End\n")
+2020-11-10 11:11:38,891 - mu.logic:1051(quit) DEBUG: Session: {'theme': 'day', 'mode': 'adafruit', 'paths': ['/home/pi/mu_code/testpin19.py'], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-10 11:11:38,892 - mu.logic:1052(quit) DEBUG: Saving session to: /home/pi/.local/share/mu/session.json
+2020-11-10 11:11:38,896 - mu.logic:1066(quit) INFO: Quitting.
+
+
+2020-11-10 14:41:13,929 - root:112(run) INFO: 
+
+-----------------
+
+Starting Mu 1.0.2
+2020-11-10 14:41:13,933 - root:113(run) INFO: uname_result(system='Linux', node='pi-zero', release='5.4.72+', version='#1356 Thu Oct 22 13:56:00 BST 2020', machine='armv6l', processor='')
+2020-11-10 14:41:13,935 - root:114(run) INFO: Python path: ['/usr/share/mu-editor', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/home/pi/.local/lib/python3.7/site-packages', '/usr/local/lib/python3.7/dist-packages', '/usr/local/lib/python3.7/dist-packages/luma.led_matrix-1.5.0-py3.7.egg', '/usr/lib/python3/dist-packages', '/usr/lib/python3/dist-packages/IPython/extensions']
+2020-11-10 14:41:13,936 - root:115(run) INFO: Language code: en_US
+2020-11-10 14:41:16,289 - mu.logic:543(__init__) INFO: Setting up editor.
+2020-11-10 14:41:16,293 - mu.logic:562(__init__) INFO: Settings path: /home/pi/.local/share/mu/settings.json
+2020-11-10 14:41:16,295 - mu.logic:563(__init__) INFO: Session path: /home/pi/.local/share/mu/session.json
+2020-11-10 14:41:16,297 - mu.logic:564(__init__) INFO: Log directory: /home/pi/.cache/mu/log
+2020-11-10 14:41:16,298 - mu.logic:565(__init__) INFO: Data directory: /home/pi/.local/share/mu
+2020-11-10 14:41:16,821 - mu.logic:578(setup) INFO: Available modes: python, adafruit, microbit, debugger, pygamezero
+2020-11-10 14:41:18,614 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-10 14:41:18,624 - mu.logic:625(restore_session) INFO: Restoring session from: /home/pi/.local/share/mu/session.json
+2020-11-10 14:41:18,627 - mu.logic:626(restore_session) DEBUG: {'theme': 'day', 'mode': 'adafruit', 'paths': ['/home/pi/mu_code/testpin19.py'], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-10 14:41:18,634 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/testpin19.py
+2020-11-10 14:41:18,637 - mu.logic:722(_load) INFO: The file /home/pi/mu_code/testpin19.py does not exist.
+2020-11-10 14:41:18,638 - mu.logic:647(restore_session) INFO: Loaded files.
+2020-11-10 14:41:18,649 - mu.logic:651(restore_session) INFO: User defined environment variables: []
+2020-11-10 14:41:18,651 - mu.logic:655(restore_session) INFO: Minify scripts on micro:bit? False
+2020-11-10 14:41:19,808 - mu.logic:678(restore_session) INFO: Starting with blank file.
+2020-11-10 14:41:22,069 - mu.interface.main:723(show_message) DEBUG: Could not find an attached Adafruit CircuitPython device.
+2020-11-10 14:41:22,071 - mu.interface.main:724(show_message) DEBUG: Python files for Adafruit CircuitPython devices are stored on the device. Therefore, to edit these files you need to have the device plugged in. Until you plug in a device, Mu will use the directory found here:
+
+ /home/pi/mu_code
+
+...to store your code.
+2020-11-10 14:41:27,546 - mu.logic:1148(change_mode) INFO: Workspace directory: /home/pi/mu_code
+2020-11-10 14:41:32,887 - mu.logic:809(get_dialog_directory) INFO: Using path for file dialog: /home/pi/mu_code
+2020-11-10 14:41:44,565 - mu.interface.main:251(get_load_path) DEBUG: Getting load path: /home/pi/mu_code/test-max7219.py
+2020-11-10 14:41:44,569 - mu.logic:713(_load) INFO: Loading script from: /home/pi/mu_code/test-max7219.py
+2020-11-10 14:41:44,592 - mu.logic:274(read_and_decode) DEBUG: Trying to decode with utf-8
+2020-11-10 14:41:44,601 - mu.logic:277(read_and_decode) INFO: Decoded with utf-8
+2020-11-10 14:41:44,630 - mu.logic:290(read_and_decode) DEBUG: Detected newline '\n'
+2020-11-10 14:41:44,631 - mu.logic:787(_load) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+"""
+
+Output in terminal window should be:
+
+Starting test-max7219.py
+Setting the RPi's GPIO pins 
+19, 23, 12, and 24 to be output pins
+
+Setting the RPi's GPIO pins 24 CS (Chip Select) 
+LOW then HIGH
+
+Setting the RPi's GPIO pins 12 CLK (Clock) 
+LOW then HIGH
+
+Preparing to send Max7219 the command data to set LED display 
+intensity to max: 0b101000001111
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to set LED display intensity: 
+GPIO.output(GPIO10, 0b101000001111)
+
+Preparing to send Max7219 the command data to resume normal 
+operation: 0b001100000001
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to resume normal operation: 
+GPIO.output(GPIO10, 0b001100000001)
+
+Preparing to send Max7219 the command data to perform 
+a display test: 0b1111000000
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to light all the dots, which is the 
+display test: GPIO.output(GPIO1, 0b111100000000)
+
+Sleep for 5 seconds
+
+Cleanup and Ending test-max7219.py
+"""
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nStarting test-max7219.py\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+# now set CS to 0 for the rest of the script
+GPIO.output(CS, 0)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   Scan Limit Register set number of digits displayed We have 5-column LEDs
+#   so set Command 0x0b and Data 0x05
+
+
+#                     1234         4-bits command hex B = binary 1011
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b101100000101)
+print("Preparing to send Max7219 the command data to limit ")
+print("the display to 5 columns of dots: 0b1011000101")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to limit the scan to 5 digits of columns, which is the ")
+print("Scan limit register: GPIO.output(GPIO1, 0b101100000101)\n")
+
+
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operation: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b111100000001)
+print("Preparing to send Max7219 the command data to perform ")
+print("a display test: 0b1111000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and Ending test-max7219.py\n")
+
+
+2020-11-10 14:41:58,098 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/test-max7219.py
+2020-11-10 14:41:58,101 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+"""
+
+Output in terminal window should be:
+
+Starting test-max7219.py
+Setting the RPi's GPIO pins 
+19, 23, 12, and 24 to be output pins
+
+Setting the RPi's GPIO pins 24 CS (Chip Select) 
+LOW then HIGH
+
+Setting the RPi's GPIO pins 12 CLK (Clock) 
+LOW then HIGH
+
+Preparing to send Max7219 the command data to set LED display 
+intensity to max: 0b101000001111
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to set LED display intensity: 
+GPIO.output(GPIO10, 0b101000001111)
+
+Preparing to send Max7219 the command data to resume normal 
+operation: 0b001100000001
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to resume normal operation: 
+GPIO.output(GPIO10, 0b001100000001)
+
+Preparing to send Max7219 the command data to perform 
+a display test: 0b1111000000
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to light all the dots, which is the 
+display test: GPIO.output(GPIO1, 0b111100000000)
+
+Sleep for 5 seconds
+
+Cleanup and Ending test-max7219.py
+"""
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nStarting test-max7219.py\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+# now set CS to 0 for the rest of the script
+GPIO.output(CS, 0)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   Scan Limit Register set number of digits displayed We have 5-column LEDs
+#   so set Command 0x0b and Data 0x05
+
+
+#                     1234         4-bits command hex B = binary 1011
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b101100000101)
+print("Preparing to send Max7219 the command data to limit ")
+print("the display to 5 columns of dots: 0b1011000101")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to limit the scan to 5 digits of columns, which is the ")
+print("Scan limit register: GPIO.output(GPIO1, 0b101100000101)\n")
+
+
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operation: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b111100000001)
+print("Preparing to send Max7219 the command data to perform ")
+print("a display test: 0b1111000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and Ending test-max7219.py\n")
+
+
+2020-11-10 14:41:58,854 - mu.logic:869(save_tab_to_file) INFO: Saving script to: /home/pi/mu_code/test-max7219.py
+2020-11-10 14:41:58,857 - mu.logic:870(save_tab_to_file) DEBUG: 
+import RPi.GPIO as GPIO
+import time
+
+"""
+
+Output in terminal window should be:
+
+Starting test-max7219.py
+Setting the RPi's GPIO pins 
+19, 23, 12, and 24 to be output pins
+
+Setting the RPi's GPIO pins 24 CS (Chip Select) 
+LOW then HIGH
+
+Setting the RPi's GPIO pins 12 CLK (Clock) 
+LOW then HIGH
+
+Preparing to send Max7219 the command data to set LED display 
+intensity to max: 0b101000001111
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to set LED display intensity: 
+GPIO.output(GPIO10, 0b101000001111)
+
+Preparing to send Max7219 the command data to resume normal 
+operation: 0b001100000001
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to resume normal operation: 
+GPIO.output(GPIO10, 0b001100000001)
+
+Preparing to send Max7219 the command data to perform 
+a display test: 0b1111000000
+That is, Max7219: initiate a transfer of command 
+data by lowering and raising the CLK pin
+
+Max7219 was told to light all the dots, which is the 
+display test: GPIO.output(GPIO1, 0b111100000000)
+
+Sleep for 5 seconds
+
+Cleanup and Ending test-max7219.py
+"""
+
+#   define GPIO pin mappings
+GPIO10 = 19   # pin 19 aka SPI pin MOSI
+GPIO11 = 23   # pin 23 aka SPI Pin SCLK
+CLK = 12      # pin 12 aka CLK
+CS = 24       # pin 24 aka CS (Chip Select GPIO8)
+LOW = 0x00
+HIGH = 0xff
+
+#   First, set the mode to address GPIOs via their GPIO number using
+#   the following command
+GPIO.setmode(GPIO.BCM)
+
+#   Next, pins 19, 23, 12, and 24 will be set to be output pins
+print("\nStarting test-max7219.py\nSetting the RPi's GPIO pins ")
+print("19, 23, 12, and 24 to be output pins\n")
+GPIO.setup(GPIO10, GPIO.OUT)
+GPIO.setup(GPIO11, GPIO.OUT)
+GPIO.setup(CS, GPIO.OUT)
+GPIO.setup(CLK, GPIO.OUT)
+
+#   The Decode Mode is set to no decode by default
+
+#   To start programming Max7219, set CS LOW then HIGH and CLK LOW then HIGH
+print("Setting the RPi's GPIO pins 24 CS (Chip Select) " )
+print("LOW then HIGH\n")
+GPIO.output(CS, LOW)
+GPIO.output(CS, HIGH)
+
+#   drive CLOCK LOW then HIGH
+print("Setting the RPi's GPIO pins 12 CLK (Clock) ")
+print("LOW then HIGH\n")
+GPIO.output(CLK, LOW)
+GPIO.output(CLK, HIGH)
+
+# now set CS to 0 for the rest of the script
+GPIO.output(CS, 0)
+
+#   Display intensity is address 0x0a / 0b1010 (command portion) and
+#   portion 0x0f
+#                     1234         4-bits command hex A = binary 1010
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b101000001111)
+print("Preparing to send Max7219 the command data to set LED display ")
+print("intensity to max: 0b101000001111")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to set LED display intensity: ")
+print("GPIO.output(GPIO10, 0b101000001111)\n")
+
+#   Scan Limit Register set number of digits displayed We have 5-column LEDs
+#   so set Command 0x0b and Data 0x05
+
+
+#                     1234         4-bits command hex B = binary 1011
+#                         12345678 8-bits data (not used by chip)
+GPIO.output(GPIO10, 0b101100000101)
+print("Preparing to send Max7219 the command data to limit ")
+print("the display to 5 columns of dots: 0b1011000101")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to limit the scan to 5 digits of columns, which is the ")
+print("Scan limit register: GPIO.output(GPIO1, 0b101100000101)\n")
+
+
+
+#   From page 7 of datasheet, at initial power up of Max7219 enters
+#   Shutdown mode. Table 3, Shutdown Register
+#   The command to resume Normal Operation
+#                     1234         4-bits command hex C = binary 1100
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b001100000001)
+print("Preparing to send Max7219 the command data to resume normal ")
+print("operation: 0b001100000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Perform the data load into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to resume normal operation: ")
+print("GPIO.output(GPIO10, 0b001100000001)\n")
+
+
+#   From page 7, Table . Display Test Register
+#   The command to test the LED by lighting all dots
+#                     1234         4-bits command hex F = binary 1111
+#                         12345678 8-bits data
+GPIO.output(GPIO10, 0b111100000001)
+print("Preparing to send Max7219 the command data to perform ")
+print("a display test: 0b1111000001")
+print("That is, Max7219: initiate a transfer of command ")
+print("data by lowering and raising the CLK pin\n")
+
+#   Data is loaded into the register on Clock's rising edge
+GPIO.output(GPIO11, LOW)
+GPIO.output(GPIO11, HIGH)
+
+print("Max7219 was told to light all the dots, which is the ")
+print("display test: GPIO.output(GPIO1, 0b111100000000)\n")
+
+print("Sleep for 5 seconds\n")
+#   The command to wait for 5 seconds
+time.sleep(5)
+
+#   The command to cleanup all the GPIO pins as expected by the chip
+GPIO.cleanup()
+print("Cleanup and Ending test-max7219.py\n")
+
+
+2020-11-10 14:43:40,175 - mu.logic:1051(quit) DEBUG: Session: {'theme': 'day', 'mode': 'adafruit', 'paths': ['/home/pi/mu_code/test-max7219.py'], 'envars': [], 'minify': False, 'microbit_runtime': '', 'zoom_level': 2}
+2020-11-10 14:43:40,177 - mu.logic:1052(quit) DEBUG: Saving session to: /home/pi/.local/share/mu/session.json
+2020-11-10 14:43:40,181 - mu.logic:1066(quit) INFO: Quitting.
+
+
